@@ -1,9 +1,9 @@
-Architectural notes and reference material for epistemic architectures, supervisory control, and AI governance.
+![Status](https://img.shields.io/badge/status-reference--only-lightgrey)
 # Epistemic Architectures
 
-Architectural notes and minimal references for epistemic architectures and supervisory control in autonomous systems.
+Architectural notes and reference material for epistemic architectures, supervisory control, and AI governance.  
+This repository is intentionally frozen except for metadata corrections.
 
-This repository serves as a stable reference point linked to the following published working paper:
 
 **Torjusen, M. E. (2026).**  
 *Epistemic Architectures: Systems That Know They Know*.  
@@ -35,3 +35,12 @@ No active development is ongoing at this stage.
 
 Marius Egerhei Torjusen  
 ORCID: https://orcid.org/0009-0006-0431-6637
+---
+
+## Citation
+
+If you reference this repository, please cite the associated working paper:
+
+Torjusen, M. E. (2026). *Epistemic Architectures: Systems That Know They Know*.  
+Zenodo. https://doi.org/10.5281/zenodo.18436983
+CC-BY-ND 4.0
