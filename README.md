@@ -1,9 +1,20 @@
 # Epistemic Architectures
 
-Architectural notes and reference material for epistemic architectures,
-supervisory control, and AI governance.
+Stable reference anchor for epistemic architectures, supervisory control, AI governance, and fail-closed realization grammars.
 
-This repository is intentionally frozen except for metadata corrections.
+## Start here
+
+Generated candidates are not consequences.
+
+This work studies systems where proposed transitions must pass explicit admissibility, structural, and governance checks before they can become authorized outcomes.
+
+Canonical path:
+
+```text
+candidate -> admissibility test -> gate decision -> witnessed consequence
+```
+
+In short: dynamics may generate possibilities; the architecture decides what can be safely realized.
 
 ---
 
@@ -14,32 +25,42 @@ DOI: https://doi.org/10.5281/zenodo.18436983
 
 ---
 
+## Repository role
+
+This repository is a stable theory anchor and citation point.
+
+It is intentionally conservative: it preserves architectural definitions, separation of concerns, and epistemic constraints. Active demonstrators, implementation artifacts, and experimental software notes are maintained in companion repositories.
+
+Suggested reading path:
+
+- `sololys/epistemic-architectures` — theory anchor and citation reference.
+- `sololys/realiseringsgrammatikk-artifact-family` — artifact family, microtests, specifications, and release packages.
+- `sololys/Poronesis-lab` — lab notes, drafts, and evolving protocol work.
+- `sololys/ky-rox-public-demonstrators` — public-facing demonstrators and external presentation material.
+
+---
+
 ## Scope
 
-This repository focuses on **architectural and conceptual structure**
-rather than implementation.
+This repository focuses on architectural and conceptual structure rather than runtime implementation.
 
-It describes form, separation of concerns, and epistemic constraints.
-It does not provide executable systems, thresholds, or decision logic.
+It describes form, separation of concerns, and epistemic constraints for systems that must distinguish generated candidates from realized consequences.
 
 Topics include:
+
 - epistemic uncertainty and confidence-aware operation,
 - supervisory control and governance overlays,
 - finite-state supervision and graceful degradation,
+- admissibility testing before irreversible consequence,
 - separation of governance logic from task-level optimization.
 
 ---
 
 ## Status
 
-This repository is intentionally minimal and non-operational.
+Stable reference repository / descriptive architecture / non-operational.
 
-It functions as:
-- an architectural index,
-- a citation anchor,
-- a stable reference point for future extensions.
-
-No active development is ongoing at this stage.
+This repository does not provide a deployed safety system, certified control system, physical hardware validation, or empirical physics validation. It is a structured reference point for ongoing work in companion repositories.
 
 ---
 
@@ -63,7 +84,6 @@ License: CC BY-ND 4.0
 
 ## About
 
-Architectural notes and reference material for epistemic architectures,
-supervisory control, and AI governance.
+Epistemic architectures are systems that make uncertainty, admissibility, authorization, and consequence explicit.
 
-This repository is descriptive, not normative.
+This repository is descriptive, not normative. It is designed to be read as an architectural reference, not as an executable runtime or certification claim.
