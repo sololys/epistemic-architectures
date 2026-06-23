@@ -38,6 +38,8 @@ Suggested reading path:
 - `sololys/Poronesis-lab` — lab notes, drafts, and evolving protocol work.
 - `sololys/ky-rox-public-demonstrators` — public-facing demonstrators and external presentation material.
 
+See `REPOSITORY_MAP.md` for the compact ecosystem map.
+
 ---
 
 ## Scope
