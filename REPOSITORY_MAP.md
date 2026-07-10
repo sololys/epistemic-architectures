@@ -1,52 +1,106 @@
-# Repository Map
+# Repository Governance Map
 
-This repository is part of a small public research-and-artifact ecosystem.
+Snapshot: 2026-07-10
 
-The purpose of this map is to make the reading path explicit and keep each repository role clean.
+This document defines the public-safe topology of the Realiseringsgrammatikk research-and-artifact ecosystem. Its purpose is to make repository roles, authority, promotion paths, and archival rules explicit.
 
-## Repository roles
+Generated material is not automatically canonical. A repository location does not itself authorize a claim, release, or consequence.
 
-### `sololys/epistemic-architectures`
+## Authority classes
 
-Stable theory anchor and citation reference.
+- `PUBLIC_CANON` — stable public definitions and citation anchors.
+- `ARTIFACT_AUTHORITY` — verified software artifacts, manifests, run logs, and release packages.
+- `WORKING_SPACE` — drafts, notes, protocol candidates, and unstable experiments.
+- `PUBLIC_SURFACE` — redacted demonstrators and external communication material.
+- `EXTERNAL_NON_CANONICAL` — external collaboration or upstream work that is not part of the internal canon.
 
-Use this repository to understand the architectural framing: epistemic architectures, supervisory control, admissibility, authorization, and the separation between generated candidates and realized consequences.
+## Public-safe repository register
 
-Status: stable reference / descriptive architecture / non-operational.
+| Repository | Role | Authority | Visibility | Status | Promotion target | Archive rule |
+|---|---|---|---|---|---|---|
+| `sololys/epistemic-architectures` | Stable theory anchor and citation reference | `PUBLIC_CANON` | Public | `OPEN / STABLE / NON-OPERATIONAL` | None; this is the public conceptual authority | Preserve cited and tagged states; never rewrite release history |
+| `sololys/epistemic-architectures-notes` | Working notes, sketches, extensions, and examples | `WORKING_SPACE` | Public | `OPEN / NON-CANONICAL` | Promote reviewed definitions to `epistemic-architectures` | Archive or mark notes after promotion; retain source history and backlinks |
+| `sololys/realiseringsgrammatikk-artifact-family` | Artifact family, microtests, specifications, release bundles, and deterministic demonstrations | `ARTIFACT_AUTHORITY` | Private | `OPEN / ACTIVE` | Promote stable public-safe theory to `epistemic-architectures`; promote redacted demonstrations to `ky-rox-public-demonstrators` | Keep superseded artifacts immutable, hashed, and clearly marked as superseded or deprecated |
+| `sololys/Poronesis-lab` | Experimental lab for drafts, protocol candidates, RTL/software simulations, and evolving formalization | `WORKING_SPACE` | Private | `OPEN / LAB` | Promote verified artifacts to `realiseringsgrammatikk-artifact-family`; promote stable definitions to `epistemic-architectures` | Retain failed and abandoned experiments with explicit status; tag only after verified PASS |
+| `sololys/ky-rox-public-demonstrators` | Public showroom and deterministic demonstration surface | `PUBLIC_SURFACE` | Public | `OPEN / PUBLIC-SAFE` | No authority promotion from presentation alone; reusable verified components return through the artifact authority | Archive replaced demonstrations only after a successor and redirect exist |
+| `sololys/loop-engineering` | External collaboration and upstream agent-loop engineering work | `EXTERNAL_NON_CANONICAL` | Public | `EXTERNAL / ACTIVE` | No direct promotion; any imported pattern requires independent review and attribution | Preserve external contribution history; keep forks and internal canon separate |
 
-### `sololys/realiseringsgrammatikk-artifact-family`
+## Promotion grammar
 
-Artifact family, microtests, specifications, release packages, and deterministic software demonstrations.
+```text
+working note / lab candidate
+  -> deterministic verification
+  -> artifact authority
+  -> editorial and claim review
+  -> public theory anchor or public demonstrator
+```
 
-Use this repository when looking for concrete artifacts, manifests, run logs, release bundles, and implementation-adjacent examples.
+Promotion is explicit. Copying, linking, popularity, or repeated use does not make material canonical.
 
-Status: artifact family / microtests / deterministic software demonstrations.
+### Theory promotion
 
-### `sololys/Poronesis-lab`
+```text
+notes or lab draft
+  -> definition stabilized
+  -> conflicting terms resolved
+  -> claim scope reviewed
+  -> citation surface updated
+  -> PUBLIC_CANON
+```
 
-Lab space for drafts, evolving protocol notes, and experimental formalization work.
+### Artifact promotion
 
-Use this repository for material that is still being shaped, tested, renamed, or prepared for later stabilization.
+```text
+candidate implementation
+  -> tests
+  -> deterministic rerun
+  -> run log
+  -> manifest / hash verification
+  -> release or tagged artifact
+```
 
-Status: lab / drafts / protocol candidates.
+### Public release promotion
 
-### `sololys/ky-rox-public-demonstrators`
-
-Public-facing demonstrators and external presentation material.
-
-Use this repository for accessible demonstrations and presentation-oriented material intended for external readers.
-
-Status: public demonstrators / communication layer.
+```text
+private artifact
+  -> protected-core review
+  -> redaction
+  -> claim review
+  -> public demonstrator
+```
 
 ## Reading order
 
-Recommended path for new readers:
-
 1. Start with `epistemic-architectures` for the conceptual frame.
-2. Move to `realiseringsgrammatikk-artifact-family` for concrete artifacts and microtests.
-3. Use `Poronesis-lab` for drafts and evolving protocol work.
-4. Use `ky-rox-public-demonstrators` for public-facing explanations and demonstrations.
+2. Use `realiseringsgrammatikk-artifact-family` for concrete artifacts, manifests, and microtests when access is authorized.
+3. Use `Poronesis-lab` for evolving protocol work and experimental material when access is authorized.
+4. Use `ky-rox-public-demonstrators` for public-facing explanations and deterministic demonstrations.
+5. Treat `epistemic-architectures-notes` as exploratory and non-canonical.
+6. Treat `loop-engineering` as external collaboration, not as Realiseringsgrammatikk authority.
+
+## Private registry boundary
+
+The full inventory of private control archives, application verticals, IP-sensitive work, dormant repositories, and repository-maintenance decisions is intentionally not enumerated in this public document.
+
+The authoritative complete register is maintained in the private control archive. Public omission is deliberate and must not be interpreted as absence, abandonment, or lack of provenance.
+
+## Governance rules
+
+- One repository must have one primary role.
+- Canonical definitions must name their authority source.
+- Working repositories must identify themselves as non-canonical or provisional.
+- Public repositories must exclude protected thresholds, interlock details, witness internals, unpublished algorithms, and patent-sensitive mechanisms.
+- Domain-specific repositories may specialize the grammar but must not silently redefine the shared core.
+- Empty or orphaned repositories remain `HOLD` until assigned a role, activated, absorbed, or archived.
+- Renaming a repository requires redirect, clone-remote update, documentation update, and link audit.
 
 ## Boundary
 
-These repositories contain architectural, conceptual, software, and documentation artifacts. They should not be read as deployed safety systems, certified hardware implementations, empirical physics validation, or legal/regulatory certification.
+These repositories contain architectural, conceptual, software, documentation, and research artifacts. They must not be read as deployed safety systems, certified hardware implementations, empirical validation of speculative physics, legal or regulatory certification, or proof of a complexity-class collapse.
+
+```text
+CANDIDATE != CONSEQUENCE
+LOCATION != AUTHORITY
+PUBLICATION != VALIDATION
+PROMOTION_REQUIRES_GATE
+```
