@@ -1,91 +1,100 @@
-# Epistemic Architectures
+<p align="center">
+  <img src="assets/punkt-bane-hero.svg" alt="PUNKT BANE — Epistemic Architectures" width="100%" />
+</p>
 
-Stable reference anchor for epistemic architectures, supervisory control, AI governance, and fail-closed realization grammars.
+<h1 align="center">Epistemic Architectures</h1>
 
-## Start here
+<p align="center">
+  <strong>PUNKT // THEORY</strong><br />
+  Stable reference anchor for realization grammars, supervisory control, AI governance, and fail-closed consequence boundaries.
+</p>
 
-Generated candidates are not consequences.
+<p align="center">
+  <img alt="status: stable reference" src="https://img.shields.io/badge/status-stable_reference-29f0d0?style=flat-square&labelColor=0a0b0f" />
+  <img alt="authority: descriptive" src="https://img.shields.io/badge/authority-descriptive-f7f7f2?style=flat-square&labelColor=0a0b0f" />
+  <img alt="gate: fail closed" src="https://img.shields.io/badge/gate-fail_closed-ff3ca6?style=flat-square&labelColor=0a0b0f" />
+  <img alt="physical authority: none" src="https://img.shields.io/badge/physical_authority-none-ffd83d?style=flat-square&labelColor=0a0b0f" />
+</p>
 
-This work studies systems where proposed transitions must pass explicit admissibility, structural, and governance checks before they can become authorized outcomes.
+## Start at the point
 
-Canonical path:
+> **Generated candidates are not consequences.**
+
+This work studies systems where proposed transitions must pass explicit structural, admissibility, and governance checks before they can become authorized outcomes.
 
 ```text
-candidate -> admissibility test -> gate decision -> witnessed consequence
+Φ GENERATE → Πₖ PROJECT → Ω OPEN / HOLD / KILL → W WITNESS
 ```
 
-In short: dynamics may generate possibilities; the architecture decides what can be safely realized.
+Dynamics may generate possibilities. The architecture decides what may cross into consequence.
 
----
+## PUNKT // BANE
+
+| Plate | Meaning |
+|---|---|
+| `P // PUNKT` | The visible, bounded decision surface |
+| `NP // BANE` | The larger field of candidate paths and unresolved possibility |
+| `Πₖ // CUT` | Projection against structure, type, boundary, and invariants |
+| `Ω // GATE` | Explicit authorization: `OPEN`, `HOLD`, or `KILL` |
+| `W // RECORD` | Downstream witness of evaluation or realized transition |
+
+Here, `P` and `NP` are part of the visual naming system: **point** and **path-field**. They do not claim a result concerning the P versus NP complexity problem.
+
+## Choose a route
+
+| Route | Surface | Use it for |
+|---|---|---|
+| **READ** | [`epistemic-architectures`](https://github.com/sololys/epistemic-architectures) | Stable definitions, architectural framing, and citation |
+| **RUN** | [`ky-rox-public-demonstrators`](https://github.com/sololys/ky-rox-public-demonstrators) | Deterministic public software demonstrations |
+| **EXPLORE** | [`epistemic-architectures-notes`](https://github.com/sololys/epistemic-architectures-notes) | Working notes, sketches, and non-canonical extensions |
+| **CITE** | [Zenodo working paper](https://doi.org/10.5281/zenodo.18436983) | Persistent scholarly reference |
+
+The public design and naming rules are documented in [`BRAND_SYSTEM.md`](BRAND_SYSTEM.md). A deploy-ready GitHub profile text is available in [`PROFILE_README.md`](PROFILE_README.md).
+
+## Repository role
+
+This repository is the conservative theory anchor of the ecosystem. It preserves architectural definitions, separation of concerns, and epistemic constraints. Active demonstrators and exploratory notes live on separate public surfaces so that location cannot be confused with authority.
+
+```text
+THEORY != DEMONSTRATOR
+WORKING NOTE != CANON
+OPEN != COMMITTED
+WITNESS != AUTHORITY
+```
+
+## Scope
+
+Topics include:
+
+- epistemic uncertainty and confidence-aware operation;
+- supervisory control and governance overlays;
+- finite-state supervision and graceful degradation;
+- admissibility testing before irreversible consequence;
+- separation of governance logic from task-level optimization;
+- witnessed computation and explicit commit boundaries.
+
+## Status and boundary
+
+**Stable reference repository / descriptive architecture / non-operational.**
+
+This repository does not provide a deployed safety system, certified control system, production interlock, physical hardware validation, or empirical physics validation. It is designed to be read as an architectural reference, not as executable authority.
+
+## Publication
 
 **Torjusen, M. E. (2026).**  
 *Epistemic Architectures: Systems That Know They Know.*  
 Working paper, Zenodo.  
-DOI: https://doi.org/10.5281/zenodo.18436983
-
----
-
-## Repository role
-
-This repository is a stable theory anchor and citation point.
-
-It is intentionally conservative: it preserves architectural definitions, separation of concerns, and epistemic constraints. Active demonstrators, implementation artifacts, and experimental software notes are maintained in companion repositories.
-
-Suggested reading path:
-
-- `sololys/epistemic-architectures` — theory anchor and citation reference.
-- `sololys/realiseringsgrammatikk-artifact-family` — artifact family, microtests, specifications, and release packages.
-- `sololys/Poronesis-lab` — lab notes, drafts, and evolving protocol work.
-- `sololys/ky-rox-public-demonstrators` — public-facing demonstrators and external presentation material.
-
-See `REPOSITORY_MAP.md` for the compact ecosystem map.
-
----
-
-## Scope
-
-This repository focuses on architectural and conceptual structure rather than runtime implementation.
-
-It describes form, separation of concerns, and epistemic constraints for systems that must distinguish generated candidates from realized consequences.
-
-Topics include:
-
-- epistemic uncertainty and confidence-aware operation,
-- supervisory control and governance overlays,
-- finite-state supervision and graceful degradation,
-- admissibility testing before irreversible consequence,
-- separation of governance logic from task-level optimization.
-
----
-
-## Status
-
-Stable reference repository / descriptive architecture / non-operational.
-
-This repository does not provide a deployed safety system, certified control system, physical hardware validation, or empirical physics validation. It is a structured reference point for ongoing work in companion repositories.
-
----
+DOI: [10.5281/zenodo.18436983](https://doi.org/10.5281/zenodo.18436983)
 
 ## Author
 
 **Marius Egerhei Torjusen**  
-ORCID: https://orcid.org/0009-0006-0431-6637
-
----
+ORCID: [0009-0006-0431-6637](https://orcid.org/0009-0006-0431-6637)
 
 ## Citation
 
-If you reference this repository, please cite the associated working paper:
-
-Torjusen, M. E. (2026).  
-*Epistemic Architectures: Systems That Know They Know.*  
-Zenodo. https://doi.org/10.5281/zenodo.18436983  
-License: CC BY-ND 4.0
+Torjusen, M. E. (2026). *Epistemic Architectures: Systems That Know They Know.* Zenodo. [https://doi.org/10.5281/zenodo.18436983](https://doi.org/10.5281/zenodo.18436983). Associated paper license: CC BY-ND 4.0.
 
 ---
 
-## About
-
-Epistemic architectures are systems that make uncertainty, admissibility, authorization, and consequence explicit.
-
-This repository is descriptive, not normative. It is designed to be read as an architectural reference, not as an executable runtime or certification claim.
+<p align="center"><code>MAXIMAL CORE / MINIMAL SURFACE / EXPLICIT CONSEQUENCE</code></p>
