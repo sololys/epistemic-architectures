@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
+  <title id="title">PUNKT BANE — Epistemic Architectures</title>
+  <desc id="desc">A minimal black field with pop-art geometry: one decision point, many candidate paths, and a fail-closed gate.</desc>
+  <rect width="1200" height="280" rx="28" fill="#0a0b0f"/>
+  <path d="M65 224 C230 224 290 58 476 58 S732 224 935 224" fill="none" stroke="#29f0d0" stroke-width="8"/>
+  <path d="M65 224 C270 224 330 112 500 112 S752 224 935 224" fill="none" stroke="#ff3ca6" stroke-width="5" stroke-dasharray="17 14"/>
+  <path d="M65 224 C248 224 354 169 525 169 S754 224 935 224" fill="none" stroke="#ffd83d" stroke-width="4" stroke-dasharray="4 15"/>
+  <circle cx="65" cy="224" r="18" fill="#f7f7f2"/>
+  <circle cx="935" cy="224" r="22" fill="#ff3ca6"/>
+  <rect x="978" y="190" width="154" height="68" rx="12" fill="#f7f7f2"/>
+  <text x="1055" y="233" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="24" font-weight="800" fill="#0a0b0f">Ω GATE</text>
+  <text x="65" y="79" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="62" font-weight="900" fill="#f7f7f2">PUNKT // BANE</text>
+  <text x="69" y="126" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#29f0d0">MINIMAL SURFACE / MAXIMAL POSSIBILITY / EXPLICIT CONSEQUENCE</text>
+  <text x="69" y="162" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#b9bec9">Φ candidate · Πₖ structure · Ω decision · W witness</text>
+</svg>
