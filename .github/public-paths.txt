@@ -1,0 +1,12 @@
+.github/CODEOWNERS
+.github/public-paths.txt
+.github/workflows/public-ip-gate.yml
+.gitignore
+BRAND_SYSTEM.md
+PROFILE_README.md
+PUBLIC_BOUNDARY.md
+README.md
+REPOSITORY_MAP.md
+assets/punkt-bane-hero.svg
+tools/test_verify_public_surface.py
+tools/verify_public_surface.py
