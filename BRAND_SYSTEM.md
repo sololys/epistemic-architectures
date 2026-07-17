@@ -10,13 +10,11 @@
 
 | Surface | Name | Function |
 |---|---|---|
-| `P // PUNKT` | The visible decision point | Minimal, sharp, readable, bounded |
-| `NP // BANE` | The candidate-path field | Dense, exploratory, generative, unresolved |
+| `PUNKT` | The visible decision point | Minimal, sharp, readable, bounded |
+| `BANE` | The candidate-path field | Dense, exploratory, generative, unresolved |
 | `Πₖ // CUT` | Structural projection | Removes inadmissible paths before authorization |
 | `Ω // GATE` | Consequence decision | Returns `OPEN`, `HOLD`, or `KILL` |
 | `W // RECORD` | Witness surface | Records what was evaluated or realized |
-
-`P` and `NP` are used here as visual names for **point** and **path-field**. They do not assert a result about the P versus NP complexity problem.
 
 ## Design law
 
