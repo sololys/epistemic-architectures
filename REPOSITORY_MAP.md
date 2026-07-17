@@ -1,52 +1,36 @@
-# Repository Map
+# Public Repository Map
 
-This repository is part of a small public research-and-artifact ecosystem.
+This map intentionally describes only public surfaces. Private repositories, branches,
+labs, and control archives are neither named nor routed from public documentation.
 
-The purpose of this map is to make the reading path explicit and keep each repository role clean.
-
-## Repository roles
+## Public roles
 
 ### `sololys/epistemic-architectures`
 
 Stable theory anchor and citation reference.
 
-Use this repository to understand the architectural framing: epistemic architectures, supervisory control, admissibility, authorization, and the separation between generated candidates and realized consequences.
+Status: public reference / descriptive architecture / non-operational.
 
-Status: stable reference / descriptive architecture / non-operational.
+### `sololys/epistemic-architectures-notes`
 
-### `sololys/realiseringsgrammatikk-artifact-family`
+Non-canonical public notes that have passed publication-boundary review.
 
-Artifact family, microtests, specifications, release packages, and deterministic software demonstrations.
-
-Use this repository when looking for concrete artifacts, manifests, run logs, release bundles, and implementation-adjacent examples.
-
-Status: artifact family / microtests / deterministic software demonstrations.
-
-### `sololys/Poronesis-lab`
-
-Lab space for drafts, evolving protocol notes, and experimental formalization work.
-
-Use this repository for material that is still being shaped, tested, renamed, or prepared for later stabilization.
-
-Status: lab / drafts / protocol candidates.
+Status: public notes / incomplete by design / no implementation authority.
 
 ### `sololys/ky-rox-public-demonstrators`
 
-Public-facing demonstrators and external presentation material.
+Sanitized deterministic demonstrations and external presentation material.
 
-Use this repository for accessible demonstrations and presentation-oriented material intended for external readers.
-
-Status: public demonstrators / communication layer.
+Status: bounded public export / no private staging / no physical authority.
 
 ## Reading order
 
-Recommended path for new readers:
-
-1. Start with `epistemic-architectures` for the conceptual frame.
-2. Move to `realiseringsgrammatikk-artifact-family` for concrete artifacts and microtests.
-3. Use `Poronesis-lab` for drafts and evolving protocol work.
-4. Use `ky-rox-public-demonstrators` for public-facing explanations and demonstrations.
+1. Read the stable architectural reference here.
+2. Use the notes surface only for explicitly public, non-canonical prose.
+3. Run only demonstrators admitted to the bounded public export repository.
 
 ## Boundary
 
-These repositories contain architectural, conceptual, software, and documentation artifacts. They should not be read as deployed safety systems, certified hardware implementations, empirical physics validation, or legal/regulatory certification.
+Private topology is deliberately absent. A repository name, branch, draft pull request,
+tag, issue, artifact, or attachment is not a confidentiality boundary once it appears
+on a public surface.
