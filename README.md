@@ -32,13 +32,11 @@ Dynamics may generate possibilities. The architecture decides what may cross int
 
 | Plate | Meaning |
 |---|---|
-| `P // PUNKT` | The visible, bounded decision surface |
-| `NP // BANE` | The larger field of candidate paths and unresolved possibility |
+| `PUNKT` | The visible, bounded decision surface |
+| `BANE` | The larger field of candidate paths and unresolved possibility |
 | `Πₖ // CUT` | Projection against structure, type, boundary, and invariants |
 | `Ω // GATE` | Explicit authorization: `OPEN`, `HOLD`, or `KILL` |
 | `W // RECORD` | Downstream witness of evaluation or realized transition |
-
-Here, `P` and `NP` are part of the visual naming system: **point** and **path-field**. They do not claim a result concerning the P versus NP complexity problem.
 
 ## Choose a route
 
