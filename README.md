@@ -17,6 +17,18 @@
   <a href="https://github.com/sololys/epistemic-architectures/wiki"><img alt="wiki: live" src="https://img.shields.io/badge/wiki-live-29f0d0?style=flat-square&labelColor=0a0b0f" /></a>
 </p>
 
+## 🏛️ Epistemic Foundation: Decoupling Generation from Consequence
+
+> *Modern computational architectures suffer from a dangerous conflation, routinely mistaking the rapid generation of high-confidence predictions for a mandate to alter physical reality. This systemic vulnerability arises when the velocity of a deep optimization loop is allowed to bypass structural governance, effectively collapsing hypothesis into consequence. To arrest this drift, an epistemic architecture must impose a fundamental mathematical invariant: the absolute decoupling of candidate generation from realized execution. A proposed state transition, regardless of its statistical certainty or the sophistication of its origin, remains nothing more than a speculative artifact until it crosses an explicit, deterministic threshold.*
+>
+> *This decoupling is not enacted as a flexible administrative policy but as an immutable geometric boundary. Within this framework, generative dynamics are permitted to endlessly produce possibilities, mapping the volatile topology of unresolved paths. However, these exploratory trajectories are structurally contained. Before any speculative candidate can bridge the gap into physical consequence, it must endure a rigorous admissibility projection. It is here, at the fail-closed gate of realization, that the system shifts from probabilistic calculation to deterministic law. Operational authority is entirely stripped from the generative engine and relocated to a regulatory membrane, which demands cryptographic witnessing and irrevocable proof before reality is permitted to unfold.*
+>
+> *The spatialization of this authority manifests through a strict structural dichotomy between the bounded decision surface and the unresolved path-field. The architecture deliberately isolates the noise of exploratory generation—the dense, untamed trajectories of the working domain—from the public stillness of canonical theory. This stratification ensures that raw intellectual inquiry never accidentally acquires the status of operational truth. A theoretical reference remains purely descriptive, functioning as a stable anchor for mathematical definitions and finite-state grammars rather than an executable command. By containing volatility within isolated sinks and preserving the foundational reference as a sanitized, read-only ledger, the framework prevents epistemic contamination across its interfaces.*
+>
+> *Ultimately, this architecture redefines the nature of supervisory control, stripping away the illusion that task-level optimization inherently understands physical safety. It enforces a paradigm where structural restriction is not a limitation on computational power, but the precise mechanism that makes physical integration survivable. By isolating the heuristics of discovery from the rigid logic of survival, the system guarantees that no volume of simulated success can bypass the gate of consequence. Realization is thus transformed from a probabilistic outcome into a deterministic privilege, governed by an architecture that is defined precisely by what it refuses to authorize.*
+
+---
+
 ## Start at the point
 
 > **Generated candidates are not consequences.**
