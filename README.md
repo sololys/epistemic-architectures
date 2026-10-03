@@ -14,6 +14,7 @@
   <img alt="authority: descriptive" src="https://img.shields.io/badge/authority-descriptive-f7f7f2?style=flat-square&labelColor=0a0b0f" />
   <img alt="gate: fail closed" src="https://img.shields.io/badge/gate-fail_closed-ff3ca6?style=flat-square&labelColor=0a0b0f" />
   <img alt="physical authority: none" src="https://img.shields.io/badge/physical_authority-none-ffd83d?style=flat-square&labelColor=0a0b0f" />
+  <a href="https://github.com/sololys/epistemic-architectures/wiki"><img alt="wiki: live" src="https://img.shields.io/badge/wiki-live-29f0d0?style=flat-square&labelColor=0a0b0f" /></a>
 </p>
 
 ## Start at the point
@@ -45,6 +46,7 @@ Dynamics may generate possibilities. The architecture decides what may cross int
 | **READ** | [`epistemic-architectures`](https://github.com/sololys/epistemic-architectures) | Stable definitions, architectural framing, and citation |
 | **RUN** | [`ky-rox-public-demonstrators`](https://github.com/sololys/ky-rox-public-demonstrators) | Deterministic public software demonstrations |
 | **EXPLORE** | [`epistemic-architectures-notes`](https://github.com/sololys/epistemic-architectures-notes) | Working notes, sketches, and non-canonical extensions |
+| **WIKI** | [`epistemic-architectures/wiki`](https://github.com/sololys/epistemic-architectures/wiki) | Comprehensive theory portal, formalisms, and governance |
 | **CITE** | [Zenodo working paper](https://doi.org/10.5281/zenodo.18436983) | Persistent scholarly reference |
 
 The public design and naming rules are documented in [`BRAND_SYSTEM.md`](BRAND_SYSTEM.md). A deploy-ready GitHub profile text is available in [`PROFILE_README.md`](PROFILE_README.md).
