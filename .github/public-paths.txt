@@ -11,6 +11,7 @@ QUANTUM_GRAMMAR.md
 README.md
 REPOSITORY_MAP.md
 THE_NON_EXPANSIVE_GATE.md
+THE_UNIFIED_FIELD_NASH_DUALITY.md
 assets/punkt-bane-hero.svg
 tools/test_verify_public_surface.py
 tools/verify_public_surface.py
