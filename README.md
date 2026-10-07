@@ -91,6 +91,10 @@ Topics include:
 
 This repository does not provide a deployed safety system, certified control system, production interlock, physical hardware validation, or empirical physics validation. It is designed to be read as an architectural reference, not as executable authority.
 
+## Treatises and Foundations
+
+- [`THE_NON_EXPANSIVE_GATE.md`](THE_NON_EXPANSIVE_GATE.md) — *The Non-Expansive Gate: Computational Complexity as the Boundary Condition of Spacetime and Perception.* Formal analysis of the Cook-Levin space-time tableau, continuous attractor manifolds ($\mathbb{T}^2$), metric projection $\Pi_A$, and subtractive realization.
+
 ## Publication
 
 **Torjusen, M. E. (2026).**  
@@ -101,7 +105,7 @@ DOI: [10.5281/zenodo.18436983](https://doi.org/10.5281/zenodo.18436983)
 ## Author
 
 **Marius Egerhei Torjusen**  
-ORCID: [0009-0006-0431-6637](https://orcid.org/0009-0006-0431-6637)
+ORCID: [0009-0006-0431-6637](https://orcid.org/0009-0006-0431-6637) · LinkedIn: [marius-torjusen-9aa392392](https://www.linkedin.com/in/marius-torjusen-9aa392392/)
 
 ## Citation
 
