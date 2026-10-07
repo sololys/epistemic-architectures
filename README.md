@@ -93,6 +93,7 @@ This repository does not provide a deployed safety system, certified control sys
 
 ## Treatises and Foundations
 
+- [`OMNI_KY_REALIZATION_GRAMMAR.md`](OMNI_KY_REALIZATION_GRAMMAR.md) — *OMNI-KY Canon: The Philosophy and Physics of Realization Grammar.* Foundational ontology of the gate, transition domains `[0] ──▶ (○) ──▶ (◇) ──▶ [□] ──▶ (△) ──▶ (O) ──▶ [●] ──▶ [1]`, double-pulse involution, Landauer dissipation, integrability triads, KY-Nash viability, and the Porter with the feather in his hat.
 - [`THE_NON_EXPANSIVE_GATE.md`](THE_NON_EXPANSIVE_GATE.md) — *The Non-Expansive Gate: Computational Complexity as the Boundary Condition of Spacetime and Perception.* Formal analysis of the Cook-Levin space-time tableau, continuous attractor manifolds ($\mathbb{T}^2$), metric projection $\Pi_A$, and subtractive realization.
 
 ## Publication
