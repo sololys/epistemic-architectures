@@ -28,7 +28,19 @@ MONOGRAPH SERIES ON CAUSAL INERTIA, EPISTEMIC GOVERNANCE & REALIZATION GRAMMAR:
 
 ---
 
-## 1. Epistemisk Demarkasjon: Fra «REALITY» til $\mathcal{R}_{\mathrm{auth}}$
+## 1. Subtraktiv Ontologi: Fra «REALITY» til $\mathcal{R}_{\mathrm{auth}}$
+
+Fysisk virkelighet genereres ikke friksjonsløst, den selekteres under tvang. I tradisjonell feltteori reduseres romtiden til en passiv arena hvor dynamikken utfolder seg fritt, betinget av at variasjonen i virkningen er null. Locus Zero-arkitekturen kaster dette premisset, og postulerer i stedet en **subtraktiv ontologi**: Det generative løsningsrommet og det realiserte konsekvensrommet er ikke identiske, men atskilt av en absolutt, idempotent filtermekanisme. Fysisk eksistens er ikke en ubetinget rettighet; den er en innrømmelse gitt utelukkende til den delen av dynamikken som overlever projeksjonen gjennom *admissibility*-operatoren $\Pi_{K}$. Det som ikke passerer dette filteret, elimineres, og i et kausalt bundet univers kan ingen eliminering skje uten at det etterlater seg et uutslettelig spor.
+
+Denne eliminasjonen gis formell tyngde gjennom projeksjonsvirkningen $S_{\Pi}$. Differansen mellom feltets generative forslag og den ufravikelige betingelsen, definert som den avviste dynamikken $\Delta_{K}$, belastes med en direkte kvadratisk straff og støtes mot en divergerende *fail-closed*-barriere, $B_{\mathcal{A}}$. Dette tapet representerer et irreversibelt projeksjonsstress, et nytt tensorledd ($\Sigma_{\mu\nu}^{\mathrm{irr}}$) som oppstår idet systemet selekterer bort ulovlige trajektorier. Følgelig overføres den formelle kostnaden av logisk og kausal overstyring direkte til den underliggende metrikken. Metrikken reagerer på det mekaniske trykket skapt av avvisningen; **romtiden krummer seg under tyngden av det som ikke får lov til å eksistere**.
+
+Denne modifikasjonen redefinerer tyngdekraftens kjerne ved å tvinge projeksjonsstresset direkte inn i høyre side av Einsteins feltligninger: 
+
+$$G_{\mu\nu}+\Lambda g_{\mu\nu}=8\pi G(T_{\mu\nu}+\Sigma_{\mu\nu}^{\mathrm{irr}})$$
+
+Romtiden oppfører seg ikke lenger kun som materiens elastiske respons, men bærer i seg det strukturelle sporet av sin egen overvåkning. Standard generell relativitetsteori fremkommer her utelukkende som en asymptotisk grensetilstand—et spesielt likevektsregime hvor den irreversible kostnaden ved projeksjonsoperatoren allerede er integrert, eller hvor den avviste dynamikken nærmer seg null. I fraværet av avvik forsvinner stresset identisk, men under press betaler universet konsekvent en geometrisk pris for å opprettholde sine egne eksistensbetingelser. **Virkeligheten overlever kun fordi den bærer tyngden av det den har avskåret.**
+
+### 1.1 Epistemisk Demarkasjon og Mengden $\mathcal{R}_{\mathrm{auth}}$
 
 I konvensjonell metafysikk og umoden kontrollteori gjøres ofte den feilslutningen at et formelt beregningssystem kan definere universets absolutte eksistens («REALITY»). 
 
