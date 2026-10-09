@@ -17,7 +17,31 @@
   <a href="https://github.com/sololys/epistemic-architectures/wiki"><img alt="wiki: live" src="https://img.shields.io/badge/wiki-live-29f0d0?style=flat-square&labelColor=0a0b0f" /></a>
 </p>
 
-## 🏛️ Epistemic Foundation: Decoupling Generation from Consequence
+## 🏛️ Epistemic Foundation: Decoupling Generation from Consequence / Epistemisk Fundament
+
+<details open>
+<summary><strong>🇳🇴 Norsk kanonisk manifest: Punktet og Banen</strong></summary>
+
+> *Vi lever i en tid bygget på en farlig sammenblanding, der vi rutinemessig forveksler den lynraske genereringen av selvsikre spådommer med et genuint mandat til å endre den fysiske virkeligheten. Denne systemiske sårbarheten oppstår når vi lar dype optimeringsløkker omgå strukturell styring, og dermed lar ubekreftede hypoteser kollapse direkte inn i fysiske konsekvenser.*
+>
+> *For å stanse denne driften, må vi forankre arkitekturen vår i en ufravikelig matematisk lov: den absolutte frikoblingen mellom det å generere et forslag, og det å faktisk utføre det.*
+>
+> *Uansett hvor statistisk sikker en maskin er, og uansett hvor sofistikert opphavet er, forblir en foreslått tilstandsendring et rent spekulativt artefakt helt frem til den krysser en eksplisitt, deterministisk terskel. Vi må slå fast en gang for alle at genererte kandidater ikke er det samme som konsekvenser.*
+>
+> *Denne frikoblingen kan ikke være en fleksibel administrativ retningslinje; den må mures opp som en urokkelig geometrisk grense. På innsiden av denne grensen kan de generative kreftene få lov til å produsere uendelige muligheter, og uavbrutt kartlegge de ustabile stiene av alt som kan skje. Men disse utforskende banene er strukturelt innesperret. Før en spekulativ tanke i det hele tatt kan bygge bro over til fysisk virkelighet, må den tvinges gjennom en streng admissibilitetsprojeksjon.*
+>
+> *Det er nøyaktig her, ved den stengte realiseringsporten, at systemet skifter fra sannsynlighetsregning til deterministisk lov. All operativ makt fjernes nådeløst fra den generative motoren, og plasseres i en regulerende membran. Denne portvokteren krever et kryptografisk vitnesbyrd og et ugjenkallelig bevis før virkeligheten får lov til å folde seg ut. Loven er nådeløs i sin enkelhet: Generering autoriserer ikke. Autorisasjon realiserer ikke. Og realisering utgjør i seg selv ikke et bevis.*
+>
+> *Dette er den fundamentale dualiteten mellom **Punktet** og **Banen**. Banen er det store feltet av uforløste muligheter og spekulative utkast. Punktet er den synlige, absolutte og avgrensede overflaten der beslutningen faktisk felles.*
+>
+> *Ved å trekke opp denne grensen, isolerer vi støyen fra maskinens uendelige oppdagelsesferd fra den monumentale stillheten i den kanoniske handlingen. Slik forhindrer vi at rå, intellektuell utforskning ved et uhell får status som operativ sannhet. Vi fjerner illusjonen om at optimering er det samme som trygghet, og gjør i stedet strukturelle begrensninger til selve mekanismen som gjør at vi kan overleve møtet med teknologien.*
+>
+> *Realisering i den fysiske verden er ikke et sannsynlig utfall. Det er et deterministisk privilegium, styrt av en arkitektur som definerer seg selv utelukkende gjennom hva den nekter å tillate.*
+
+</details>
+
+<details open>
+<summary><strong>🇬🇧 English Theoretical Reference</strong></summary>
 
 > *Modern computational architectures suffer from a dangerous conflation, routinely mistaking the rapid generation of high-confidence predictions for a mandate to alter physical reality. This systemic vulnerability arises when the velocity of a deep optimization loop is allowed to bypass structural governance, effectively collapsing hypothesis into consequence. To arrest this drift, an epistemic architecture must impose a fundamental mathematical invariant: the absolute decoupling of candidate generation from realized execution. A proposed state transition, regardless of its statistical certainty or the sophistication of its origin, remains nothing more than a speculative artifact until it crosses an explicit, deterministic threshold.*
 >
@@ -26,6 +50,8 @@
 > *The spatialization of this authority manifests through a strict structural dichotomy between the bounded decision surface and the unresolved path-field. The architecture deliberately isolates the noise of exploratory generation—the dense, untamed trajectories of the working domain—from the public stillness of canonical theory. This stratification ensures that raw intellectual inquiry never accidentally acquires the status of operational truth. A theoretical reference remains purely descriptive, functioning as a stable anchor for mathematical definitions and finite-state grammars rather than an executable command. By containing volatility within isolated sinks and preserving the foundational reference as a sanitized, read-only ledger, the framework prevents epistemic contamination across its interfaces.*
 >
 > *Ultimately, this architecture redefines the nature of supervisory control, stripping away the illusion that task-level optimization inherently understands physical safety. It enforces a paradigm where structural restriction is not a limitation on computational power, but the precise mechanism that makes physical integration survivable. By isolating the heuristics of discovery from the rigid logic of survival, the system guarantees that no volume of simulated success can bypass the gate of consequence. Realization is thus transformed from a probabilistic outcome into a deterministic privilege, governed by an architecture that is defined precisely by what it refuses to authorize.*
+
+</details>
 
 ---
 
