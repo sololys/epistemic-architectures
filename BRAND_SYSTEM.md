@@ -2,8 +2,7 @@
 
 **Minimal surface. Maximal logical depth. Explicit consequence.**
 
-$$\min |p| \;\land\; \max D(x), \qquad \Phi(x_t) 
-eq x_{t+1}$$
+$$\min |p| \;\land\; \max D(x), \qquad \Phi(x_t) \neq x_{t+1}$$
 
 ## The Triad
 

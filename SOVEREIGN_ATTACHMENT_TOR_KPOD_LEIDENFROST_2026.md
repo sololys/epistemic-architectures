@@ -58,7 +58,7 @@ $$U_{socio}(s_t, a_t) = \Delta B_{fuel}(s_t, a_t) + \Delta B_{climate}(s_t, a_t)
 * **Kommersielt Personvern (GDPR art. 25/32):** Differensielt privat ruteaggregering ($k \ge 50$) med Zero-Knowledge Proofs og Edge-sletting.
 
 ### 2.2 Samfunnsøkonomisk Kostnads-Nytte Analyse (CBA)
-Beregnet over en 10-års evalueringsperiode (2026–2035) med Finansdepartementets $4,0\ \%$ kalkulasjonsrente.
+Beregnet over en 10-års evalueringsperiode (2026–2035) med Finansdepartementets $4,0\ \%$ kalkulasjonsrente (jf. 5-års DCF-analysen for K-POD/RTDRA-integrasjonen i [`04_RTDRA_SOCIOECONOMIC_ENERGY_ROUTING.md`](04_RTDRA_SOCIOECONOMIC_ENERGY_ROUTING.md), hvor 5-års $\text{NNV} = +9,335\text{ mrd. NOK}$ og $\text{BCR} = 2,87$).
 
 | År | Statlig Investering | Drivstoffbesparelse | Klimanytte (MCC) | Netto Kontantstrøm |
 | :---: | :---: | :---: | :---: | :---: |

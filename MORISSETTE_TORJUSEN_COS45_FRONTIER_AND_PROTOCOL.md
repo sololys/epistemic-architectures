@@ -6,7 +6,7 @@
 **Status Discipline (per Joint Co-Authorship Protocol):**
 - **`[Exact Identity]`**: Algebraic or spectral identities holding exactly for every finite $a \ge 4$ or for closed-form infinite series.
 - **`[Asymptotic Statement — Under Joint Examination]`**: Large-$a$ ($a \to \infty$) limiting laws and leading constants under independent co-author verification prior to benchmark freeze.
-- **`[Numerical Observation]`**: Finite-$a$ direct matrix calculations, residual tables, and Richardson extrapolations produced by [`tools/verify_cos45_kms_spectral_series.py`](../tools/verify_cos45_kms_spectral_series.py).
+- **`[Numerical Observation]`**: Finite-$a$ direct matrix calculations, residual tables, and Richardson extrapolations produced by [`tools/verify_cos45_kms_spectral_series.py`](tools/verify_cos45_kms_spectral_series.py).
 
 ---
 

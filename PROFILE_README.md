@@ -28,8 +28,8 @@ Realization = W o Omega o Pi_K o Phi   <=>   CANDIDATE != CONSEQUENCE
 ## Flagship Works
 
 - [`LAW_OF_CAUSAL_INERTIA.md`](LAW_OF_CAUSAL_INERTIA.md) — *Treghetens lov // The Law of Causal Inertia (`FEATURE-NEWYORKER-INERTIA-2026-v1.0`)*
-- [`METRISK_INVARIANS_SPEKTRAL_KONVERGENS_OG_HORISONTENS_LOV.md`](METRISK_INVARIANS_SPEKTRAL_KONVERGENS_OG_HORISONTENS_LOV.md) — *Metric Invariance, Spectral Convergence, and the Law of the Horizon (Sections I–XIV)*
+- [`METRISK_INVARIANS_SPEKTRAL_KONVERGENS_OG_HORISONTENS_LOV.md`](METRISK_INVARIANS_SPEKTRAL_KONVERGENS_OG_HORISONTENS_LOV.md) — *Metric Invariance, Spectral Convergence, and the Law of the Horizon (Sections XII–XIV)*
 - [`DOR_30_OG_DOR_31_TEKNISK_ARKITEKTURSPESIFIKASJON.md`](DOR_30_OG_DOR_31_TEKNISK_ARKITEKTURSPESIFIKASJON.md) — *Door 30 & Door 31 Technical Architecture Specification*
-- [`KPOD_V12_L3_15N2_NMR_LAB_PROTOCOL.md`](KPOD_V12_L3_15N2_NMR_LAB_PROTOCOL.md) — *K-POD v1.2 Operational $^{15}	ext{N}_2$ / $^1	ext{H-NMR}$ ($72.5	ext{ Hz}$) Laboratory Protocol*
+- [`KPOD_V12_L3_15N2_NMR_LAB_PROTOCOL.md`](KPOD_V12_L3_15N2_NMR_LAB_PROTOCOL.md) — *K-POD v1.2 Operational $^{15}\text{N}_2$ / $^1\text{H-NMR}$ ($72.5\text{ Hz}$) Laboratory Protocol*
 - [`IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md`](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md) — *Non-AI Consequence Gating for IT-OT Integration in Critical Infrastructure*
 - [`MORISSETTE_TORJUSEN_COS45_FRONTIER_AND_PROTOCOL.md`](MORISSETTE_TORJUSEN_COS45_FRONTIER_AND_PROTOCOL.md) — *Exact Resolution of the COS45 Frontier Constants and 5-Gate Protocol*
