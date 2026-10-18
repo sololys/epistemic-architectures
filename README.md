@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>PUNKT // THEORY · LAW OF CAUSAL INERTIA (Φ(x_t) ≠ x_{t+1})</strong><br />
-  Stable reference anchor for realization grammars, supervisory control, AI governance, and fail-closed consequence boundaries.
+  Stable reference anchor for realization grammars, supervisory control, AI governance, and fail-closed consequence gates.
 </p>
 
 <p align="center">
@@ -110,13 +110,7 @@ Topics include:
 - finite-state supervision and graceful degradation;
 - admissibility testing before irreversible consequence;
 - separation of governance logic from task-level optimization;
-- witnessed computation and explicit commit boundaries.
-
-## Status and boundary
-
-**Stable reference repository / descriptive architecture / non-operational.**
-
-This repository does not provide a deployed safety system, certified control system, production interlock, physical hardware validation, or empirical physics validation. It is designed to be read as an architectural reference, not as executable authority.
+- witnessed computation and explicit commit gates.
 
 ## Treatises and Foundations
 
