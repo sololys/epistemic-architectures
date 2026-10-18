@@ -2,10 +2,10 @@
   <img src="assets/punkt-bane-hero.svg" alt="PUNKT BANE — Epistemic Architectures" width="100%" />
 </p>
 
-<h1 align="center">Epistemic Architectures</h1>
+<h1 align="center">Epistemic Architectures — The Law of Causal Inertia</h1>
 
 <p align="center">
-  <strong>PUNKT // THEORY</strong><br />
+  <strong>PUNKT // THEORY · LAW OF CAUSAL INERTIA (Φ(x_t) ≠ x_{t+1})</strong><br />
   Stable reference anchor for realization grammars, supervisory control, AI governance, and fail-closed consequence boundaries.
 </p>
 
@@ -55,9 +55,10 @@
 
 ---
 
-## Start at the point
+## Start at the point — The Law of Causal Inertia
 
-> **Generated candidates are not consequences.**
+> **Generated candidates are not consequences ($\Phi(x_t) \neq x_{t+1}$).**  
+> **See the foundational axiom:** [`LAW_OF_CAUSAL_INERTIA.md`](LAW_OF_CAUSAL_INERTIA.md)
 
 This work studies systems where proposed transitions must pass explicit structural, admissibility, and governance checks before they can become authorized outcomes.
 
@@ -119,6 +120,7 @@ This repository does not provide a deployed safety system, certified control sys
 
 ## Treatises and Foundations
 
+- [`LAW_OF_CAUSAL_INERTIA.md`](LAW_OF_CAUSAL_INERTIA.md) — *The Law of Causal Inertia // Den Kausale Treghetsloven: Why Generated Candidates Possess Zero Physical Momentum ($\Phi(x_t) \neq x_{t+1}$).* The constitutional first law of realization grammar: a physical system remains in fail-closed stasis ($\mathrm{HOLD} = 0.00\,\mathrm{V\ DC}$) unless acted upon by a verified, invariant-projected, and pre-witnessed authorization ($\Omega(\Pi_K(\Phi(x_t))) = \mathrm{OPEN}$).
 - [`IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md`](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md) — *Non-AI Consequence Gating for IT-OT Integration in Critical Infrastructure ($\Phi \to \Pi_K \to \Omega \to W^2$).* Architectural brief on deterministic projection and fail-closed consequence gating across locally deployed LLMs & HMIs (CPS4CIP Session 3), maritime GNSS denial via UWB Time-of-Flight causal light-cones and Euclidean AoA phase discrimination (Session 4), and Virtual Synchronous Generator (VSG) Byzantine fault tolerance via relativistic dispersion screening ($\omega^2 = \mu_{\mathrm{eff}}^2 + c_s^2 k^2$, Sessions 2 & 4).
 - [`DOCUMENT_173_AUTHORIZED_REALIZATIONS.md`](DOCUMENT_173_AUTHORIZED_REALIZATIONS.md) — *Dokument 173: Autoriserbare Realiseringer og Feltligninger for Projisert Virkelighet (Document 173: Authorized Realizations and Field Equations for Projected Reality).* The crowning monograph uniting realization grammar, wave interference ($s^+ \rightleftarrows s^-$), approximate fixed points ($\|\Delta_K\| < \varepsilon_{\mathrm{tol}}$), zero-work passive constraints ($\dot{W}_c = 0$), ground potential ($0.00\,\text{V}$) as valid stasis, irreversible projection stress ($\Sigma_{\mu\nu}^{\mathrm{irr}}$) in Einstein's field equations, and Infranett as the physical fixed point.
 - [`KY_NASH_ADMISSIBLE_GAMES.md`](KY_NASH_ADMISSIBLE_GAMES.md) — *KY–Nash Spillteori: Håndbok for Admissible Overganger (Admissible Equilibrium: A KY–Nash Theory of Strategic Consequence).* The formal game theory of realization: game as a history of authorized transitions, four-step chain $a'_{t+1} \to \tilde{a}_{t+1} \to \Omega \to a_{t+1}$, Integrity-Adjusted Payoff ($U_i = u_i - C_K - S_{\mathrm{irr}} - R_W$), the strategic surface ($\text{Payoff} \times \text{Admissibility}$), definition of KY–Nash equilibrium as the absence of improving $\mathrm{OPEN}$-vectors, elimination of *Ghost Wins*, and the whistleblower case study.
