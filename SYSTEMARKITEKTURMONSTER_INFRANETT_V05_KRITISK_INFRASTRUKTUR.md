@@ -467,3 +467,15 @@ De tekniske, operative og samfunnsøkonomiske analysene syntetiseres i den oppsu
 ### 6.2 Det Kanoniske Aksiomet
 
 > **«En skogbunn kan ikke jammes. Et Infranett kan ikke kuttes. Sann samfunnsmessig robusthet kan ikke lastes ned fra skyen; den må syntetiseres på kanten og voktes av fysikkens lover.»**
+
+---
+
+## 7. Utvidelse: Det Optiske Laser-Vitnet ($W_{\text{laser}}$) — Okklusjonsskranke, FSO-Taushet og $532\text{ nm}$ Undervannskausalitet
+
+Mens UWB-radio ($W_{\text{range}}$) verifiserer avstand i vakuum/luft ($\Delta t_{\text{roundtrip}} \le 133{,}4256\text{ ns}$ ved $r_{\max} = 20{,}0\text{ m}$), kan mikrobølger trenge gjennom gipsvegger og vinduer. Infranett v0.5 komplementerer derfor UWB med **Det Optiske Laser-Vitnet ($W_{\text{laser}}$)** (se [`INFRANETT_LASER_WITNESS_FSO_532NM_SPEC.md`](INFRANETT_LASER_WITNESS_FSO_532NM_SPEC.md) og `L1`-referansemotoren `engines/infranett_laser_fso_witness_engine.py`):
+
+1. **Romlig Innelukking ($1550\text{ nm}$ Okklusjonslås):** Koherent laserlys stoppes 100 % av vegger og skott. Konjunksjonen $W_{\text{range}} \land W_{\text{laser}}$ garanterer at operatøren ikke bare er innenfor 20 meter, men befinner seg **inne i eksakt samme fysiske rom** (`OPTICAL_LOS_BROKEN_WALL_OCCLUSION` $\implies \mathbf{HOLD}\ 0{,}00\text{ V DC}$).
+2. **Radiotaus FSO Punkt-til-Punkt Link (EMCON):** En kollimert Gaussisk laserstråle ($w(20\text{ m}) \approx 5{,}38\text{ mm}$) gir $0{,}0\text{ W}$ radiofrekvent lekkasje, null metallisk flerveisstøy (*multipath*) og selvdetekterende avlyttingsvern (ethvert fysisk objekt i strålen kaster en optisk skygge som momentant feller porten til $0{,}00\text{ V DC}$).
+3. **$532\text{ nm}$ Blågrønn Undervannslaser (Maritim & Subsea Kausalitet):** Utnytter sjøvannets optiske transmisjonsvindu ($n_{\text{vann}} \approx 1{,}334$, $v_{\text{vann}} = c/n_{\text{vann}} \approx 2{,}247 \times 10^8\text{ m/s}$) for sonar-usynlig, relativistisk avstandsvalidering under vann ($\Delta t_{\text{vann,RTT}} \le 177{,}9898\text{ ns}$ ved $r_{\max} = 20{,}0\text{ m}$).
+4. **Galvanisk Isolert Safir-Dokking (K-POD Air-Gap):** Overfører Write-Ahead Loggen optisk gjennom et herdet safirglassvindu med $I_{\text{galvanisk}} = 0{,}0\,\mu\text{A}$ og $\ge 25\text{ kV}$ dielektrisk EMP-/lynbeskyttelse.
+
