@@ -6,7 +6,7 @@
 TEKNISK SPESIFIKASJON / MONOGRAF:
   DOKUMENT-ID             : N2RR-FEMOS-PNP-TORJUSEN-2026-v1.2
   FORFATTER               : Marius Egerhei Torjusen (ORCID: 0009-0006-0431-6637)
-  SELSKAP & LOKUS         : TORJUSEN / ReismannPoint Systems / Brahman Ventures, Risør
+  SELSKAP & LOKUS         : Brahman
   EPISTEMISK STATUS       : L1 DETERMINISTISK SIMULERING (DFT/PCET) · L3 FYSISK HOLD · KOMMERSIELT HOLD
 ========================================================================================
 ```
@@ -99,4 +99,4 @@ We have formalized a multi-scale architecture addressing ambient dinitrogen fixa
 
 ## Author Contributions and Data Availability
 
-All theoretical formalizations, micro-engine simulations, control logic, and hardware specifications were developed by Marius Egerhei Torjusen (ReismannPoint Systems). Deterministic simulation codes, test suites, and append-only SHA-256 witness ledgers are maintained in the `Reismann-Core` architecture (`Sololyset@gmail.com`).
+All theoretical formalizations, micro-engine simulations, control logic, and hardware specifications were developed by Marius Egerhei Torjusen (Brahman). Deterministic simulation codes, test suites, and append-only SHA-256 witness ledgers are maintained in the `Reismann-Core` architecture (`Sololyset@gmail.com`).

@@ -6,7 +6,7 @@
 STRATEGISK INVESTERINGSRAMMEVERK:
   DOKUMENT-ID             : STRAT-INVEST-ROLLOUT-TORJUSEN-2026-v1.0
   FORFATTER               : Marius Egerhei Torjusen (ORCID: 0009-0006-0431-6637)
-  SELSKAP & LOKUS         : TORJUSEN / ReismannPoint Systems / Brahman Ventures, Risør
+  SELSKAP & LOKUS         : Brahman
   BEREGNINGSSTANDARD      : DFØ Samfunnsøkonomisk Veileder (4.0 % Kalkulasjonsrente)
 ========================================================================================
 ```

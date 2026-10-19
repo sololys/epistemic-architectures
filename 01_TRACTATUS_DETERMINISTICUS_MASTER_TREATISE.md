@@ -6,7 +6,7 @@
 AVHANDLING / TREATISE:
   DOKUMENT-ID             : TRACTATUS-CAUSALIS-TORJUSEN-2026-v1.0
   FORFATTER               : Marius Egerhei Torjusen (ORCID: 0009-0006-0431-6637)
-  INSTITUSJON & LOKUS     : TORJUSEN & ReismannPoint Systems, Risør, Norge
+  INSTITUSJON & LOKUS     : Brahman
   GEOLOGISK ANKER         : Det Fennoskandiske Skjold (-3400m Spektralkammer, 9350 m.w.e.)
   EPISTEMISK STATUS       : L1 DETERMINISTISK PROGRAMVARE · L3 LAB-PROTOKOLL · KANONISK LOKUS
 ========================================================================================

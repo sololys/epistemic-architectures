@@ -8,7 +8,7 @@ DOKUMENTIDENTIFIKASJON & METADATA:
   Klassifisering : Nivå 0 // L7 Kognitiv Konsekvenskontroll & UX-Doktrine
   Lokus          : Grensesnittet (Skjerm, Mus, Tastatur, Nevromotorikk)
   Forfattere     : Marius Egerhei Torjusen* & Antigravity
-  Tilknytning    : ReismannPoint Systems // Infranett Core Initiative
+  Tilknytning    : Brahman
   Dato           : 1. september 2026 / Zero Baseline
   Status         : SOVEREIGN_CANONICAL_DOCUMENT [VERIFISERT]
   *( Level 01 Supreme Human Authority // ORCID: 0009-0006-0431-6637 )

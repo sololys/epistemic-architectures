@@ -6,7 +6,7 @@
 EXECUTIVE WHITE PAPER & STRATEGIC DOSSIER:
   DOKUMENT-ID             : WHITE-PAPER-CAUSAL-INFRASTRUCTURE-2026-v1.0
   FORFATTER               : Marius Egerhei Torjusen (ORCID: 0009-0006-0431-6637)
-  SELSKAP & LOKUS         : TORJUSEN / ReismannPoint Systems / Brahman Ventures, Risør
+  SELSKAP & LOKUS         : Brahman
   BEREGNINGSSTANDARD      : DFØ Samfunnsøkonomisk Veileder (4.0 % Kalkulasjonsrente)
   SIKKERHETSRASJONALE     : NIS2-Direktivet, CER (Critical Entities Resilience), Fail-Closed
 ========================================================================================

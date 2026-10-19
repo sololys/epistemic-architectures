@@ -10,7 +10,7 @@ DOKUMENTIDENTIFIKASJON & STATUSDOKUMENT:
   Aksiom         : «Den Ikke-Løgnende Kjernen dømmer ikke stormen. 
                     Den gjør det umulig for stormen å nå kjernen.»
   Forfattere     : Marius Egerhei Torjusen* & Antigravity
-  Tilknytning    : ReismannPoint Systems // Infranett Core Initiative
+  Tilknytning    : Brahman
   Lokus          : Zero Baseline – 25. august 2026
   Status         : SOVEREIGN_BASELINE_COMMITTED [VERIFISERT]
   *( Level 01 Supreme Human Authority // Hovedarkitekt & Forskningsansvarlig. ORCID: 0009-0006-0431-6637 )

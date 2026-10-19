@@ -6,7 +6,7 @@
 AGENTIC AI & SYSTEMARKITEKTUR-AVHANDLING:
   DOKUMENT-ID             : AGENTIC-AI-COMPLETE-FRAMEWORK-TORJUSEN-2026-v1.0
   FORFATTER               : Marius Egerhei Torjusen (ORCID: 0009-0006-0431-6637)
-  SELSKAP & LOKUS         : TORJUSEN / ReismannPoint Systems / Brahman Ventures, Risør
+  SELSKAP & LOKUS         : Brahman
   EPISTEMISK STATUS       : L1 DETERMINISTISK PROGRAMVARE · L4 GOVERNANCE · KANONISK LOKUS
 ========================================================================================
 ```

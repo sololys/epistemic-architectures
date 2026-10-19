@@ -6,7 +6,7 @@
 SIKKERHETSANALYSE & BEREDSKAPSRAMMEVERK:
   DOKUMENT-ID             : NIS2-CER-SECURITY-TORJUSEN-2026-v1.0
   FORFATTER               : Marius Egerhei Torjusen (ORCID: 0009-0006-0431-6637)
-  SELSKAP & LOKUS         : TORJUSEN / ReismannPoint Systems / Brahman Ventures, Risør
+  SELSKAP & LOKUS         : Brahman
   LOVVERK & MANDAT        : NIS2-Direktivet (EU 2022/2555), CER-Direktivet (EU 2022/2557)
 ========================================================================================
 ```
