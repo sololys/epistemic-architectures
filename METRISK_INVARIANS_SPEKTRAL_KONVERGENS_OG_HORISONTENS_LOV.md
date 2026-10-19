@@ -97,7 +97,7 @@ Hvorfor kan grenseverdien $\lim_{a \to \infty}$ bytte plass med den spektrale su
 
 For enhver endelig dimensjon $a \ge 8$ og enhver mode $1 \le k \le a$ av Kac-Murdock-Szegő-matrisen (KMS) ved $\rho = 1/2$, gir de eksakte tridiagonale sekulærligningene:
 
-$$\Lambda(\theta_k) = \frac{3}{5 - 4\cos\theta_k}, \quad u_k(1)^2 = \frac{4 A_k^2 \sin^2\theta_k}{5 - 4\cos\theta_k}, \quad A_k^2 < \frac{2}{a - 1}, \quad \theta_k \in \left(\frac{(k-1)\pi}{a+1}, \frac{k\pi}{a}\right)$$
+$$\Lambda(\theta_k) = \frac{3}{5 - 4\cos\theta_k}, \quad u_k(1)^2 = \frac{4 A_k^2 \sin^2\theta_k}{5 - 4\cos\theta_k}, \quad \frac{1}{A_k^2} = \frac{a}{2} + \frac{3}{2(5 - 4\cos\theta_k)} > \frac{a - 1}{2}, \quad \theta_k \in \left(\frac{(k-1)\pi}{a+1}, \frac{k\pi}{a}\right)$$
 
 For de ledende modene $i \in \{1, 2\}$ og enhver eksitert mode $j \in \{3, \dots, a\}$ er den eksakte egenverdidifferansen:
 
@@ -173,7 +173,7 @@ Why may the limit $\lim_{a \to \infty}$ be interchanged with the spectral sum $\
 
 For every finite dimension $a \ge 8$ and every mode $1 \le k \le a$ of the Kac-Murdock-Szegő (KMS) matrix at $\rho = 1/2$, the exact tridiagonal secular equations dictate:
 
-$$\Lambda(\theta_k) = \frac{3}{5 - 4\cos\theta_k}, \quad u_k(1)^2 = \frac{4 A_k^2 \sin^2\theta_k}{5 - 4\cos\theta_k}, \quad A_k^2 < \frac{2}{a - 1}, \quad \theta_k \in \left(\frac{(k-1)\pi}{a+1}, \frac{k\pi}{a}\right)$$
+$$\Lambda(\theta_k) = \frac{3}{5 - 4\cos\theta_k}, \quad u_k(1)^2 = \frac{4 A_k^2 \sin^2\theta_k}{5 - 4\cos\theta_k}, \quad \frac{1}{A_k^2} = \frac{a}{2} + \frac{3}{2(5 - 4\cos\theta_k)} > \frac{a - 1}{2}, \quad \theta_k \in \left(\frac{(k-1)\pi}{a+1}, \frac{k\pi}{a}\right)$$
 
 For the principal modes $i \in \{1, 2\}$ and any excited mode $j \in \{3, \dots, a\}$, the exact spectral gap is:
 
