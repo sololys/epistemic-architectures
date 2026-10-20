@@ -78,13 +78,17 @@ Dynamics may generate possibilities. The architecture decides what may cross int
 | `Ω // GATE` | Explicit authorization: `OPEN`, `HOLD`, or `KILL` |
 | `W // RECORD` | Downstream witness of evaluation or realized transition |
 
-## SFI NORCICS / CPS4CIP Technical Reference (IT-OT Consequence Gating & Digital Twins)
+## SFI NORCICS / CPS4CIP Technical Reference & $W^2$ Proof Chains
 
-- **Specification (Markdown):** [`IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md`](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md)
-- **Specification (PDF):** [`IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.pdf`](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.pdf)
-- **Zero-Dependency `L1` Verification Script (Python Standard Library only):** [`tools/verify_norcics_digital_twin_llm_gate.py`](tools/verify_norcics_digital_twin_llm_gate.py)
+- **IT-OT & Digital Twin Brief:** [`IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md`](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md)
+- **Formal $W^2$ Specification (`/specifications`):** [`specifications/W2_FIVE_PROOF_CHAINS_SPEC.md`](specifications/W2_FIVE_PROOF_CHAINS_SPEC.md)
+- **Executable `L1` Verifiers (`/demonstrators` & `/tools`, Python Standard Library only):**
+  - [`demonstrators/verify_w2_five_proof_chains.py`](demonstrators/verify_w2_five_proof_chains.py)
+  - [`tools/verify_norcics_digital_twin_llm_gate.py`](tools/verify_norcics_digital_twin_llm_gate.py)
+- **Boundary Counterexamples (`/notes`):** [`notes/W2_BOUNDARY_COUNTEREXAMPLES.md`](notes/W2_BOUNDARY_COUNTEREXAMPLES.md)
 
 ```bash
+python3 demonstrators/verify_w2_five_proof_chains.py
 python3 tools/verify_norcics_digital_twin_llm_gate.py
 ```
 

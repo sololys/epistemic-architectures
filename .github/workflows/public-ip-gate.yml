@@ -25,3 +25,9 @@ jobs:
 
       - name: Run verifier tests
         run: python3 -m unittest -v tools/test_verify_public_surface.py
+
+      - name: Run W2 Five Proof Chains Gate (OPEN / HOLD / KILL)
+        run: python3 demonstrators/verify_w2_five_proof_chains.py
+
+      - name: Run SFI NORCICS / CPS4CIP Digital Twin & LLM Gate Suite
+        run: python3 tools/verify_norcics_digital_twin_llm_gate.py
