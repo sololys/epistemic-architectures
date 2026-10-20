@@ -4,6 +4,8 @@
 .github/workflows/morandi-core-gate.yml
 .github/workflows/public-ip-gate.yml
 .gitignore
+L1_LAW/122_G2_HOLONOMIC_SPIRAL_ZERO_DIVISOR_EVASION_SPEC.md
+L1_LAW/122_G2_HOLONOMIC_SPIRAL_ZERO_DIVISOR_EVASION_SPEC.pdf
 L1_LAW/invariants_pure.py
 L1_LAW/IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md
 L1_LAW/IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.pdf
