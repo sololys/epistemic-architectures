@@ -80,7 +80,7 @@ Dynamics may generate possibilities. The architecture decides what may cross int
 
 ## SFI NORCICS / CPS4CIP Technical Reference & $W^2$ Proof Chains
 
-- **IT-OT & Digital Twin Brief:** [`IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md`](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md)
+- **IT-OT & Digital Twin Brief:** [`IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md`](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md) · [**PDF Brief**](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.pdf)
 - **Formal $W^2$ Specification (`/specifications`):** [`specifications/W2_FIVE_PROOF_CHAINS_SPEC.md`](specifications/W2_FIVE_PROOF_CHAINS_SPEC.md)
 - **Executable `L1` Verifiers (`/demonstrators` & `/tools`, Python Standard Library only):**
   - [`demonstrators/verify_w2_five_proof_chains.py`](demonstrators/verify_w2_five_proof_chains.py)

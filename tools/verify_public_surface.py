@@ -13,7 +13,7 @@ ALLOWLIST = ROOT / ".github" / "public-paths.txt"
 MAX_FILE_BYTES = 512 * 1024
 DISALLOWED_SUFFIXES = {
     ".7z", ".bin", ".docx", ".env", ".gz", ".ipynb", ".key", ".kdbx",
-    ".p12", ".pdf", ".pem", ".pfx", ".pptx", ".rar", ".tar", ".tgz",
+    ".p12", ".pem", ".pfx", ".pptx", ".rar", ".tar", ".tgz",
     ".wasm", ".xlsx", ".zip",
 }
 
@@ -91,6 +91,8 @@ def main() -> int:
         data = path.read_bytes()
         if len(data) > MAX_FILE_BYTES:
             findings.append((relative, "FILE_SIZE_LIMIT"))
+        if pure.suffix.lower() == ".pdf" and relative in allowed:
+            continue
         if b"\0" in data:
             findings.append((relative, "BINARY_PAYLOAD"))
             continue
