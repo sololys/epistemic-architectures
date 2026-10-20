@@ -1,8 +1,8 @@
-# Non-AI Consequence Gating for IT-OT Integration in Critical Infrastructure
-### *Architectural Brief on Deterministic Projection ($\Phi \to \Pi_K \to \Omega \to W^2$) across Local LLM/HMI Control, Maritime GNSS Denial, and VSG Byzantine Resilience*
+# Non-AI Consequence Gating for IT-OT Integration & Digital Twins in Critical Infrastructure
+### *Architectural Brief on Deterministic Projection ($\Phi \to \Pi_K \to \Omega \to W^2$) across Digital Twin Incident Response, Local LLM/HMI Control, Maritime GNSS Denial, and VSG Byzantine Resilience*
 
-**Author:** Marius Egerhei Torjusen  
-**Context:** Technical discussion brief following the CPS4CIP 2026 / SFI NORCICS exchange on IT-OT integration  
+**Author:** Marius Egerhei Torjusen (Founder, Brahman AS · ORCID: `0009-0006-0431-6637`)  
+**Context:** Technical discussion brief for SFI NORCICS at NTNU (Prof. Sokratis Katsikas & Konstantinos Kampourakis), following referral from Dr. Habtamu Abie (Norsk Regnesentral)  
 **Canonical Reference Architecture:** [`sololys/epistemic-architectures`](https://github.com/sololys/epistemic-architectures) ([Zenodo DOI: `10.5281/zenodo.18436983`](https://doi.org/10.5281/zenodo.18436983))  
 **Public `L1` Software Demonstrators:** [`sololys/ky-rox-public-demonstrators`](https://github.com/sololys/ky-rox-public-demonstrators)  
 **Epistemic Status:** `L1` Reference Architecture & Deterministic Software Specification (`INSPIRED_BY != IMPLEMENTS != PROVES`; `PHYSICAL_AUTHORITY = NONE`)
@@ -35,9 +35,24 @@ where any single invariant violation vetoes actuation unconditionally, and the A
 
 ---
 
-## 2. Three Industrial IT-OT Domains (CPS4CIP 2026 Alignment)
+## 2. Four Industrial IT-OT Domains (SFI NORCICS & CPS4CIP 2026 Alignment)
 
-### Domain I — Locally Deployed LLMs & HMIs in Industrial Control (Session 3)
+### Domain I — Digital Twins for Incident Detection & Fail-Closed Response (`Door 25` Ontological Twin)
+
+#### Architectural Bottleneck
+Conventional Digital Twins in critical infrastructure operate primarily as passive state observers or post-facto statistical anomaly detectors (IDS). When an adversarial command or compromised controller injects a state-corrupting actuation sequence, passive monitoring alerts operators *after* the command has already crossed the OT boundary.
+
+#### Pre-Execution Involutive Collision & Envelope Gate ($\Pi_K^{\mathrm{Twin}}$)
+Rather than treating the Digital Twin as a passive dashboard, **Door 25 (`SPEC-58`)** places the Digital Twin directly inside the pre-commit consequence gate as a **deterministic spectral collision test**:
+
+1. **Involutive Reversibility Check ($S_0 \xrightarrow{a} S_f \xrightarrow{a^{-1}} S_r$):**  
+   Before any candidate command $a \in \Phi(x_t)$ can reach a physical PLC or relay, the gate clones the last sealed state ($W_{\mathrm{post}} \to W_{\mathrm{twin}}$), simulates the forward transition to $S_f$, and applies the exact inverse operation $a^{-1}$ to return to $S_r$. If the round-trip residual exceeds isometric tolerance ($\|S_0 - S_r\| > \varepsilon_{\mathrm{iso}}$), indicating undeclared irreversible state loss or hidden hysteresis, the gate immediately triggers `TWIN_ASYMMETRY_DETECTED` $\implies \Omega \to \mathrm{KILL}$ ($0.00\,\mathrm{V\ DC}$).
+2. **Admissible Envelope Stress Test (`within_envelope`):**  
+   During forward simulation inside the Digital Twin, the trajectory is evaluated against hard physical invariants (voltage, thermal, and rate-of-change bounds). Any boundary violation clamps actuation to `TWIN_ENVELOPE_BREACH` $\implies \Omega \to \mathrm{HOLD}$ ($0.00\,\mathrm{V\ DC}$) before physical hardware is touched.
+
+---
+
+### Domain II — Locally Deployed LLMs & HMIs in Industrial Control (Session 3)
 
 #### Architectural Bottleneck
 When locally deployed Large Language Models (LLMs) or AI-assisted Human-Machine Interfaces (HMIs) translate natural-language operator intent or multi-sensor telemetry into PLC setpoint proposals, hallucinated parameters, unit mismatches, or out-of-envelope transitions can propagate directly into actuator registers if the HMI acts as an unmediated command source.
@@ -57,7 +72,7 @@ Every AI/HMI proposal $u_{\mathrm{cand}} \in \Phi(x_t)$ is treated strictly as a
 
 ---
 
-### Domain II — Maritime GNSS Spoofing & Jamming in Coastal and Port Operations (Session 4)
+### Domain III — Maritime GNSS Spoofing & Jamming in Coastal and Port Operations (Session 4)
 
 #### Architectural Bottleneck
 In coastal navigation, dynamic positioning (DP), and automated port crane/vessel operations, adversarial GNSS spoofing or RF jamming corrupts external satellite timing and position fixes while cloud connectivity may be degraded or contested. Systems that equate cryptographic cloud reachability or smooth Kalman-filter innovation with physical truth can be smoothly dragged onto a false trajectory.
@@ -80,7 +95,7 @@ When external GNSS ephemeris is untrusted, physical authority is restricted stri
 
 ---
 
-### Domain III — Virtual Synchronous Generators (VSGs) & Byzantine Fault Tolerance (Sessions 2 & 4)
+### Domain IV — Virtual Synchronous Generators (VSGs) & Byzantine Fault Tolerance (Sessions 2 & 4)
 
 #### Architectural Bottleneck
 Grid-forming Virtual Synchronous Generators (VSGs) emulate rotor inertia and damping in power electronics-dominated microgrids. Sub-threshold Byzantine sensor corruption or coordinated high-frequency oscillatory injection across distributed inverter nodes can excite synthetic swing-equation resonances ($\frac{d^2\delta}{dt^2}$) before traditional static threshold alarms trip.
@@ -99,8 +114,9 @@ Grid-forming Virtual Synchronous Generators (VSGs) emulate rotor inertia and dam
 
 ## 3. Summary Matrix for Joint SFI NORCICS Technical Evaluation
 
-| CPS4CIP Domain | Untrusted IT Candidate ($\Phi$) | Non-AI Projection Invariant ($\Pi_K$) | Fail-Closed Gate Verdict ($\Omega$) | Verification Tier |
+| SFI NORCICS / CPS4CIP Domain | Untrusted IT Candidate ($\Phi$) | Non-AI Projection Invariant ($\Pi_K$) | Fail-Closed Gate Verdict ($\Omega$) | Verification Tier |
 | :--- | :--- | :--- | :--- | :--- |
+| **Digital Twins (Incident Response)** | Compromised controller / OT actuation proposal $a$ | Involutive round-trip $\|S_0 - S_r\| \le \varepsilon_{\mathrm{iso}}$ + envelope stress check in $W_{\mathrm{twin}}$ | `TWIN_ENVELOPE_BREACH` (`HOLD`) or `TWIN_ASYMMETRY_DETECTED` (`KILL`, $0.00\,\mathrm{V\ DC}$) | `L1` Door 25 twin gate (`Python` / `#![no_std]` `Rust`) |
 | **Session 3: Local LLMs & HMIs** | Natural-language / AI setpoint proposal $u_{\mathrm{cand}}$ | Nagumo barrier tangency $\langle \nabla h, f\rangle + \alpha(h) \ge 0$, $\Delta_\varepsilon$ spline latch, $W^2$ receipt | `HOLD` in $[-\varepsilon, +\varepsilon]$; `KILL` ($0.00\,\mathrm{V\ DC}$) if $h(x) < 0$ or unlatched | `L1` deterministic gate suite $\to$ PLC/HMI HIL |
 | **Session 4: Maritime GNSS Denial** | Spoofed/jammed GNSS position & ephemeris | UWB ToF causal light-cone $d_{\mathrm{ToF}} \le c\Delta t/2$, AoA $|s_{\mathrm{obs}}| \le 1$, local SHA-256 chain | `JAMMING_KILL` / `HOLD` ($0.00\,\mathrm{V\ DC}$) on light-cone or $|\sin\theta| > 1$ breach | `L1` synthetic spoofing traces $\to$ coastal/port replay |
 | **Sessions 2 & 4: VSG & BFT Grid** | Byzantine inverter telemetry & oscillatory chatter | Screened dispersion gap $\omega^2 \ge \mu_{\mathrm{eff}}^2 + c_s^2 k^2$ + $(2f+1)$ multiplicative warrant | Sub-gap chatter held evanescent in `HOLD`; warrant loss $\implies \mathrm{KILL}$ ($0.00\,\mathrm{V\ DC}$) | `L1` swing-equation simulator $\to$ microgrid testbed |
@@ -109,10 +125,11 @@ Grid-forming Virtual Synchronous Generators (VSGs) emulate rotor inertia and dam
 
 ## 4. Sammendrag på norsk (Norsk Stamme)
 
-I integrasjonen mellom informasjonsteknologi (IT) og operasjonell teknologi (OT) i kritisk infrastruktur oppstår en fundamental termodynamisk asymmetri: en sannsynlighetsmodell eller lokal språkmodell ($\Phi$) opererer nesten kostnadsfritt i minnet ($Q_{\mathrm{math}} = 0.00\,\mathrm{J}$), mens et fysisk rorutslag, et reléinnslag eller en omformerordre i strømnettet krysser irreversibilitetsgrensen i romtid ($Q_{\mathrm{phys}} \ge k_B T \ln 2 \cdot \Delta I_{\mathrm{phys}}$).
+I integrasjonen mellom informasjonsteknologi (IT), Digitale Tvillinger og operasjonell teknologi (OT) i kritisk infrastruktur oppstår en fundamental termodynamisk asymmetri: en sannsynlighetsmodell eller lokal språkmodell ($\Phi$) opererer nesten kostnadsfritt i minnet ($Q_{\mathrm{math}} = 0.00\,\mathrm{J}$), mens et fysisk rorutslag, et reléinnslag eller en omformerordre i strømnettet krysser irreversibilitetsgrensen i romtid ($Q_{\mathrm{phys}} \ge k_B T \ln 2 \cdot \Delta I_{\mathrm{phys}}$).
 
-Ved å plassere en ikke-AI, statisk verifiserbar projeksjons- og konsekvensport ($\Phi \to \Pi_K \to \Omega \to W^2$) mellom IT-inferens og OT-aktuering under subsumpsjonsloven $\mathrm{KILL} \succ \mathrm{HOLD} \succ \mathrm{OPEN}$, oppnås tre strukturelle garantier på tvers av bruksområdene i SFI NORCICS / CPS4CIP:
+Ved å plassere en ikke-AI, statisk verifiserbar projeksjons- og konsekvensport ($\Phi \to \Pi_K \to \Omega \to W^2$) mellom IT-inferens og OT-aktuering under subsumpsjonsloven $\mathrm{KILL} \succ \mathrm{HOLD} \succ \mathrm{OPEN}$, oppnås fire strukturelle garantier på tvers av bruksområdene i SFI NORCICS / CPS4CIP:
 
-1. **Lokale LLM-er og HMI-er (Session 3):** Ingen AI-generert kandidat har direkte skrivemyndighet til PLS eller aktuator (`standalone_commit_authority = NONE`). Forslag som bryter Nagumo-tangentkjeglen ved sikkerhetsranden $\partial K$ eller mangler dobbelt forhåndsvitne $W^2 = \langle W_{\mathrm{machine}}, W_{\mathrm{human}} \rangle$, klemmes til $0.00\,\mathrm{V\ DC}$ før de når feltnivået.
-2. **Maritim GNSS-manipulasjon (Session 4):** Når satellittsignaler eller skyforbindelse manipuleres eller faller bort i kyst- og havneoperasjoner, begrenses fysisk myndighet til den lokale kausale lyskjeglen via relativistisk UWB Time-of-Flight-avstandsmåling ($d_{\mathrm{ToF}} \le c\Delta t/2$), euklidsk fasediskriminering ($|\sin\theta| \le 1.0$) og lokal-først SHA-256-forfedrekjede.
-3. **Virtuelle synkrongeneratorer og BFT (Session 2 & 4):** Ved å håndheve en relativistisk dispersjonsterskel ($\omega^2 = \mu_{\mathrm{eff}}^2 + c_s^2 k^2$) sammen med en multiplikativ $2f+1$-kvorumsbarriere ved kontrollporten, blir sub-terskel bysantinsk støy og høyfrekvent flimmer eksponentielt evanescente og holdes tilbake i $0.00\,\mathrm{V\ DC}$ stase før de kan forplante seg til frekvens- eller RoCoF-ustabilitet i kraftnettet.
+1. **Digitale Tvillinger for hendelsesdeteksjon og aktiv respons (`Door 25`):** I stedet for at den digitale tvillingen kun varsler i etterkant, kjøres enhver foreslått styrekommando gjennom en involutiv frem-og-tilbake-kollisjonstest ($S_0 \xrightarrow{a} S_f \xrightarrow{a^{-1}} S_r$) og konvoluttsjekk i tvillingen *før* utgangstrinnet kan strømsettes. Ved avvik låses utgangen til $0.00\,\mathrm{V\ DC}$.
+2. **Lokale LLM-er og HMI-er (Session 3):** Ingen AI-generert kandidat har direkte skrivemyndighet til PLS eller aktuator (`standalone_commit_authority = NONE`). Forslag som bryter Nagumo-tangentkjeglen ved sikkerhetsranden $\partial K$ eller mangler dobbelt forhåndsvitne $W^2 = \langle W_{\mathrm{machine}}, W_{\mathrm{human}} \rangle$, klemmes til $0.00\,\mathrm{V\ DC}$ før de når feltnivået.
+3. **Maritim GNSS-manipulasjon (Session 4):** Når satellittsignaler eller skyforbindelse manipuleres eller faller bort i kyst- og havneoperasjoner, begrenses fysisk myndighet til den lokale kausale lyskjeglen via relativistisk UWB Time-of-Flight-avstandsmåling ($d_{\mathrm{ToF}} \le c\Delta t/2$), euklidsk fasediskriminering ($|\sin\theta| \le 1.0$) og lokal-først SHA-256-forfedrekjede.
+4. **Virtuelle synkrongeneratorer og BFT (Session 2 & 4):** Ved å håndheve en relativistisk dispersjonsterskel ($\omega^2 = \mu_{\mathrm{eff}}^2 + c_s^2 k^2$) sammen med en multiplikativ $2f+1$-kvorumsbarriere ved kontrollporten, blir sub-terskel bysantinsk støy og høyfrekvent flimmer eksponentielt evanescente og holdes tilbake i $0.00\,\mathrm{V\ DC}$ stase før de kan forplante seg til frekvens- eller RoCoF-ustabilitet i kraftnettet.
