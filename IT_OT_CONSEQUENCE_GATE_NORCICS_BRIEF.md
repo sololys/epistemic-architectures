@@ -1,7 +1,7 @@
 # Non-AI Consequence Gating for IT-OT Integration & Digital Twins in Critical Infrastructure
 ### *Architectural Brief on Deterministic Projection ($\Phi \to \Pi_K \to \Omega \to W^2$) across Digital Twin Incident Response, Local LLM/HMI Control, Maritime GNSS Denial, and VSG Byzantine Resilience*
 
-**Author:** Marius Egerhei Torjusen (Founder, Brahman AS · ORCID: `0009-0006-0431-6637`)  
+**Author:** Marius Egerhei Torjusen (Brahman · Risør, Norway · ORCID: `0009-0006-0431-6637`)  
 **Context:** Technical discussion brief for SFI NORCICS at NTNU (Prof. Sokratis Katsikas & Konstantinos Kampourakis), following referral from Dr. Habtamu Abie (Norsk Regnesentral)  
 **Canonical Reference Architecture:** [`sololys/epistemic-architectures`](https://github.com/sololys/epistemic-architectures) ([Zenodo DOI: `10.5281/zenodo.18436983`](https://doi.org/10.5281/zenodo.18436983))  
 **Public `L1` Software Demonstrators:** [`sololys/ky-rox-public-demonstrators`](https://github.com/sololys/ky-rox-public-demonstrators)  
