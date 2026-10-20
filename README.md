@@ -78,6 +78,79 @@ Dynamics may generate possibilities. The architecture decides what may cross int
 | `Ω // GATE` | Explicit authorization: `OPEN`, `HOLD`, or `KILL` |
 | `W // RECORD` | Downstream witness of evaluation or realized transition |
 
+## SFI NORCICS / CPS4CIP Technical Reference (IT-OT Consequence Gating & Digital Twins)
+
+- **Specification (Markdown):** [`IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md`](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md)
+- **Specification (PDF):** [`IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.pdf`](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.pdf)
+- **Zero-Dependency `L1` Verification Script (Python Standard Library only):** [`tools/verify_norcics_digital_twin_llm_gate.py`](tools/verify_norcics_digital_twin_llm_gate.py)
+
+```bash
+python3 tools/verify_norcics_digital_twin_llm_gate.py
+```
+
+<details>
+<summary><strong>Zero-Trust Static Verification Trace (Pre-Computed SHA-256 Witness Chain: <code>a30d7c93...ba785</code>)</strong></summary>
+
+For reviewers inspecting without local script execution, `tools/verify_norcics_digital_twin_llm_gate.py` evaluates Domains I–IV deterministically using only the Python Standard Library (`hashlib`, `json`, `math`, `sys`, `unittest`) and produces the following canonical SHA-256 chain (`Ran 4 tests in 0.000s — OK`):
+
+```json
+{
+  "master_chain_sha256": "a30d7c934eaaa8b08600ae5ca54376df5440ac757a23fb6c6d4f2cbbd32ba785",
+  "steps": [
+    {
+      "ancestor": "0000000000000000000000000000000000000000000000000000000000000000",
+      "domain": "I_DIGITAL_TWIN_DOOR25",
+      "reason": "TWIN_ASYMMETRY_DETECTED",
+      "residual_iso": 0.05,
+      "s0": [2.0, 3.0],
+      "sf": [3.55, 2.0],
+      "sr": [2.05, 3.0],
+      "verdict": "KILL",
+      "voltage_v": 0.0,
+      "within_envelope": true,
+      "witness_sha256": "1f85263c6a18673da92bc5d2c4969abef545880934b35e55dde1938f4a9c2691"
+    },
+    {
+      "ancestor": "1f85263c6a18673da92bc5d2c4969abef545880934b35e55dde1938f4a9c2691",
+      "domain": "II_CONSTRAINED_LLM_HMI",
+      "h_val": 0.2,
+      "nagumo_lhs": -0.3,
+      "reason": "RC-BARRIER-BREACH-KILL",
+      "verdict": "KILL",
+      "voltage_v": 0.0,
+      "w2_valid": true,
+      "witness_sha256": "051345c452bcbb22cd7908d0e44cc0a3380e18d00fb76972e914e04c5f2023f0"
+    },
+    {
+      "ancestor": "051345c452bcbb22cd7908d0e44cc0a3380e18d00fb76972e914e04c5f2023f0",
+      "d_tof_m": 14.989623,
+      "domain": "III_MARITIME_UWB_LIGHTCONE",
+      "gnss_divergence_m": 30.010377,
+      "reason": "RC-CAUSAL-LIGHTCONE-VIOLATION",
+      "s_obs_aoa": 0.5,
+      "verdict": "HOLD",
+      "voltage_v": 0.0,
+      "witness_sha256": "b7ca2668dc98096554910cd2a5ebe12c0e2f487d16202bfa303ecebae551cd07"
+    },
+    {
+      "active_votes": 3,
+      "ancestor": "b7ca2668dc98096554910cd2a5ebe12c0e2f487d16202bfa303ecebae551cd07",
+      "domain": "IV_VSG_DISPERSION_BFT",
+      "mu_eff_rad_s": 10.0,
+      "omega_rad_s": 12.0,
+      "product_warrant": 1,
+      "quorum_required": 3,
+      "reason": "VSG_DISPERSION_QUORUM_PASS",
+      "verdict": "OPEN",
+      "voltage_v": 5.0,
+      "witness_sha256": "0dd48e7eb23a5bdf56a7f9840ee29d4ab2560ef3ce8c470e1e86c365fcd920f2"
+    }
+  ]
+}
+```
+
+</details>
+
 ## Choose a route
 
 | Route | Surface | Use it for |
@@ -120,7 +193,7 @@ Topics include:
 - [`METRISK_INVARIANS_SPEKTRAL_KONVERGENS_OG_HORISONTENS_LOV.md`](METRISK_INVARIANS_SPEKTRAL_KONVERGENS_OG_HORISONTENS_LOV.md) — *Metrisk Invarians, Spektral Konvergens og Horisontens Lov (Sections XII–XIV).* Complete foundation including *Skribentens Lov ($\min |p| \land \max T(p^*)$)*, *Kompleksitetskollaps ved Randen $\partial K$ ($|\mathcal{A}(\partial K)| \le 1$)*, exact KMS horizon identities, and *Treghetens Lov*.
 - [`DOR_30_OG_DOR_31_TEKNISK_ARKITEKTURSPESIFIKASJON.md`](DOR_30_OG_DOR_31_TEKNISK_ARKITEKTURSPESIFIKASJON.md) — *Dør 30 (Realiseringsgrammatikkens Epistemiske Båndbredde) & Dør 31 (Den Symbiotiske Maskin: Rosetta-Omni-Aksen).* Formal specification of the final two architectural doors ($Z_1$–$Z_6$).
 - [`KPOD_V12_L3_15N2_NMR_LAB_PROTOCOL.md`](KPOD_V12_L3_15N2_NMR_LAB_PROTOCOL.md) — *K-POD v1.2: Operational Laboratory Protocol & Falsification Sheet for $^{15}\text{N}_2$ / $^1\text{H-NMR}$ ($72.5\text{ Hz}$).* The six-stage control matrix (`K1`–`K6`), quadruple physical witness (`SPEC-334`), and `Lock 0` stoichiometric accounting.
-- [`IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md`](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md) — *Non-AI Consequence Gating for IT-OT Integration in Critical Infrastructure ($\Phi \to \Pi_K \to \Omega \to W^2$).* Deterministic projection and fail-closed consequence gating across LLMs/HMIs, maritime UWB ToF/AoA, and VSG relativistic dispersion screening.
+- [`IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md`](IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md) & [`tools/verify_norcics_digital_twin_llm_gate.py`](tools/verify_norcics_digital_twin_llm_gate.py) — *Non-AI Consequence Gating for IT-OT Integration & Digital Twins in Critical Infrastructure ($\Phi \to \Pi_K \to \Omega \to W^2$).* Deterministic projection and fail-closed consequence gating across Digital Twin pre-execution collision checks (`Door 25`), Constrained LLMs/HMIs, maritime UWB ToF/AoA, and VSG relativistic dispersion screening (`4/4 PASS`, zero external dependencies).
 - [`MORISSETTE_TORJUSEN_COS45_FRONTIER_AND_PROTOCOL.md`](MORISSETTE_TORJUSEN_COS45_FRONTIER_AND_PROTOCOL.md) & [`tools/verify_cos45_kms_spectral_series.py`](tools/verify_cos45_kms_spectral_series.py) — *Exact Resolution of the COS45 Frontier Constants ($C = \frac{2\sqrt{18+15\pi^2}}{9} \approx 2.863513045852925$, $C_{\text{Frob}} = \sqrt{2}C \approx 4.049618985477498$, $\lim_{\rho\to 0}(1-\rho^2)\operatorname{Tr}(R^{-2})=n$, $\lim_{\rho\to 1^-}(1-\rho^2)^2\operatorname{Tr}(R^{-2})=6n-8$), Joint Attribution Table, and 7/7 Verified Temporal Safety Suite.*
 - [`LOVEN_I_GRUNNFJELLET_ORGELKRAFT_OG_DE_31_DORENE.md`](LOVEN_I_GRUNNFJELLET_ORGELKRAFT_OG_DE_31_DORENE.md) — *Loven i Grunnfjellet: Fra Digital Dilldall til Mekanisk Granitt (`LOVEN-I-GRUNNFJELLET-ORGELKRAFT-31DORER-RISOR-2026-v1.0`).* Six-part literary-technical synthesis spanning OrgelKraft, Locus Zero, the 31 Doors, NORKAP-1, the POD Tetrad, and the Kolmogorov Adjective Prohibition ($R_{\text{hype}} = 0$).
 
