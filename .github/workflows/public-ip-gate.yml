@@ -21,13 +21,16 @@ jobs:
           persist-credentials: false
 
       - name: Verify exact allowlisted tree
-        run: python3 tools/verify_public_surface.py
+        run: python3 L2_GATE/verify_public_surface.py
 
       - name: Run verifier tests
-        run: python3 -m unittest -v tools/test_verify_public_surface.py
+        run: python3 -m unittest -v L2_GATE/test_verify_public_surface.py
+
+      - name: Run Morandi-Core Formal Verification Contract (L1_LAW -> L2_GATE)
+        run: make verify && make clean
 
       - name: Run W2 Five Proof Chains Gate (OPEN / HOLD / KILL)
-        run: python3 demonstrators/verify_w2_five_proof_chains.py
+        run: python3 L2_GATE/verify_w2_five_proof_chains.py
 
       - name: Run SFI NORCICS / CPS4CIP Digital Twin & LLM Gate Suite
-        run: python3 tools/verify_norcics_digital_twin_llm_gate.py
+        run: python3 L2_GATE/verify_norcics_digital_twin_llm_gate.py

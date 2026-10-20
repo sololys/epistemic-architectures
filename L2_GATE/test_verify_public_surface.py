@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from tools import verify_public_surface
+from L2_GATE import verify_public_surface
 
 
 class PublicSurfaceTests(unittest.TestCase):
