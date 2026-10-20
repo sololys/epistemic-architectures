@@ -1,5 +1,7 @@
 .github/CODEOWNERS
 .github/public-paths.txt
+.github/PULL_REQUEST_TEMPLATE.md
+.github/workflows/morandi-core-gate.yml
 .github/workflows/public-ip-gate.yml
 .gitignore
 L1_LAW/invariants_pure.py
