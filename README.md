@@ -4,7 +4,7 @@ $$\boxed{\text{GENERATION} \neq \text{AUTHORIZATION} \neq \text{WITNESSED CONSEQ
 
 $$\Phi(x_t) \;\xrightarrow{\;\text{Candidate}\;}\; \Pi_K \;\xrightarrow{\;\text{Residual }\Delta_K\;}\; \Omega \in \{\mathrm{KILL}, \mathrm{HOLD}, \mathrm{OPEN}\} \;\xrightarrow{\;\text{Pre-Commit}\;}\; W^2 = \langle W_{\mathrm{machine}}, W_{\mathrm{human}}\rangle$$
 
-* **Author:** Marius Egerhei Torjusen · Brahman, Risør, Norway ([ORCID: `0009-0006-0431-6637`](https://orcid.org/0009-0006-0431-6637) · [Zenodo DOI: `10.5281/zenodo.18436983`](https://doi.org/10.5281/zenodo.18436983))
+* **Author:** Marius Egerhei Torjusen · Brahman, Risør, Norway ([ORCID: `0009-0006-0431-6637`](https://orcid.org/0009-0006-0431-6637) · [Zenodo DOIs: `10.5281/zenodo.18436983`](https://doi.org/10.5281/zenodo.18436983) · [`10.5281/zenodo.22229111`](https://doi.org/10.5281/zenodo.22229111))
 * **Epistemic Boundary:** `INSPIRED_BY != IMPLEMENTS != PROVES` · `PHYSICAL_AUTHORITY = NONE` · $\Sigma_{\mathrm{ext}} = \emptyset$ (Python Standard Library only)
 
 ---
@@ -90,7 +90,7 @@ For reviewers inspecting without local script execution, [`L2_GATE/verify_norcic
 | **[`L1_LAW/`](L1_LAW/)** | Pure mathematical definitions & formal contracts. Zero I/O, zero side effects. | • [`L1_LAW/IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md`](L1_LAW/IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md) · [**PDF Brief**](L1_LAW/IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.pdf)<br>• [`L1_LAW/W2_FIVE_PROOF_CHAINS_SPEC.md`](L1_LAW/W2_FIVE_PROOF_CHAINS_SPEC.md)<br>• [`L1_LAW/122_G2_HOLONOMIC_SPIRAL_ZERO_DIVISOR_EVASION_SPEC.md`](L1_LAW/122_G2_HOLONOMIC_SPIRAL_ZERO_DIVISOR_EVASION_SPEC.md) · [**PDF Spec**](L1_LAW/122_G2_HOLONOMIC_SPIRAL_ZERO_DIVISOR_EVASION_SPEC.pdf)<br>• [`L1_LAW/invariants_pure.py`](L1_LAW/invariants_pure.py) |
 | **[`L2_GATE/`](L2_GATE/)** | Consequence gate ($\Omega \circ \Pi_K$) & deterministic boundary evaluation. | • [`L2_GATE/evaluate_boundaries.py`](L2_GATE/evaluate_boundaries.py)<br>• [`L2_GATE/verify_w2_five_proof_chains.py`](L2_GATE/verify_w2_five_proof_chains.py)<br>• [`L2_GATE/verify_norcics_digital_twin_llm_gate.py`](L2_GATE/verify_norcics_digital_twin_llm_gate.py)<br>• [`L2_GATE/verify_cos45_kms_spectral_series.py`](L2_GATE/verify_cos45_kms_spectral_series.py)<br>• [`L2_GATE/verify_public_surface.py`](L2_GATE/verify_public_surface.py) |
 | **[`L3_WITNESS/`](L3_WITNESS/)** | Append-only cryptographic SHA-256 receipts ($W^2$) of verified transitions. | • [`L3_WITNESS/audit_log.jsonl`](L3_WITNESS/audit_log.jsonl) |
-| **[`L3_NOTES/`](L3_NOTES/)** | Theoretical monographs, working derivations & counterexamples ($\text{THEORY} \neq \text{DEMONSTRATOR}$). | • [`L3_NOTES/W2_BOUNDARY_COUNTEREXAMPLES.md`](L3_NOTES/W2_BOUNDARY_COUNTEREXAMPLES.md)<br>• [`L3_NOTES/LAW_OF_CAUSAL_INERTIA.md`](L3_NOTES/LAW_OF_CAUSAL_INERTIA.md)<br>• [`L3_NOTES/MORISSETTE_TORJUSEN_COS45_FRONTIER_AND_PROTOCOL.md`](L3_NOTES/MORISSETTE_TORJUSEN_COS45_FRONTIER_AND_PROTOCOL.md)<br>• [`L3_NOTES/DOCUMENT_173_AUTHORIZED_REALIZATIONS.md`](L3_NOTES/DOCUMENT_173_AUTHORIZED_REALIZATIONS.md)<br>• [`L3_NOTES/KY_NASH_ADMISSIBLE_GAMES.md`](L3_NOTES/KY_NASH_ADMISSIBLE_GAMES.md)<br>• [`L3_NOTES/00`–`26` Causal Inertia Suite](L3_NOTES/) |
+| **[`L3_NOTES/`](L3_NOTES/)** | Theoretical monographs, working derivations & counterexamples ($\text{THEORY} \neq \text{DEMONSTRATOR}$). | • [`L3_NOTES/W2_BOUNDARY_COUNTEREXAMPLES.md`](L3_NOTES/W2_BOUNDARY_COUNTEREXAMPLES.md)<br>• [`L3_NOTES/LAW_OF_CAUSAL_INERTIA.md`](L3_NOTES/LAW_OF_CAUSAL_INERTIA.md)<br>• [`L3_NOTES/MORISSETTE_TORJUSEN_COS45_FRONTIER_AND_PROTOCOL.md`](L3_NOTES/MORISSETTE_TORJUSEN_COS45_FRONTIER_AND_PROTOCOL.md)<br>• [`L3_NOTES/DOCUMENT_173_AUTHORIZED_REALIZATIONS.md`](L3_NOTES/DOCUMENT_173_AUTHORIZED_REALIZATIONS.md)<br>• [`L3_NOTES/KY_NASH_ADMISSIBLE_GAMES.md`](L3_NOTES/KY_NASH_ADMISSIBLE_GAMES.md)<br>• [`L3_NOTES/00`–`26` Causal Inertia Suite](L3_NOTES/) ([Zenodo DOI: `10.5281/zenodo.22229111`](https://doi.org/10.5281/zenodo.22229111)) |
 
 ---
 
@@ -102,4 +102,5 @@ $$V_{\mathrm{out}} = \lim_{\Delta_K \to 0} \left( \mathbb{I}(\Omega(\Pi_K) == \m
 
 ## Citation
 
-Torjusen, M. E. (2026). *Epistemic Architectures: Systems That Know They Know.* Zenodo. [https://doi.org/10.5281/zenodo.18436983](https://doi.org/10.5281/zenodo.18436983).
+* Torjusen, M. E. (2026). *Epistemic Architectures: Systems That Know They Know.* Zenodo. [https://doi.org/10.5281/zenodo.18436983](https://doi.org/10.5281/zenodo.18436983).
+* Torjusen, M. E. (2026). *The Law of Causal Inertia: The Definitive Scientific & Architectural Monograph Series.* Zenodo. [https://doi.org/10.5281/zenodo.22229111](https://doi.org/10.5281/zenodo.22229111).
