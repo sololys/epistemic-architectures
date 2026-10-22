@@ -10,6 +10,7 @@ L1_LAW/invariants_pure.py
 L1_LAW/IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.md
 L1_LAW/IT_OT_CONSEQUENCE_GATE_NORCICS_BRIEF.pdf
 L1_LAW/MPOLYNOMIAL_1WL_MOLECULAR_GATE_SPEC.md
+L1_LAW/PWR2_SCRAMBLING_COLLECTIVE_GATE_SPEC.md
 L1_LAW/W2_FIVE_PROOF_CHAINS_SPEC.md
 L2_GATE/evaluate_boundaries.py
 L2_GATE/test_verify_public_surface.py
@@ -17,6 +18,7 @@ L2_GATE/verify_cos45_kms_spectral_series.py
 L2_GATE/verify_mpolynomial_1wl_molecular_gate.py
 L2_GATE/verify_norcics_digital_twin_llm_gate.py
 L2_GATE/verify_public_surface.py
+L2_GATE/verify_pwr2_scrambling_collective_gate.py
 L2_GATE/verify_w2_five_proof_chains.py
 L3_NOTES/00_THE_CAUSAL_INFRASTRUCTURE_MASTER_WHITEPAPER_2026_2031.md
 L3_NOTES/01_TRACTATUS_DETERMINISTICUS_MASTER_TREATISE.md
