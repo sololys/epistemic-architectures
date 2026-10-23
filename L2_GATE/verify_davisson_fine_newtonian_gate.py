@@ -1285,6 +1285,48 @@ class KYGrammarEngine:
         }
 
 
+class UnifiedLocusZeroVerifier:
+    """Binds Physical Lattice, Combinatorial Time, Newtonian Mechanics, and KY v1.5 Grammar."""
+
+    def __init__(self) -> None:
+        self.phys_engine = KYConsequenceGateEngine(genesis_seed="LOCUS_ZERO_0xABCDEF00")
+        self.ky_engine = KYGrammarEngine(tau_open=0.25, tau_kill=0.60)
+
+    def evaluate_joint_vector(
+        self,
+        phys_prop: CandidateProposal,
+        somatic_cand: SomaticCampaignCandidate,
+    ) -> Dict[str, object]:
+        phys_rec = self.phys_engine.evaluate(phys_prop)
+        ky_rec = self.ky_engine.evaluate_kreativ_core_campaign(somatic_cand)
+
+        if phys_rec.verdict == GateVerdict.KILL or ky_rec["omega_verdict"] == "KILL":
+            joint_verdict = "KILL"
+            voltage = 0.00
+        elif phys_rec.verdict == GateVerdict.HOLD or ky_rec["omega_verdict"] == "HOLD":
+            joint_verdict = "HOLD"
+            voltage = 0.00
+        else:
+            joint_verdict = "OPEN"
+            voltage = 5.00
+
+        return {
+            "vector_id": phys_prop.candidate_id,
+            "campaign_title": somatic_cand.title,
+            "phys_verdict": phys_rec.verdict.value,
+            "ky_verdict": ky_rec["omega_verdict"],
+            "joint_verdict": joint_verdict,
+            "voltage_v_dc": voltage,
+            "mu_supra": ky_rec["mu_supra"],
+            "r_energy_j": phys_rec.r_energy_j,
+            "r_path_m": phys_rec.r_path_m,
+            "actuator_x_m": phys_rec.final_pos_m if joint_verdict == "OPEN" else 0.00,
+            "ky_ascii": ky_rec["ky_ascii"],
+            "ontological_class": ky_rec["ontological_class"],
+            "worm_seal": f"0x{phys_rec.worm_hash[:8]}_{str(ky_rec['worm_hash'])[:8]}",
+        }
+
+
 
 
 class TestDavissonFineOct22CoherenceGateEngine(unittest.TestCase):
@@ -1628,6 +1670,110 @@ class TestDavissonFineOct22CoherenceGateEngine(unittest.TestCase):
         self.assertGreaterEqual(res_b["mu_supra"], 0.0)
         self.assertEqual(res_b["omega_verdict"], "OPEN")
         self.assertEqual(res_b["d_latch_voltage"], 5.00)
+
+    def test_17_unified_vector_1_f3_bloff_flawless_sheen_kills(self) -> None:
+        verifier = UnifiedLocusZeroVerifier()
+        phys = CandidateProposal(
+            candidate_id="V1_F3_BLOFF_SHEEN",
+            total_nodes_n=100, disordered_nodes_k=4,
+            period_p=5, period_q=8, observed_steps_l=12,
+            mass_kg=2.50, initial_pos_m=0.00, initial_vel_ms=0.00,
+            target_pos_m=4.00, applied_force_n=None, duration_dt_s=None,
+            reported_work_ext_j=0.00, claimed_delta_p_kgms=20.0,
+        )
+        som = SomaticCampaignCandidate(
+            campaign_id="KC-SHEEN-2026-A",
+            title="The Flawless Sheen (Det sterile gitteret)",
+            classification="Clean Form / Bløff",
+            u_raw=10.0, c_k=5.0, s_irr=15.0, r_w=8.0,
+            has_material_warrant=False,
+            rox_payload=0xA5A5, rox_mask_in=0x5A5A, rox_mask_out=0x5A5A,
+            plasma_noise_pi=0.75,
+            ky_expression="(○→●)≠ ✕",
+        )
+        res = verifier.evaluate_joint_vector(phys, som)
+        self.assertEqual(res["joint_verdict"], "KILL")
+        self.assertEqual(res["voltage_v_dc"], 0.00)
+        self.assertEqual(res["r_energy_j"], 80.00)
+        self.assertLess(res["mu_supra"], 0.0)
+
+    def test_18_unified_vector_2_f2_sturmian_ghost_holds(self) -> None:
+        verifier = UnifiedLocusZeroVerifier()
+        phys = CandidateProposal(
+            candidate_id="V2_F2_STURMIAN_HOLD",
+            total_nodes_n=100, disordered_nodes_k=4,
+            period_p=5, period_q=8, observed_steps_l=11,
+            mass_kg=2.50, initial_pos_m=0.00, initial_vel_ms=0.00,
+            target_pos_m=4.00, applied_force_n=None, duration_dt_s=None,
+            reported_work_ext_j=0.00, claimed_delta_p_kgms=None,
+        )
+        som = SomaticCampaignCandidate(
+            campaign_id="KC-BUFFER-D1",
+            title="Varmekammer Asyl (Sturmian Ghost Window)",
+            classification="Reversible Buffer",
+            u_raw=40.0, c_k=20.0, s_irr=8.0, r_w=6.0,
+            has_material_warrant=True,
+            rox_payload=0xA5A5, rox_mask_in=0x5A5A, rox_mask_out=0x5A5A,
+            plasma_noise_pi=0.35,
+            ky_expression="(□~□) ‖",
+        )
+        res = verifier.evaluate_joint_vector(phys, som)
+        self.assertEqual(res["joint_verdict"], "HOLD")
+        self.assertEqual(res["voltage_v_dc"], 0.00)
+        self.assertEqual(res["actuator_x_m"], 0.00)
+
+    def test_19_unified_vector_3_unaudited_commit_breach_kills(self) -> None:
+        verifier = UnifiedLocusZeroVerifier()
+        phys = CandidateProposal(
+            candidate_id="V3_UNAUDITED_COMMIT_BREACH",
+            total_nodes_n=100, disordered_nodes_k=4,
+            period_p=5, period_q=8, observed_steps_l=12,
+            mass_kg=2.50, initial_pos_m=0.00, initial_vel_ms=0.00,
+            target_pos_m=4.00, applied_force_n=5.00, duration_dt_s=2.00,
+            reported_work_ext_j=20.00, claimed_delta_p_kgms=10.0,
+        )
+        som = SomaticCampaignCandidate(
+            campaign_id="KC-UNAUDITED-2026",
+            title="Unaudited Actuation Attempt",
+            classification="Audit Law Violation",
+            u_raw=100.0, c_k=35.0, s_irr=10.0, r_w=15.0,
+            has_material_warrant=True,
+            rox_payload=0xA5A5, rox_mask_in=0x5A5A, rox_mask_out=0x5A5A,
+            plasma_noise_pi=0.12,
+            ky_expression="✓(○→∅→□→◇⇒●) ▸",
+        )
+        res = verifier.evaluate_joint_vector(phys, som)
+        self.assertEqual(res["phys_verdict"], "OPEN")
+        self.assertEqual(res["ky_verdict"], "KILL")
+        self.assertEqual(res["joint_verdict"], "KILL")
+        self.assertEqual(res["voltage_v_dc"], 0.00)
+
+    def test_20_unified_vector_4_f1_boff_somatic_scar_opens(self) -> None:
+        verifier = UnifiedLocusZeroVerifier()
+        phys = CandidateProposal(
+            candidate_id="V4_F1_BOFF_SOMATIC_SCAR",
+            total_nodes_n=100, disordered_nodes_k=4,
+            period_p=5, period_q=8, observed_steps_l=12,
+            mass_kg=2.50, initial_pos_m=0.00, initial_vel_ms=0.00,
+            target_pos_m=4.00, applied_force_n=5.00, duration_dt_s=2.00,
+            reported_work_ext_j=20.00, claimed_delta_p_kgms=10.0,
+        )
+        som = SomaticCampaignCandidate(
+            campaign_id="KC-ARR-2026-025",
+            title="Det Sårede Gitteret (The Somatic Scar)",
+            classification="Dirty Form / Bøff",
+            u_raw=100.0, c_k=35.0, s_irr=10.0, r_w=15.0,
+            has_material_warrant=True,
+            rox_payload=0xA5A5, rox_mask_in=0x5A5A, rox_mask_out=0x5A5A,
+            plasma_noise_pi=0.12,
+            ky_expression="✓(○→∅→□→◇⇒●)#! ▸",
+        )
+        res = verifier.evaluate_joint_vector(phys, som)
+        self.assertEqual(res["joint_verdict"], "OPEN")
+        self.assertEqual(res["voltage_v_dc"], 5.00)
+        self.assertEqual(res["actuator_x_m"], 4.00)
+        self.assertEqual(res["r_energy_j"], 0.00)
+        self.assertGreaterEqual(res["mu_supra"], 0.0)
 
 
 if __name__ == "__main__":
