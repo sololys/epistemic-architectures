@@ -200,6 +200,36 @@ def aps_anomaly_inflow_index(
     return int(nearest_int), residual_q
 
 
+def davisson_fine_newton_ky_v15_invariants_valid(
+    mass_kg: float = 2.50,
+    force_n: float = 5.00,
+    dt_s: float = 2.00,
+    work_ext_j: float = 20.00,
+    period_p: int = 5,
+    period_q: int = 8,
+    observed_steps_l: int = 12,
+    disordered_k: int = 4,
+    total_nodes_n: int = 100,
+    ky_expr: str = "✓(○→∅→□→◇⇒●)#! ▸",
+) -> bool:
+    """
+    Pure L1 check unifying:
+      1. Davisson spatial coherence: k <= sqrt(N)
+      2. Fine-Wilf temporal horizon: L >= p + q - gcd(p, q)
+      3. Newtonian P-path integration: R_E == 0 and R_p == 0
+      4. KY v1.5 disambiguated EBNF audit & commit seal (#! and ▸)
+    """
+    if disordered_k > math.sqrt(total_nodes_n):
+        return False
+    if observed_steps_l < (period_p + period_q - math.gcd(period_p, period_q)):
+        return False
+    v_end = (force_n / mass_kg) * dt_s
+    ek_end = 0.5 * mass_kg * (v_end ** 2)
+    if abs(ek_end - work_ext_j) > 1e-6 or abs(mass_kg * v_end - force_n * dt_s) > 1e-6:
+        return False
+    return ky_expr.startswith("✓(") and ("●" in ky_expr) and ("#!" in ky_expr) and ky_expr.endswith("▸")
+
+
 class TestL1LawPure(unittest.TestCase):
     def test_involutive_residual_pure(self) -> None:
         res_ok, _ = involutive_residual_norm((2.0, 3.0), (1.5, -1.0), (0.0, 0.0))
@@ -250,6 +280,13 @@ class TestL1LawPure(unittest.TestCase):
         idx, res_q = aps_anomaly_inflow_index(Fraction(5, 2), Fraction(1, 1), 0)
         self.assertEqual(idx, 2)
         self.assertEqual(res_q, Fraction(0, 1))
+
+    def test_davisson_fine_newton_ky_v15_pure(self) -> None:
+        self.assertTrue(davisson_fine_newton_ky_v15_invariants_valid())
+        self.assertFalse(davisson_fine_newton_ky_v15_invariants_valid(observed_steps_l=11))
+        self.assertFalse(davisson_fine_newton_ky_v15_invariants_valid(disordered_k=25, total_nodes_n=100))
+        self.assertFalse(davisson_fine_newton_ky_v15_invariants_valid(work_ext_j=0.0))
+        self.assertFalse(davisson_fine_newton_ky_v15_invariants_valid(ky_expr="(○→●)≠ ✕"))
 
 
 if __name__ == "__main__":
