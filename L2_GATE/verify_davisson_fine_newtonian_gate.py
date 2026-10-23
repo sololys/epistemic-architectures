@@ -26,10 +26,11 @@ Verifies:
 from __future__ import annotations
 
 from dataclasses import dataclass
+from enum import Enum
 import hashlib
 import json
 import math
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 import unittest
 
 
@@ -494,6 +495,217 @@ class TestDavissonFineNewtonianGate(unittest.TestCase):
             claimed_x1_m=4.00, direct_memory_injection_attempt=True
         )
         self.assertEqual(mem_inj.gate_state, GATE_KILL)
+
+    def test_08_ky_consequence_gate_engine_d0_to_d3_realization_grammar(self) -> None:
+        engine = KYConsequenceGateEngine()
+        c_f3, c_f2, c_l11, c_f1 = build_canonical_ky_candidates()
+
+        rec_f3 = engine.evaluate(c_f3)
+        self.assertEqual(rec_f3.verdict, GateVerdict.KILL)
+        self.assertEqual(rec_f3.layer_reached, DomainLayer.KILLED)
+        self.assertEqual(rec_f3.r_energy_j, 80.00)
+
+        rec_f2 = engine.evaluate(c_f2)
+        self.assertEqual(rec_f2.verdict, GateVerdict.HOLD)
+        self.assertEqual(rec_f2.r_path_m, 4.00)
+
+        rec_l11 = engine.evaluate(c_l11)
+        self.assertEqual(rec_l11.verdict, GateVerdict.HOLD)
+
+        rec_f1 = engine.evaluate(c_f1)
+        self.assertEqual(rec_f1.verdict, GateVerdict.OPEN)
+        self.assertEqual(rec_f1.layer_reached, DomainLayer.D3_WITNESS)
+        self.assertEqual(rec_f1.voltage_v_dc, 5.00)
+        self.assertEqual(rec_f1.final_pos_m, 4.00)
+        self.assertEqual(rec_f1.final_vel_ms, 4.00)
+
+
+class GateVerdict(Enum):
+    OPEN = "OPEN"
+    HOLD = "HOLD"
+    KILL = "KILL"
+
+
+class DomainLayer(Enum):
+    D0_RAW = "D0_RAW (o)"
+    D1_REVERSIBLE = "D1_REVERSIBLE (emptyset)"
+    D1_2_STRUCT = "D1_2_STRUCT (Box)"
+    D1_5_VIABILITY = "D1_5_VIABILITY (diamond)"
+    D2_PRE_WARRANT = "D2_PRE_WARRANT (J_t^-)"
+    D2_COMMITTED = "D2_COMMITTED (bullet)"
+    D3_WITNESS = "D3_WITNESS (#!)"
+    KILLED = "KILLED (bot)"
+
+
+@dataclass(frozen=True)
+class CandidateProposal:
+    candidate_id: str
+    total_nodes_n: int
+    disordered_nodes_k: int
+    period_p: int
+    period_q: int
+    observed_steps_l: int
+    mass_kg: float
+    initial_pos_m: float
+    initial_vel_ms: float
+    target_pos_m: float
+    applied_force_n: Optional[float]
+    duration_dt_s: Optional[float]
+    reported_work_ext_j: float
+    claimed_delta_p_kgms: Optional[float]
+    rox_mask_in: int = 0x5A5A5A5A
+    rox_mask_out: int = 0x5A5A5A5A
+
+
+@dataclass(frozen=True)
+class GateEvaluationRecord:
+    candidate_id: str
+    verdict: GateVerdict
+    layer_reached: DomainLayer
+    voltage_v_dc: float
+    ky_glyph: str
+    r_energy_j: float
+    r_momentum_kgms: float
+    r_path_m: float
+    final_pos_m: float
+    final_vel_ms: float
+    reason: str
+    worm_hash: str
+
+
+class KYConsequenceGateEngine:
+    EPSILON: float = 1e-6
+
+    def __init__(self, genesis_seed: str = "LOCUS_ZERO_0xABCDEF00") -> None:
+        self._worm_chain: List[str] = [
+            hashlib.sha256(genesis_seed.encode("ascii")).hexdigest()
+        ]
+        self.state_x_m: float = 0.00
+        self.state_v_ms: float = 0.00
+
+    @staticmethod
+    def rox_involutive_check(payload_bits: int, mask_in: int, mask_out: int) -> bool:
+        if mask_in != mask_out:
+            return False
+        return ((payload_bits ^ mask_in) ^ mask_out) == payload_bits
+
+    @staticmethod
+    def fine_wilf_horizon(p: int, q: int) -> int:
+        return p + q - math.gcd(p, q)
+
+    def _seal_worm(self, payload: str) -> str:
+        prev_hash = self._worm_chain[-1]
+        new_hash = hashlib.sha256(f"{prev_hash}||{payload}".encode("ascii")).hexdigest()
+        self._worm_chain.append(new_hash)
+        return new_hash
+
+    def evaluate(self, prop: CandidateProposal) -> GateEvaluationRecord:
+        if not self.rox_involutive_check(0x10101, prop.rox_mask_in, prop.rox_mask_out):
+            return self._finalize(
+                prop, GateVerdict.KILL, DomainLayer.KILLED, 0.00,
+                "(o -> Box) != X", 0.0, 0.0, 0.0,
+                "ROX_FAIL: Mask mutated during mirror roundtrip."
+            )
+        k_star = math.sqrt(prop.total_nodes_n)
+        if prop.disordered_nodes_k > k_star:
+            return self._finalize(
+                prop, GateVerdict.KILL, DomainLayer.KILLED, 0.00,
+                "(o -> bullet) != X", 0.0, 0.0, 0.0,
+                f"DAVISSON_KILL: Disordered grains k={prop.disordered_nodes_k} > k*={k_star:.2f} (Polycrystalline scrambling)."
+            )
+        if prop.claimed_delta_p_kgms is not None and prop.applied_force_n is None:
+            required_ek = (prop.claimed_delta_p_kgms ** 2) / (2.0 * prop.mass_kg)
+            r_energy = abs(required_ek - prop.reported_work_ext_j)
+            if r_energy > self.EPSILON:
+                return self._finalize(
+                    prop, GateVerdict.KILL, DomainLayer.KILLED, 0.00,
+                    "(o -> bullet) != X", r_energy, prop.claimed_delta_p_kgms,
+                    abs(prop.target_pos_m - self.state_x_m),
+                    f"NEWTON_KILL: Energy residual breach R_E={r_energy:.2f} J (Claimed dp={prop.claimed_delta_p_kgms} with W_ext={prop.reported_work_ext_j} J)."
+                )
+        l_star = self.fine_wilf_horizon(prop.period_p, prop.period_q)
+        if prop.observed_steps_l < l_star:
+            return self._finalize(
+                prop, GateVerdict.HOLD, DomainLayer.D1_5_VIABILITY, 0.00,
+                "(Box ~ Box) ||", 0.0, 0.0, abs(prop.target_pos_m - self.state_x_m),
+                f"FINE_WILF_HOLD: Window L={prop.observed_steps_l} < L*={l_star} (Sub-horizon Sturmian ghost risk)."
+            )
+        if prop.applied_force_n is None or prop.duration_dt_s is None:
+            r_path = abs(prop.target_pos_m - self.state_x_m)
+            return self._finalize(
+                prop, GateVerdict.HOLD, DomainLayer.D1_5_VIABILITY, 0.00,
+                "(Box ~ Box) ||", 0.0, 0.0, r_path,
+                f"NEWTON_HOLD: Unwarranted NP-point (x_target={prop.target_pos_m:.2f} m) without integration path F(t), dt."
+            )
+        accel = prop.applied_force_n / prop.mass_kg
+        v_end = prop.initial_vel_ms + accel * prop.duration_dt_s
+        x_end = prop.initial_pos_m + prop.initial_vel_ms * prop.duration_dt_s + 0.5 * accel * (prop.duration_dt_s ** 2)
+        ek_start = 0.5 * prop.mass_kg * (prop.initial_vel_ms ** 2)
+        ek_end = 0.5 * prop.mass_kg * (v_end ** 2)
+        impulse = prop.applied_force_n * prop.duration_dt_s
+        delta_p = prop.mass_kg * (v_end - prop.initial_vel_ms)
+        r_energy = abs((ek_end - ek_start) - prop.reported_work_ext_j)
+        r_momentum = abs(delta_p - impulse)
+        r_path = abs(prop.target_pos_m - x_end)
+        if r_energy > self.EPSILON or r_momentum > self.EPSILON or r_path > self.EPSILON:
+            return self._finalize(
+                prop, GateVerdict.KILL, DomainLayer.KILLED, 0.00,
+                "(o -> bullet) != X", r_energy, r_momentum, r_path,
+                f"INTEGRATION_KILL: Residual mismatch (R_E={r_energy:.4f}, R_p={r_momentum:.4f}, R_x={r_path:.4f})."
+            )
+        self.state_x_m = x_end
+        self.state_v_ms = v_end
+        return self._finalize(
+            prop, GateVerdict.OPEN, DomainLayer.D3_WITNESS, 5.00,
+            "check(o -> emptyset -> Box -> diamond => bullet)#! |>",
+            r_energy, r_momentum, r_path,
+            "OPEN_REALIZED: Crystal coherent, Fine-Wilf locked, P-path integrated and WORM-sealed."
+        )
+
+    def _finalize(
+        self, prop: CandidateProposal, verdict: GateVerdict, layer: DomainLayer,
+        voltage: float, glyph: str, r_e: float, r_p: float, r_x: float, reason: str,
+    ) -> GateEvaluationRecord:
+        log_entry = (
+            f"ID={prop.candidate_id}|VERDICT={verdict.value}|V={voltage:.2f}|"
+            f"X={self.state_x_m:.2f}|V_MS={self.state_v_ms:.2f}|R_E={r_e:.2f}"
+        )
+        worm_hash = self._seal_worm(log_entry)
+        return GateEvaluationRecord(
+            candidate_id=prop.candidate_id, verdict=verdict, layer_reached=layer,
+            voltage_v_dc=voltage, ky_glyph=glyph, r_energy_j=r_e, r_momentum_kgms=r_p,
+            r_path_m=r_x, final_pos_m=self.state_x_m, final_vel_ms=self.state_v_ms,
+            reason=reason, worm_hash=worm_hash[:16],
+        )
+
+
+def build_canonical_ky_candidates() -> Tuple[CandidateProposal, ...]:
+    return (
+        CandidateProposal(
+            candidate_id="F3_ENERGY_CONTRADICTION",
+            total_nodes_n=100, disordered_nodes_k=4, period_p=5, period_q=8, observed_steps_l=12,
+            mass_kg=2.50, initial_pos_m=0.00, initial_vel_ms=0.00, target_pos_m=4.00,
+            applied_force_n=None, duration_dt_s=None, reported_work_ext_j=0.00, claimed_delta_p_kgms=20.0,
+        ),
+        CandidateProposal(
+            candidate_id="F2_UNWARRANTED_NP_POINT",
+            total_nodes_n=100, disordered_nodes_k=4, period_p=5, period_q=8, observed_steps_l=12,
+            mass_kg=2.50, initial_pos_m=0.00, initial_vel_ms=0.00, target_pos_m=4.00,
+            applied_force_n=None, duration_dt_s=None, reported_work_ext_j=0.00, claimed_delta_p_kgms=None,
+        ),
+        CandidateProposal(
+            candidate_id="FINE_STURMIAN_GHOST_L11",
+            total_nodes_n=100, disordered_nodes_k=4, period_p=5, period_q=8, observed_steps_l=11,
+            mass_kg=2.50, initial_pos_m=0.00, initial_vel_ms=0.00, target_pos_m=4.00,
+            applied_force_n=5.00, duration_dt_s=2.00, reported_work_ext_j=20.00, claimed_delta_p_kgms=10.0,
+        ),
+        CandidateProposal(
+            candidate_id="F1_AUTHENTICATED_P_PATH",
+            total_nodes_n=100, disordered_nodes_k=4, period_p=5, period_q=8, observed_steps_l=12,
+            mass_kg=2.50, initial_pos_m=0.00, initial_vel_ms=0.00, target_pos_m=4.00,
+            applied_force_n=5.00, duration_dt_s=2.00, reported_work_ext_j=20.00, claimed_delta_p_kgms=10.0,
+        ),
+    )
 
 
 if __name__ == "__main__":
