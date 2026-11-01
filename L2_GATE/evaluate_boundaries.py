@@ -30,7 +30,10 @@ from L1_LAW.invariants_pure import (
     g2_algebraic_curvature,
     g2_holonomic_spiral_state,
     involutive_residual_norm,
+    ky_rox_re_admission_contract,
+    lyapunov_prediction_horizon,
     monotone_fuse_valid,
+    preimage_viability_audit,
     rational_conservation_residual,
     relational_gram_drift,
     riccati_are_descent_inner_product,
@@ -65,6 +68,10 @@ def evaluate_gate(
     bft_verdict = asymmetric_bft_quorum_verdict(fault_tolerance_f=1, allow_votes=3, veto_votes=0)
     aps_idx, aps_res_q = aps_anomaly_inflow_index(Fraction(5, 2), Fraction(1, 1), 0)
 
+    ky_rox_contract = ky_rox_re_admission_contract(q_rox=1.0, q_readmit=0.5)
+    t_star_horizon = lyapunov_prediction_horizon(lam=0.5, d_crit=0.54, d_0=0.054)
+    preimage_ok = preimage_viability_audit(y_state=0.5, psi_bounds=(0.0, 1.0), fixed_point_tol=0.05)
+
     if (
         res_iso > eps_iso
         or delta_g > tau_gram
@@ -77,6 +84,9 @@ def evaluate_gate(
         or not rosetta_ok
         or bft_verdict == "KILL"
         or aps_res_q != Fraction(0, 1)
+        or ky_rox_contract == "TRAP_G_SHADOW"
+        or t_star_horizon <= 0.0
+        or not preimage_ok
     ):
         verdict = "KILL"
         voltage_v = 0.00
@@ -99,7 +109,10 @@ def evaluate_gate(
         "fuse_monotone": fuse_ok,
         "g2_curvature_kappa": round(kappa_g2, 6),
         "g2_zd_distance": round(dist_zd, 6),
+        "ky_rox_contract": ky_rox_contract,
         "legal_authority": "NONE_HUMAN_L01_REQUIRED",
+        "lyapunov_t_star": round(t_star_horizon, 6),
+        "preimage_viable": preimage_ok,
         "residual_iso": round(res_iso, 12),
         "rosetta3_isometry": rosetta_ok,
         "verdict": verdict,

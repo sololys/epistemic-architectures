@@ -230,6 +230,56 @@ def davisson_fine_newton_ky_v15_invariants_valid(
     return ky_expr.startswith("✓(") and ("●" in ky_expr) and ("#!" in ky_expr) and ky_expr.endswith("▸")
 
 
+# --- KY_ROX_SCOPE_GATE_V0_2 & TYPED CONSEQUENCE LAW (2026-10-31) ---
+
+
+def ky_rox_re_admission_contract(q_rox: float, q_readmit: float) -> str:
+    """
+    Invariant 1 & 5: ROX-isometri (q_rox == 1.0) vs. Banach-kontraksjon R := Pi_A o F o Phi (0 <= q_readmit < 1).
+    Enhver overtredelse rutes deterministisk til G_shadow (TRAP).
+    """
+    if not (math.isfinite(q_rox) and math.isfinite(q_readmit)):
+        return "TRAP_G_SHADOW"
+    if abs(q_rox - 1.0) > 1e-12 or not (0.0 <= q_readmit < 1.0):
+        return "TRAP_G_SHADOW"
+    return "ADMIT_CONTRACTIVE_W2"
+
+
+def lyapunov_prediction_horizon(lam: float, d_crit: float, d_0: float) -> float:
+    """
+    Invariant 4: Prediksjonshorisont t^* = (1 / lambda) * ln(D_crit / D_0).
+    Feiler lukket til 0.0 ved ikke-positiv divergens eller ugyldig terskelratio.
+    """
+    if not (math.isfinite(lam) and math.isfinite(d_crit) and math.isfinite(d_0)):
+        return 0.0
+    if lam <= 0.0 or d_0 <= 0.0 or d_crit <= d_0:
+        return 0.0
+    # Kvantiser til 5 desimaler (10^-5 s) for å eliminere libm ULP-drift i L2 SHA-256
+    return round((1.0 / lam) * math.log(d_crit / d_0), 5)
+
+
+def preimage_viability_audit(
+    y_state: float,
+    psi_bounds: Tuple[float, float],
+    fixed_point_tol: float,
+) -> bool:
+    """
+    Invariant 2 & 3: Fikspunkt vs. Viability og Preimage-audit Psi(y).
+    Verifiserer at tilstanden y tilhører det kompakte viabilitetsdomenet Psi^{-1}(K).
+    """
+    low, high = psi_bounds
+    if not (
+        math.isfinite(y_state)
+        and math.isfinite(low)
+        and math.isfinite(high)
+        and math.isfinite(fixed_point_tol)
+    ):
+        return False
+    if low > high or fixed_point_tol < 0.0:
+        return False
+    return (low + fixed_point_tol) <= y_state <= (high - fixed_point_tol)
+
+
 class TestL1LawPure(unittest.TestCase):
     def test_involutive_residual_pure(self) -> None:
         res_ok, _ = involutive_residual_norm((2.0, 3.0), (1.5, -1.0), (0.0, 0.0))
@@ -287,6 +337,36 @@ class TestL1LawPure(unittest.TestCase):
         self.assertFalse(davisson_fine_newton_ky_v15_invariants_valid(disordered_k=25, total_nodes_n=100))
         self.assertFalse(davisson_fine_newton_ky_v15_invariants_valid(work_ext_j=0.0))
         self.assertFalse(davisson_fine_newton_ky_v15_invariants_valid(ky_expr="(○→●)≠ ✕"))
+
+    def test_ky_rox_re_admission_contract_pure(self) -> None:
+        self.assertEqual(ky_rox_re_admission_contract(1.0, 0.5), "ADMIT_CONTRACTIVE_W2")
+        self.assertEqual(ky_rox_re_admission_contract(1.0, 0.0), "ADMIT_CONTRACTIVE_W2")
+        self.assertEqual(ky_rox_re_admission_contract(1.0, 1.0), "TRAP_G_SHADOW")
+        self.assertEqual(ky_rox_re_admission_contract(1.0, 1.2), "TRAP_G_SHADOW")
+        self.assertEqual(ky_rox_re_admission_contract(1.0, -0.1), "TRAP_G_SHADOW")
+        self.assertEqual(ky_rox_re_admission_contract(0.99, 0.5), "TRAP_G_SHADOW")
+        self.assertEqual(ky_rox_re_admission_contract(float("nan"), 0.5), "TRAP_G_SHADOW")
+        self.assertEqual(ky_rox_re_admission_contract(1.0, float("inf")), "TRAP_G_SHADOW")
+
+    def test_lyapunov_prediction_horizon_pure(self) -> None:
+        t_star = lyapunov_prediction_horizon(0.5, math.e, 1.0)
+        self.assertAlmostEqual(t_star, 2.0, places=12)
+        self.assertEqual(lyapunov_prediction_horizon(0.0, 10.0, 1.0), 0.0)
+        self.assertEqual(lyapunov_prediction_horizon(-0.5, 10.0, 1.0), 0.0)
+        self.assertEqual(lyapunov_prediction_horizon(0.5, 1.0, 1.0), 0.0)
+        self.assertEqual(lyapunov_prediction_horizon(0.5, 0.5, 1.0), 0.0)
+        self.assertEqual(lyapunov_prediction_horizon(float("nan"), 10.0, 1.0), 0.0)
+        self.assertEqual(lyapunov_prediction_horizon(0.5, float("inf"), 1.0), 0.0)
+
+    def test_preimage_viability_audit_pure(self) -> None:
+        self.assertTrue(preimage_viability_audit(0.5, (0.0, 1.0), 0.05))
+        self.assertTrue(preimage_viability_audit(0.05, (0.0, 1.0), 0.05))
+        self.assertFalse(preimage_viability_audit(0.04, (0.0, 1.0), 0.05))
+        self.assertFalse(preimage_viability_audit(0.96, (0.0, 1.0), 0.05))
+        self.assertFalse(preimage_viability_audit(0.5, (1.0, 0.0), 0.05))
+        self.assertFalse(preimage_viability_audit(0.5, (0.0, 1.0), -0.01))
+        self.assertFalse(preimage_viability_audit(float("nan"), (0.0, 1.0), 0.05))
+        self.assertFalse(preimage_viability_audit(0.5, (0.0, float("inf")), 0.05))
 
 
 if __name__ == "__main__":

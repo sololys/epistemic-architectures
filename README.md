@@ -19,7 +19,7 @@ python3 L2_GATE/verify_w2_five_proof_chains.py         # Verifies all 5 W^2 math
 python3 L2_GATE/verify_norcics_digital_twin_llm_gate.py # Verifies SFI NORCICS / CPS4CIP Domains I-IV (4/4 PASS, 0.000s)
 python3 L2_GATE/verify_mpolynomial_1wl_molecular_gate.py # Verifies M-Polynomial & 1-WL Molecular Gate Pi_K ([Fe7MoS9C], 6/6 PASS)
 python3 L2_GATE/verify_pwr2_scrambling_collective_gate.py # Verifies PWR2 & Power-Law Spin Scrambling vs. Collective Gate (k*~sqrt(N), 6/6 PASS)
-python3 L2_GATE/verify_davisson_fine_newtonian_gate.py # Verifies Davisson-Fine-Newtonian Consequence Gate (50 deg Bragg + L*=12 + m_A=2.50kg F1/F2/F3, 7/7 PASS)
+python3 L2_GATE/verify_davisson_fine_newtonian_gate.py # Verifies Davisson-Fine-Newtonian Consequence Gate (UnifiedLocusZeroVerifier, 20/20 PASS)
 ```
 
 <details>
