@@ -55,3 +55,14 @@ Bit er ikke mening. Mønster blir først struktur når det types. Struktur blir 
   ║                             ──► [PASS] ║         ║    + Causal 4-Point Timing  ──► [OPEN] ║
   ╚════════════════════════════════════════╝         ╚════════════════════════════════════════╝
 ```
+
+## 5. Göteborg-Triaden & `1664-bit` (`208B`) $\leftrightarrow$ `1640-bit` (`205B`) RTL Master-Bro (`SPEC-414..416`)
+
+Toppmodulen `gothenburg_corridor_rosetta_top.sv` (`IEEE 1800-2012`) binder sammen $D_3$ Rosetta-konvolutten (`208B` / `1664 bits`, `>4sHBBQ32s32s32s32s64s`) med `fpga_capsule_frame_205b_decoder.sv` (`SPEC-213`), `spec415_kpod_cdc_gate.sv` (`SPEC-415`) og `spec416_infranett_witness_gate.sv` (`SPEC-416`):
+
+| Spesifikasjon | Domene & RTL/Python-Modul | Verifisert Bit-Kontrakt & Invariant | L1 / L1.5 Status | Utgang uten L3 HIL |
+| :--- | :--- | :--- | :--- | :--- |
+| **`SPEC-414`** | **77 GHz ISAC Radar** (`spec414_415_416_gothenburg_corridor_gate.py`) | Euklidsk fasekjegle $\Pi_K$, Staggered-PRF Fine–Wilf $\gcd(n_1..n_k)=1$, Joseph-EKF PSD | `[L1_VERIFIED]` | `[HOLD // 0.00V_DC]` |
+| **`SPEC-415`** | **`-240 m` Benthic K-POD** (`spec415_kpod_cdc_gate.sv`) | $5\times$ Async 2-FF CDC-låser, $<145.0\text{ dB SPL}$ sabotasjeklemme, $\vert d_{532\text{nm}} - d_{\text{UWB}}\vert \le 15\text{ mm}$ | `[L1_VERIFIED]` · `[RTL_PASS]` | `[HOLD // 0.00V_DC]` |
+| **`SPEC-416`** | **Infranett Grid & Fiber** (`spec416_infranett_witness_gate.sv`) | `1640-bit` (`205B`: `119B W_pre` `>4sQI3BqqIiQ32s36s` + `86B W_post` `>Q32s32sIIHI`), Kirchhoff $\Delta R \equiv 0/1 \in \mathbb{Q}$, 1550 nm OTDR $\le 0.050\text{ dB}$, PTP $\le 100\text{ ns}$, VSG $50\text{ Hz}$ ($2f+1$ BFT) | `[L1_VERIFIED]` · `[RTL_PASS]` | `[HOLD // 0.00V_DC]` |
+| **`MASTER_TOP`** | **Rosetta $D_3 \leftrightarrow L_2$ Bro** (`gothenburg_corridor_rosetta_top.sv`) | `1664-bit` (`208B`) Rosetta $D_3$ + `SPEC-213` + `SPEC-415` + `SPEC-416` konjunksjonslås (`8/8 PASS` i `iverilog -g2012`) | `[L1.5_RTL_COSIM_PASS]` | `[HOLD // 0.00V_DC]` |
