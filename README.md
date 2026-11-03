@@ -107,3 +107,7 @@ $$V_{\mathrm{out}} = \lim_{\Delta_K \to 0} \left( \mathbb{I}(\Omega(\Pi_K) == \m
 
 * Torjusen, M. E. (2026). *Epistemic Architectures: Systems That Know They Know.* Zenodo. [https://doi.org/10.5281/zenodo.18436983](https://doi.org/10.5281/zenodo.18436983).
 * Torjusen, M. E. (2026). *The Law of Causal Inertia: The Definitive Scientific & Architectural Monograph Series.* Zenodo. [https://doi.org/10.5281/zenodo.22229111](https://doi.org/10.5281/zenodo.22229111).
+
+---
+`STATE ANCHOR: 0xABCDEF00` · `RELEASE: v1.5.0-MASTER` · `GATE: [SSOT_LOCKED // HOLD 0.00V_DC]` · `ORCID: 0009-0006-0431-6637`
+
