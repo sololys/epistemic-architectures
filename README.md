@@ -1,5 +1,10 @@
 # EPISTEMIC ARCHITECTURES // MORANDI-CORE PROOF INDEX
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24032510.svg)](https://doi.org/10.5281/zenodo.24032510)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0006--0431--6637-A6CE39?style=flat-square)](https://orcid.org/0009-0006-0431-6637)
+[![Granitum Physics](https://img.shields.io/badge/SALON-Granitum_Physics_(LinkedIn)-0A66C2?style=flat-square)](https://www.linkedin.com/groups/40622443/)
+
+
 $$\boxed{\text{GENERATION} \neq \text{AUTHORIZATION} \neq \text{WITNESSED CONSEQUENCE}}$$
 
 $$\Phi(x_t) \;\xrightarrow{\;\text{Candidate}\;}\; \Pi_K \;\xrightarrow{\;\text{Residual }\Delta_K\;}\; \Omega \in \{\mathrm{KILL}, \mathrm{HOLD}, \mathrm{OPEN}\} \;\xrightarrow{\;\text{Pre-Commit}\;}\; W^2 = \langle W_{\mathrm{machine}}, W_{\mathrm{human}}\rangle$$

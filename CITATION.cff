@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, formal specification, or verification harness, please cite it using the metadata below."
+authors:
+  - family-names: "Torjusen"
+    given-names: "Marius Egerhei"
+    orcid: "https://orcid.org/0009-0006-0431-6637"
+    affiliation: "Granitum Physics // Sovereign Consequence Architecture, Norway"
+title: "Formal Realization Grammar, KY–Nash Mechanism Design & IT/OT Consequence Specifications (sololys/epistemic-architectures v1.5.1)"
+version: "1.5.1"
+doi: "10.5281/zenodo.24032510"
+date-released: "2026-11-07"
+url: "https://github.com/sololys/epistemic-architectures"
+repository-code: "https://github.com/sololys/epistemic-architectures"
+license: "MIT"
+keywords:
+  - "formal-methods"
+  - "mechanism-design"
+  - "nash-equilibrium"
+  - "catastrophe-theory"
+  - "it-ot-security"
+  - "control-theory"
+  - "critical-infrastructure"
+  - "fail-closed"
