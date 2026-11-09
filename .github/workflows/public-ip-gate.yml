@@ -34,3 +34,6 @@ jobs:
 
       - name: Run SFI NORCICS / CPS4CIP Digital Twin & LLM Gate Suite
         run: python3 L2_GATE/verify_norcics_digital_twin_llm_gate.py
+
+      - name: Run Fluid/Process Control Incident Response Digital Twin Gate Demonstrator
+        run: python3 L2_GATE/verify_fluid_process_idr_twin_gate.py
