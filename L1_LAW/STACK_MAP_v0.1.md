@@ -18,7 +18,7 @@ $$\mathcal{R} = (\Phi, \Pi_K, \Omega, W) \quad \text{med} \quad x_{t+1} = \Omega
 
 ## 3. Frosne Portregistre (v1.5-MASTER Seksjon 6)
 - **Registry A (`KILL` — WORM- og Unicode-Restriksjonen):** Unicode alene og *frittstående hash-kjeder alene* får ubetinget `KILL` (`0.00 V DC`) dersom de presenteres som tilstrekkelig semantisk eller fysisk uforanderlighet. En frittstående SHA-256-kjede uten nøkkelstyrt MAC/Ed25519-signatur og bilateralt kjedeanker ($W_T^{\text{bilat}}$) hindrer ikke haletrunkering eller loggerstatning.
-- **Registry B (`HOLD` — Hardware D-Latch Gap):** Hardware D-Latch Actuation er låst til `HOLD` i påvente av fysiske telemetrilogger. Utdata fra C++- og Python-kjøringer (`dungeon_imp.cpp`, `merge_interlock.cpp`, `ky_parser.py`) er klassifisert som `OPEN_AS_SOFTWARE_DEMONSTRATION` ("deterministisk demonstrert i simuleringsmotoren" ved `0xABCDEF00`), ikke fysisk målt silisium-spenning, inntil GPIO/FPGA-loggen fra `Gemini-Core` (L2 Silicon HIL) er koblet på.
+- **Registry B (`HOLD` — Hardware D-Latch Gap):** Hardware D-Latch Actuation er låst til `HOLD` i påvente av fysiske telemetrilogger. Utdata fra C++- og Python-kjøringer (`dungeon_imp.cpp`, `merge_interlock.cpp`, `ky_parser.py`) er klassifisert som `OPEN_AS_SOFTWARE_DEMONSTRATION` ("deterministisk demonstrert i simuleringsmotoren" ved `0xABCDEF00`), ikke fysisk målt silisium-spenning, inntil GPIO/FPGA-loggen fra `L2 Silicon HIL` (Hardware-in-the-Loop) er koblet på.
 
 ## 4. Arkitekturkart: $D_0 \longrightarrow D_3$ & Port-Topologi (`0xABCDEF00`)
 
