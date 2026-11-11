@@ -61,7 +61,7 @@ Infranett forankrer derfor sine operasjonelle garantier direkte i uforanderlige 
 
 $$x_{t+1} = \Pi_{K_t}(\Phi(x_t))$$
 
-hvor $\Phi: X \to X$ genererer kandidattilstander i et uhemmet forslagsrom $\mathcal{C}_t$, mens $\Pi_{K_t}: X \to K_t$ er en idempotent projeksjon ($\Pi^2 = \Pi$) som selekterer utelukkende levedyktige, fysisk autoriserte tilstander i levedyktighetskjernen $K_t = \operatorname{Im}(\Pi)$. Dette skaper en uforstyrrelig plattform som gjør det mulig å opprettholde praktiske mønstre for distriktsautarki i sivilsamfunnet.
+hvor $\Phi: X \to X$ genererer kandidattilstander i et uhemmet forslagsrom $\mathcal{C}_t$, mens $\Pi_{K_t}: X \to K_t$ er en idempotent projeksjon ($\Pi^2 = \Pi$) som selekterer utelukkende levedyktige, fysisk autoriserte tilstander i levedyktighetskjernen $K_t = \mathrm{Im}(\Pi)$. Dette skaper en uforstyrrelig plattform som gjør det mulig å opprettholde praktiske mønstre for distriktsautarki i sivilsamfunnet.
 
 ### 2.1 Deterministisk Transaksjonskjerne: Append-Only Write-Ahead Log (WAL)
 
@@ -69,7 +69,7 @@ Kjernen i enhver Infranett-node er en krasjkonsistent og autonom datalagringsmot
 
 Formelt beregnes oppføringens unike hash som:
 
-$$\text{entry\_hash} = \operatorname{SHA-256}\left(\text{sequence\_id} \,\|\, \text{timestamp\_ms} \,\|\, \text{node\_id} \,\|\, \text{event\_type} \,\|\, \text{payload\_json} \,\|\, \text{prev\_hash}\right)$$
+$$\text{entry\_hash} = \mathrm{SHA-256}\left(\text{sequence\_id} \,\|\, \text{timestamp\_ms} \,\|\, \text{node\_id} \,\|\, \text{event\_type} \,\|\, \text{payload\_json} \,\|\, \text{prev\_hash}\right)$$
 
 For å forhindre epoch-replay og tilstandsforfalskning under oppstart eller nettverksbrudd, valideres enhver ny hendelse mot en maskinvareenklave-forankret, strengt monotont stigende sekvensteller:
 
@@ -174,7 +174,7 @@ Autentisering og kryptering utføres over et støyfylt medium via `Noise_KK` zer
 1. **HELO Handshake:** Noden og kurerkapselen utveksler sine henholdsvise nodenumre (`node_id`), statiske Ed25519 offentlige nøkler og sin nyeste rot-hash (`head_commit_record_hash`). Begge parter gjennomfører `Noise_KK`-validering og bekrefter motpartens autorisasjon i lokal nøkkelring.
 2. **Delta Discovery:** Noden og kapselen sammenligner sekvensmarkører ($C_{\text{hw}}$) for å identifisere differansen i sine henholdsvise hendelseslogger. Noden spør kureren etter manglende sekvensnumre for spesifikke kanaler, og kureren svarer med sin høyeste mottatte sekvens.
 3. **Signed Stream:** Kun de manglende hendelsene overføres som en signert datastrøm i kanonisk JSON-format i henhold til RFC 8785. Hver hendelse inneholder sin opprinnelige SHA-256 hash-kjede og signeres med avsenderens private Ed25519-nøkkel:
-   $$\sigma = \operatorname{Sign}_{\text{NodeA}}\left(\texttt{"INFRANETT-COURIER-CAPSULE:"} \,\|\, \operatorname{SHA-256}(\text{payload}_{\text{RFC8785}})\right)$$
+   $$\sigma = \mathrm{Sign}_{\text{NodeA}}\left(\texttt{"INFRANETT-COURIER-CAPSULE:"} \,\|\, \mathrm{SHA-256}(\text{payload}_{\text{RFC8785}})\right)$$
 4. **Durable Receipt & Markørframføring:** Kapselen og noden fletter de nye hendelsene inn i sine lokale WAL-strukturer via Conflict-free Replicated Data Types (CRDTs), verifiserer kjede-kontinuiteten, og genererer en signert returkvittering (*Durable Receipt*). Begge enheter flytter sin synkroniseringsmarkør (*cursor*) frem til siste bekreftede sekvensnummer ($C \ge C_{\text{hw}}$).
 
 ### 3.2 Sektorvis Implementering: Havnedrift, Vannforsyning, Energi og Kommunal Beredskap

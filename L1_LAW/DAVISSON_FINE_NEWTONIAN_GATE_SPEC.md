@@ -17,7 +17,7 @@ When critical infrastructure, autonomous sensors, or industrial actuators ($m_A 
    Polycrystalline grain disorder ($k > \sqrt{N}$) scrambles phases ($I_N \sim 1/N \to 0 \implies \mathbf{GATE::KILL}$). Annealed single-crystal order ($k \le \sqrt{N}$) preserves constructive interference ($I_N \ge 0.50$).
 
 2. **Extreme B — Combinatorial Period-Lock & Powers of Two (Nathan Jacob Fine, born Oct 22, 1916):**
-   * **Fine's Binomial Theorem (1947):** $N_p(n) = \prod_i (d_i + 1)$, so for $p = 2$, $N_2(n) = 2^{\operatorname{popcount}(n)}$, and row $n$ is unbroken ($\forall k, \binom{n}{k} \equiv 1 \pmod 2$) iff $n = 2^m - 1$.
+   * **Fine's Binomial Theorem (1947):** $N_p(n) = \prod_i (d_i + 1)$, so for $p = 2$, $N_2(n) = 2^{\mathrm{popcount}(n)}$, and row $n$ is unbroken ($\forall k, \binom{n}{k} \equiv 1 \pmod 2$) iff $n = 2^m - 1$.
    * **Fine–Wilf Horizon (1965):** A sequence with periods $p$ and $q$ is guaranteed to lock to period $\gcd(p, q)$ only when the observation window satisfies:
      $$L \ge L^* = p + q - \gcd(p, q).$$
      At $L = L^* - 1$ (e.g., $p = 5, q = 8 \implies L^* = 12, L = 11$), the Sturmian ghost word `ABAABABAABA` obeys both period $5$ and period $8$ without collapsing to $\gcd(5, 8) = 1$ ($\implies \mathbf{GATE::HOLD}$, $0.00\text{ V DC}$).

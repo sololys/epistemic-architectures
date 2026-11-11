@@ -44,9 +44,9 @@ Physical, strategic, and social reality does not emerge from the free generator 
 
 $$E(x) = x - \Pi_{\mathcal{K}}(\Phi(x)) \implies \mathbf{Reality} = \ker(E)$$
 
-Consequently, real-time realization is confined to the viable and surviving kernel $\operatorname{Viab}(\mathcal{K})$ under continued forward evolution:
+Consequently, real-time realization is confined to the viable and surviving kernel $\mathrm{Viab}(\mathcal{K})$ under continued forward evolution:
 
-$$\operatorname{Viab}(\mathcal{K}) = \left\{ x_0 \in \mathcal{X} \mid (\Pi_{\mathcal{K}} \circ \Phi)^t(x_0) \in \mathcal{K}, \; \forall t \ge 0 \right\}$$
+$$\mathrm{Viab}(\mathcal{K}) = \left\{ x_0 \in \mathcal{X} \mid (\Pi_{\mathcal{K}} \circ \Phi)^t(x_0) \in \mathcal{K}, \; \forall t \ge 0 \right\}$$
 
 Reality is not a given property of dynamic updates; it is a structural subset of possibilities that continuously survives boundary selection.
 
@@ -84,7 +84,7 @@ This geometric uniqueness proves that any deformation under our generator $\Phi$
 The relationship between raw generative physics and the protective control layers is structured as an immutable hierarchy of seven functional layers:
 
 * **L6 (Teleology):** The sovereign diachronic objective function, maximizing long-term legacy value under physical, epistemic, and constitutional constraints:
-  $$\max_{\pi \in \operatorname{Adm}} \int_0^\infty e^{-\beta t} \mathcal{U}_{\mathrm{legacy}}(\mathbf{x}_t) \, dt$$
+  $$\max_{\pi \in \mathrm{Adm}} \int_0^\infty e^{-\beta t} \mathcal{U}_{\mathrm{legacy}}(\mathbf{x}_t) \, dt$$
 * **L5 (Meta-Governance):** Externalized reflexivity and systemic immune response. Monitors the alignment between model representation and physical reality, preventing self-absorbing decay loops.
 * **L4 (Governance):** Real-time identification and mitigation of emerging hostile complexity and pathological configurations (Nashus).
 * **L3 (Control Dynamics):** Mathematically guarantees the existence of a stable trajectory via Kakutani’s fixed-point theorem, regularizing derivative loss under extreme perturbations using iterative Nash-Moser smoothing to eliminate actuator jitter.
@@ -200,9 +200,9 @@ This mathematically necessitates a dual-layer architecture: **sharp, discrete se
 
 In fourth-order curvature gravity, the Euler-Lagrange tensor introduces degrees of freedom with unbounded Hamiltonians (Ostrogradsky ghosts). The K-filter architecture mitigates these instabilities by defining the admissible state space $\mathcal{A}$ strictly through the spectrum of the linearized operator $\mathcal{L}_g$:
 
-$$\mathcal{A} = \left\{ g \in \mathcal{X} \mid \sigma(\mathcal{L}_g) \subset \{ \operatorname{Re}(\lambda) \le 0 \} \right\}$$
+$$\mathcal{A} = \left\{ g \in \mathcal{X} \mid \sigma(\mathcal{L}_g) \subset \{ \mathrm{Re}(\lambda) \le 0 \} \right\}$$
 
-Unstable modes ($\operatorname{Re}(\lambda) > 0$) lack an operator to propagate ($h_{\mathrm{ghost}} \notin \operatorname{Dom}(\mathcal{L}_{\mathrm{eff}})$) and are structurally excluded from physical realization.
+Unstable modes ($\mathrm{Re}(\lambda) > 0$) lack an operator to propagate ($h_{\mathrm{ghost}} \notin \mathrm{Dom}(\mathcal{L}_{\mathrm{eff}})$) and are structurally excluded from physical realization.
 
 ### Conserved Kernel of Kerr Spacetime
 
@@ -268,7 +268,7 @@ Reality does not materialize raw possibilities; it prunes them based on structur
 
 In a live control loop, perfect instantaneous closure is physically unachievable. The KORA fixed point defines an authorized control equilibrium at the fidelity boundary:
 
-$$\operatorname{Fix}_{\mathrm{KORA}} = \operatorname{Fix}\left( \text{Commit} \circ \Omega \circ \Pi_{\mathcal{A}} \circ \Phi_{H\infty\mathrm{EKF}} \right)$$
+$$\mathrm{Fix}_{\mathrm{KORA}} = \mathrm{Fix}\left( \text{Commit} \circ \Omega \circ \Pi_{\mathcal{A}} \circ \Phi_{H\infty\mathrm{EKF}} \right)$$
 
 Temporal steps are sealed via a discrete Fibonacci recurrence ($F_n = F_{n-1} + F_{n-2}$) bounded almost surely under noise by Viswanath’s constant ($C_{\mathrm{Vis}} \approx 1.137628$).
 

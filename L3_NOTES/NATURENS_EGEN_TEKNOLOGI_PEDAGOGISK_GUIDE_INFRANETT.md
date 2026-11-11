@@ -39,7 +39,7 @@ Infranett fungerer på eksakt samme måte gjennom en lokal **Write-Ahead Log (WA
 
 Den eksakte matematiske sammenkoblingen for hver enkelt loggoppføring beregnes etter følgende formel:
 
-$$\text{entry\_hash} = \operatorname{SHA-256}\left(\text{sequence\_id} \parallel \text{timestamp\_ms} \parallel \text{node\_id} \parallel \text{event\_type} \parallel \text{payload\_json} \parallel \text{prev\_hash}\right)$$
+$$\text{entry\_hash} = \mathrm{SHA-256}\left(\text{sequence\_id} \parallel \text{timestamp\_ms} \parallel \text{node\_id} \parallel \text{event\_type} \parallel \text{payload\_json} \parallel \text{prev\_hash}\right)$$
 
 Siden hver eneste oppføring inneholder hash-avtrykket (`prev_hash`) til sin umiddelbare forgjenger, dannes det en ubrytelig, matematisk kjede. Dersom en hacker eller en fiendtlig aktør forsøker å manipulere en enkelt byte i den historiske loggen, brytes kjeden umiddelbart, og manipuleringen avvises lokalt. For å garantere at loggen overlever plutselige strømbrudd eller fysiske spenningskutt uten datatap, håndheves strenge POSIX `fsync()`-barrierer mot ikke-flyktige lagringsmedier (som MRAM eller NVMe-flash) før transaksjonen bekreftes.
 

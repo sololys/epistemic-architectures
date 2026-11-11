@@ -48,7 +48,7 @@ I tråd med monorepoets grunnlov (`INSPIRED_BY != IMPLEMENTS != PROVES`) avvises
 
 Vi definerer derfor mengden av **Autoriserbare Realiseringer ($\mathcal{R}_{\mathrm{auth}}$)**:
 
-$$\boxed{\mathcal{R}_{\mathrm{auth}} = \operatorname{Fix}_{\varepsilon}(\Pi_K \circ \Phi) \;\cap\; \left\{ x \in \mathcal{A} \;\middle|\; \dot{W}_c = 0 \right\} \;\cap\; \left\{ t < t^* \right\} \;\cap\; \mathbf{Evidens}(W)}$$
+$$\boxed{\mathcal{R}_{\mathrm{auth}} = \mathrm{Fix}_{\varepsilon}(\Pi_K \circ \Phi) \;\cap\; \left\{ x \in \mathcal{A} \;\middle|\; \dot{W}_c = 0 \right\} \;\cap\; \left\{ t < t^* \right\} \;\cap\; \mathbf{Evidens}(W)}$$
 
 Denne mengden representerer de overgangene som simultant tilfredsstiller:
 1. **Fikspunktkonvergens:** Tilstanden stemmer overens med sin egen projeksjon under en streng toleransekonvolutt $\varepsilon_{\mathrm{tol}}$.
@@ -62,12 +62,12 @@ Denne mengden representerer de overgangene som simultant tilfredsstiller:
 
 For å gjøre den matematiske formuleringen ugjennomtrengelig for analytisk og fysisk kritikk, fastsettes tre ufravikelige prinsipper:
 
-### Presisering I: Tilnærmet Fikspunkt ($\operatorname{Fix}_\varepsilon$)
+### Presisering I: Tilnærmet Fikspunkt ($\mathrm{Fix}_\varepsilon$)
 I reell fysikk, kraftelektronikk og numerisk analyse (IEEE 754) finnes det aldri en absolutt matematisk likhet $x \equiv \Pi_K(\Phi(x))$. Å kreve eksakt identitet ned til minste bit i et kontinuerlig faserom vil føre til numerisk lammelse på grunn av mikroskopisk støy.
 
 Vi definerer derfor **$\varepsilon$-fikspunktet**:
 
-$$\operatorname{Fix}_{\varepsilon}(\Pi_K \circ \Phi) := \left\{ x \in \mathcal{X} \;\middle|\; \|\Delta_K(x)\| = \|x - \Pi_K(\Phi(x))\| < \varepsilon_{\mathrm{tol}} \right\}$$
+$$\mathrm{Fix}_{\varepsilon}(\Pi_K \circ \Phi) := \left\{ x \in \mathcal{X} \;\middle|\; \|\Delta_K(x)\| = \|x - \Pi_K(\Phi(x))\| < \varepsilon_{\mathrm{tol}} \right\}$$
 
 der $\varepsilon_{\mathrm{tol}} > 0$ er en eksplisitt definert, målbar toleranse basert på sensorspredning og metrisk oppløsning.
 

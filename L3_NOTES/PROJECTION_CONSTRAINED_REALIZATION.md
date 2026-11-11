@@ -2,7 +2,7 @@
 
 > **Abstract:** Standard physical formulations identify reality with the full solution space of dynamical equations ($\dot{x} = f(x)$). In physical, biological, and engineered control systems, however, not all mathematical solutions are realized: causality, thermodynamic irreversibility, stability, and fail-closed admissibility eliminate candidates before physical actuation. We formalize this selection principle:
 > 
-> $$\boxed{\mathbf{Reality} = \operatorname{Fix}(\Pi \circ \Phi) = \ker(E)}$$
+> $$\boxed{\mathbf{Reality} = \mathrm{Fix}(\Pi \circ \Phi) = \ker(E)}$$
 > 
 > where $\Phi$ generates candidate dynamics and $\Pi$ is an idempotent admissibility projection ($\Pi^2 = \Pi$). We prove that: (i) realized dynamics is generically non-involutive ($M \circ M \neq \mathrm{Id}$) even when the pre-selection consistency layer is involutive ($F \circ F = \mathrm{Id}$), (ii) physical existence is structurally equivalent to a Nash equilibrium under an induced best-response operator $BR = \Pi \circ \Phi$, and (iii) General Relativity's field equations emerge as an equilibrium limit ($\Phi_\perp = 0$) of a broader projection-constrained dynamics. We outline falsifiable experimental predictions separating state-determined statistics from history-dependent kernel admissibility. Finally, we show that decentralized local-first survivability architectures (Infranett) constitute physical engineering instantiations of this fixed-point selection law.
 
@@ -18,12 +18,12 @@ In physical implementation, however, unconstrained generation is an idealization
 
 We define physical existence through an explicit selection principle:
 
-$$\boxed{x \text{ exists} \iff x = \Pi(\Phi(x)) \iff x \in \operatorname{Fix}(\Pi \circ \Phi)}$$
+$$\boxed{x \text{ exists} \iff x = \Pi(\Phi(x)) \iff x \in \mathrm{Fix}(\Pi \circ \Phi)}$$
 
 where:
 * $\Phi : \mathcal{X} \to \mathcal{X}$ generates candidate dynamics,
 * $\Pi : \mathcal{X} \to \mathcal{K} \subseteq \mathcal{X}$ is an idempotent admissibility projection ($\Pi^2 = \Pi$),
-* $\mathcal{K} = \operatorname{Im}(\Pi) = \{x \in \mathcal{X} \mid \Pi(x) = x\}$ is the admissible constraint manifold.
+* $\mathcal{K} = \mathrm{Im}(\Pi) = \{x \in \mathcal{X} \mid \Pi(x) = x\}$ is the admissible constraint manifold.
 
 $$\boxed{\mathbf{Dynamical\;laws\;generate\;possibilities;\;admissibility\;selects\;realizable\;states.}}$$
 
@@ -40,7 +40,7 @@ Let $\mathcal{X}$ be a complete metric state space.
   We define the defect or elimination operator $E : \mathcal{X} \to \mathcal{X}$:
   $$E(x) := x - \Pi(\Phi(x))$$
 
-  $$\boxed{\mathbf{Reality} = \operatorname{Fix}(M) = \ker(E)}$$
+  $$\boxed{\mathbf{Reality} = \mathrm{Fix}(M) = \ker(E)}$$
 
   *Ontological shift:* Reality is not what is merely generated; **reality is that which cannot be eliminated.**
 
@@ -99,7 +99,7 @@ Let $BR : \mathcal{X} \to \mathcal{X}$ be a response operator in game-theoretic 
 * **Theorem 4.2 (Structural Equivalence):** Let the response operator be defined by the projection-constrained generator $BR := \Pi \circ \Phi$. Then:
   $$\boxed{x \text{ physically exists} \iff x \text{ is a Nash equilibrium}}$$
 
-*Proof:* Immediate from $x = \Pi(\Phi(x)) \iff x = BR(x) \iff x \in \operatorname{Fix}(BR)$. $\blacksquare$
+*Proof:* Immediate from $x = \Pi(\Phi(x)) \iff x = BR(x) \iff x \in \mathrm{Fix}(BR)$. $\blacksquare$
 
 ### Refusal of Ghost Wins
 
@@ -182,7 +182,7 @@ Infranett, by contrast, enforces:
 
 Therefore:
 
-$$\boxed{\mathbf{Infranett} \equiv \operatorname{Fix}(\Pi \circ \Phi)}$$
+$$\boxed{\mathbf{Infranett} \equiv \mathrm{Fix}(\Pi \circ \Phi)}$$
 
 **Infranett is the physical fixed point.** It is the state that remains invariant when the external world is forced through the boundary of physical survival.
 

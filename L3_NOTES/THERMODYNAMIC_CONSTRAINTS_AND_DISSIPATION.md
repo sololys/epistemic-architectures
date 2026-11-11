@@ -1,7 +1,7 @@
 # En kontrollteoretisk og termodynamisk analogi for fysisk realiserte constraints i dissipative systemer
 ## A Control-Theoretic and Thermodynamic Analogy for Physically Realized Constraints in Dissipative Systems
 
-> **Abstract:** This treatise establishes the rigorous physical and thermodynamic hygiene of the KY-Nash / projection-constrained realization framework ($\mathbf{Reality} = \operatorname{Fix}(\Pi \circ \Phi)$). By grounding the operator formalism in classical analytical mechanics and relativistic thermodynamics, we establish a strict separation between passive geometric constraints (which perform identically zero mechanical work: $\dot{W}_c = F_c \cdot \dot{q} = 0$) and independent dissipative mechanisms (which generate irreversible entropy: $\dot{S}_{\mathrm{irr}} = \frac{1}{T}\dot{q}^T D \dot{q} \ge 0$). We prove that natural laws and geometric boundaries do not "consume energy" or burn fuel to enforce themselves. We formalize the three-layer state space $Z = X \times M \times W$ (active mechanical state, physical memory/environment, non-reactive append-only audit log), resolve relativistic frame-dependence via the Lorentz-invariant divergence of the entropy four-current ($\nabla_\mu s^\mu = \sigma \ge 0$), resolve the Ostrogradsky ghost paradox through domain restriction rather than thermal dumping, and delineate the precise boundary conditions for Landauer-bounded informational recording vs. physical microstate recurrence.
+> **Abstract:** This treatise establishes the rigorous physical and thermodynamic hygiene of the KY-Nash / projection-constrained realization framework ($\mathbf{Reality} = \mathrm{Fix}(\Pi \circ \Phi)$). By grounding the operator formalism in classical analytical mechanics and relativistic thermodynamics, we establish a strict separation between passive geometric constraints (which perform identically zero mechanical work: $\dot{W}_c = F_c \cdot \dot{q} = 0$) and independent dissipative mechanisms (which generate irreversible entropy: $\dot{S}_{\mathrm{irr}} = \frac{1}{T}\dot{q}^T D \dot{q} \ge 0$). We prove that natural laws and geometric boundaries do not "consume energy" or burn fuel to enforce themselves. We formalize the three-layer state space $Z = X \times M \times W$ (active mechanical state, physical memory/environment, non-reactive append-only audit log), resolve relativistic frame-dependence via the Lorentz-invariant divergence of the entropy four-current ($\nabla_\mu s^\mu = \sigma \ge 0$), resolve the Ostrogradsky ghost paradox through domain restriction rather than thermal dumping, and delineate the precise boundary conditions for Landauer-bounded informational recording vs. physical microstate recurrence.
 
 ---
 
@@ -137,7 +137,7 @@ Høyere-deriverte instabiliteter (*Ostrogradsky-spøkelser*) i teorier som kvadr
 Fordi spøkelsesmodi har kinetisk energi ubegrenset fra bunnen ($H_{\mathrm{ghost}} \to -\infty$), vil en termisk kobling til et dissipativt reservoar føre til en katastrofal løpsk instabilitet (*runaway catastrophe*): spøkelsesmodiene eksiteres mot $-\infty$ mens varmereservoaret pumpes mot $+\infty$.
 
 I stedet må slike fysiske instabiliteter behandles gjennom **degenererte lagrangianer** (DHOST / Horndeski) eller ved å innføre fysiske constraints som reduserer det aktive faserommet til en stabil manifold $\mathcal{A}_{\mathrm{stable}}$:
-$$h_{\mathrm{ghost}} \notin \operatorname{Dom}(\mathcal{L}_{\mathrm{eff}})$$
+$$h_{\mathrm{ghost}} \notin \mathrm{Dom}(\mathcal{L}_{\mathrm{eff}})$$
 Den spektrale portvokteren ($\Pi$) må derfor forstås som et **analytisk filter som begrenser de tillatte startbetingelsene**, ikke som en aktiv fysisk absorber.
 
 ### 4. Ingen universell varmedød fra lovhåndhevelse
@@ -213,7 +213,7 @@ Det vil si:
 | Fysisk Analogi (Klassisk Mekanikk) | Informasjonsteoretisk / Kontrollarkitektur (KY-Nash) | Invariant Status |
 | :--- | :--- | :--- |
 | Konfigurasjonsrom $\mathcal{Q}$ | Kandidatrom $X$ (tilstander, transaksjoner, inputs) | Representasjonsrom |
-| Holonom føring $g(q) = 0$ | Admissibel mengde $\mathcal{K} = \operatorname{Im}(\Pi)$ | Lovmessig grense |
+| Holonom føring $g(q) = 0$ | Admissibel mengde $\mathcal{K} = \mathrm{Im}(\Pi)$ | Lovmessig grense |
 | Normalkraft $F_c = J_g^T \lambda$ | Projeksjonsoperator $\Pi(x)$ | $\dot{W}_c = 0$ (Passiv, null drivstoff) |
 | Friksjon $F_d = -D\dot{q}$ | Irreversibel tilstandsendring / termisk varme | $\dot{S}_{\mathrm{irr}} \ge 0$ (Diskrete dissipative steg) |
 | Flytegrense $|F_c| > F_{\mathrm{yield}}$ | Sikkerhetsbrudd / Fail-Closed $\bot$ | Fysisk faseovergang |

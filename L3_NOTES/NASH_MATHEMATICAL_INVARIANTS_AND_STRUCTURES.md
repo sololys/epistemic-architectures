@@ -152,9 +152,9 @@ Den realiserte systemdynamikken defineres ved:
 $$M := \Pi \circ \Phi, \qquad x_{t+1} = M(x_t)$$
 
 ### 5.2 Definisjoner
-* **Admissibel mengde:** $K = \operatorname{Im}(\Pi) = \{ x \in \mathcal{X} \mid \Pi(x) = x \}$.
+* **Admissibel mengde:** $K = \mathrm{Im}(\Pi) = \{ x \in \mathcal{X} \mid \Pi(x) = x \}$.
 * **Operasjonell eksistens:**
-  $$x \text{ eksisterer} \iff x = \Pi(\Phi(x)) \iff x \in \operatorname{Fix}(\Pi \circ \Phi)$$
+  $$x \text{ eksisterer} \iff x = \Pi(\Phi(x)) \iff x \in \mathrm{Fix}(\Pi \circ \Phi)$$
 * **Konsistens:** Testes reversibelt ved $F(F(x)) = x$.
 
 ### 5.3 Lemma 1: Involutiv konsistens er reversibel
@@ -219,7 +219,7 @@ $$\boxed{\text{Unitær evolusjon er reversibel; måling og realisering er projek
 ### 6.2 Generell Relativitet: Levedyktighet og Horisonter
 I gravitasjonsfysikk genererer Einsteins feltligninger en evolusjon $g_{t+1} = \Phi(g_t)$. Men for at romtiden skal være fysisk meningsfull og fri for patologier (slik som Ostrogradsky-spøkelser eller nakne singulariteter), må løsningene tilhøre den levedyktige delmengden:
 
-$$\mathcal{A} = \left\{ g_{\mu\nu} \mid \operatorname{Re}(\lambda_i(\mathcal{L}_g)) \le 0, \quad \text{global hyperbolisitet opprettholdes} \right\}$$
+$$\mathcal{A} = \left\{ g_{\mu\nu} \mid \mathrm{Re}(\lambda_i(\mathcal{L}_g)) \le 0, \quad \text{global hyperbolisitet opprettholdes} \right\}$$
 
 Den fysiske romtiden er gitt ved levedyktighetskjernen $\Gamma_{\mathrm{phys}} = \mathrm{Viab}(\mathcal{A})$, slik at $g_{t+1} = \Pi_{\mathcal{A}}(\Phi(g_t))$. Hendelseshorisonten fungerer som projeksjonens fysiske grenseflate: $\text{Horisont} \sim \partial \mathcal{A}$.
 

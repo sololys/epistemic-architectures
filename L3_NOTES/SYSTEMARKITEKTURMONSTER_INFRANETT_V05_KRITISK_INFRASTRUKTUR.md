@@ -130,7 +130,7 @@ Transaksjoner forsegles kryptografisk før bekreftelse gis til applikasjonslaget
 
 Sammensetningen av hver hendelses-hash $h_t$ skjer via en uavbrutt SHA-256 hash-kjede:
 
-$$h_t = \operatorname{SHA-256}\left(\text{sequence\_id} \parallel \text{timestamp\_ms} \parallel \text{node\_id} \parallel \text{event\_type} \parallel \text{payload} \parallel h_{t-1}\right)$$
+$$h_t = \mathrm{SHA-256}\left(\text{sequence\_id} \parallel \text{timestamp\_ms} \parallel \text{node\_id} \parallel \text{event\_type} \parallel \text{payload} \parallel h_{t-1}\right)$$
 
 Dersom en enkelt byte i historikken manipuleres i ettertid, brytes hash-kjeden deterministisk, og noden utløser en umiddelbar sikkerhetsfelling til $0{,}00\text{ V DC}$.
 
@@ -208,7 +208,7 @@ En herdet kurerkapsel (K-POD) integrert i utrykningskjøretøy, melkebiler, losb
 1. **HELO Handshake:** Noden og kapselen kobles sammen og utveksler sine `node_id`-er, offentlige Ed25519-nøkler og siste kjente `head_commit_record_hash`.
 2. **Delta Discovery:** Noden og kapselen sammenligner sine lokalt registrerte sekvensnumre og identifiserer manglende hendelser på begge sider.
 3. **Signed Stream:** Kun uoverførte hendelser pakkes i kanonisk JSON-format (RFC 8785) og overføres. Hver pakke signeres med avsenderens private Ed25519-nøkkel:
-   $$\sigma = \operatorname{Sign}_{\text{Node}}\left(\texttt{"INFRANETT-COURIER-CAPSULE:"} \parallel \operatorname{SHA-256}(\text{payload})\right)$$
+   $$\sigma = \mathrm{Sign}_{\text{Node}}\left(\texttt{"INFRANETT-COURIER-CAPSULE:"} \parallel \mathrm{SHA-256}(\text{payload})\right)$$
 4. **Durable Receipt & Markørframføring:** Mottakeren verifiserer signaturene, skriver hendelsene til sin lokale WAL via POSIX `fsync()`, og returnerer en kryptografisk returkvittering (*Durable Receipt*). Begge enheter flytter sin synkroniseringsmarkør (*cursor*) frem.
 
 ### 2.4 Pilar 4: Fail-Closed Sikkerhetsfilosofi og Galvanisk Stase ($0{,}00\text{ V DC}$)
@@ -219,7 +219,7 @@ Infranett håndhever en streng projeksjonsbegrenset realiseringsmodell. En kandi
 
 $$x_{t+1} = \Pi_K(\Phi(x_t)) \quad \text{der} \quad \Pi_K^2 = \Pi_K$$
 
-Projeksjonen eliminerer den ortogonale, uadmissible komponenten $\Phi_\perp \in \operatorname{Ker}(\Pi_K)$.
+Projeksjonen eliminerer den ortogonale, uadmissible komponenten $\Phi_\perp \in \mathrm{Ker}(\Pi_K)$.
 
 Sikkerhetsstrukturen i maskinvaren instansieres gjennom en **DK-Registerport Interlock Gate**, der databanen, klokkesignalet og autoritetsbanen er fysisk adskilt:
 
