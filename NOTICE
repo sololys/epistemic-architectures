@@ -1,0 +1,33 @@
+NOTICE AND ONTOLOGICAL SCOPE BOUNDARY
+=====================================
+
+Repository : https://github.com/sololys/epistemic-architectures
+Copyright  : Copyright (c) 2026 Marius Egerhei Torjusen (ORCID: 0009-0006-0431-6637)
+State      : L1 / L1.5 Deterministic Verification Surface (0.00 V DC // HOLD)
+
+1. Ontological Scope of Delivered Artifacts (MIT License)
+---------------------------------------------------------
+The executable scripts, algebraic reference models, synthesizable L1.5 reference
+descriptions, and verification harnesses actually present in this repository
+constitute "the Software" licensed under the MIT License in `LICENSE`. All
+delivered artifacts operate strictly as local deterministic verifiers at
+0.00 V DC (`PHYSICAL_AUTHORITY = NONE`, `INSPIRED_BY != IMPLEMENTS != PROVES`).
+
+2. Undelivered Physical Systems and Patent Boundary
+---------------------------------------------------
+Physical L2/L3 hardware actuators, bench-calibrated industrial process
+parameters, private production vaults, and subject matter covered by separate
+patent filings are ontologically absent from and never delivered by this
+repository. Because they do not form part of "the Software" furnished herein,
+nothing in this repository grants, by implication, exhaustion, or estoppel, any
+patent license, hardware implementation right, or safety certification over
+undelivered physical systems or external industrial deployments.
+
+3. Literary Passages and Identifiers
+------------------------------------
+Where literary prologues or philosophical essays accompany technical indices,
+their verbatim prose integrity is additionally stewarded for citation under
+Creative Commons Attribution-NoDerivatives 4.0 International (`CC-BY-ND-4.0`).
+Project names, architectural sigils, and identifiers (`Granitum Physics`,
+`ReismannPoint`, `Kreativ-Core`, `Sololys`, `0xABCDEF00`) are retained for
+origin identification and are not licensed as commercial trademarks.
