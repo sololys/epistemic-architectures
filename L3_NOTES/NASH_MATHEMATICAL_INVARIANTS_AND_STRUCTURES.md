@@ -1,11 +1,14 @@
 # Analytisk Syntese: Nashs Matematiske Invarianter og Strukturer
 ## Analytical Synthesis: Nash's Mathematical Invariants, Tame Estimates, and Admissibility Geometry
 
-> **Abstract:** This treatise establishes the formal mathematical synthesis unifying John F. Nash Jr.’s two monumental mathematical contributions: his topological game-theoretic equilibrium ($C^0$ Kakutani fixed-point correspondence) and his non-linear, infinite-dimensional isometric embedding analysis ($C^\infty$ Nash-Moser iteration over Fréchet spaces with tame estimates). By contrasting finite-dimensional algebraic equilibria with degenerated PDE systems characterized by derivative loss, we formalize the sequential ontological pipeline of **Admissibility Geometry**:
+> **Epistemisk avgrensning (`INSPIRED_BY != IMPLEMENTS != PROVES`):**  
+> Seksjon 1–3 gjennomgår etablerte matematiske resultater av John F. Nash Jr. ($C^0$ likevekt via Kakutani 1950 og $C^k$/$C^\infty$ isometrisk innlejring via Nash–Moser-glatting 1954–1956). Seksjon 4–5 formaliserer det algebraiske skillet mellom involutiv konsistensprøving ($F \circ F = \mathrm{Id}$) og idempotent projeksjon ($\Pi^2 = \Pi$) for feil-lukkede kontrollporter (`L1`). Seksjon 6 sammenstiller kvantemåling og relativistiske horisonter strengt som **strukturelle analogier (`INSPIRED_BY`)** — ikke som fysiske utledninger eller laboratoriebevis.
+
+> **Abstract:** This note synthesizes John F. Nash Jr.’s two foundational mathematical contributions: his topological game-theoretic equilibrium ($C^0$ Kakutani fixed-point correspondence) and his non-linear, infinite-dimensional isometric embedding analysis ($C^\infty$ Nash-Moser iteration over Fréchet spaces with tame estimates). Contrasting finite-dimensional algebraic equilibria with degenerate PDE systems subject to derivative loss motivates the sequential control pipeline of **Admissibility Geometry**:
 > 
 > $$x_{t+1} = \Omega\bigl(\Pi_K(R(\Phi(x_t)))\bigr)$$
 > 
-> We prove that realized physical and computational dynamics are inherently non-involutive projections ($M \circ M \neq \mathrm{Id}$) operating over an underlying involutive consistency structure ($F \circ F = \mathrm{Id}$), and demonstrate how this selection principle manifests across quantum measurement, General Relativity Cauchy horizons, and fail-closed hardware interlocks.
+> We show algebraically that gated state transitions are non-involutive projections ($M \circ M \neq \mathrm{Id}$) acting downstream of an involutive trial layer ($F \circ F = \mathrm{Id}$), and note structural parallels (`INSPIRED_BY`) to projective quantum measurement, viability horizons, and fail-closed hardware interlocks.
 > 
 > $$\boxed{\mathbf{Reality\;is\;not\;generated\;by\;dynamics\;alone;\;it\;is\;realized\;by\;admissible\;selection.}}$$
 
@@ -26,7 +29,7 @@ For at korrespondansen $B$ skal ha et fikspunkt $s^* \in S$ som utgjør et PNE u
 2. **Konveksitet:** Hvert individuelt strategisett $S_i$ må være konveks ($\forall x, y \in S_i, \, \theta \in [0, 1] \implies \theta x + (1-\theta)y \in S_i$).
 3. **Kontinuitet og Kvasikonkavitet:** Nyttefunksjonen $u_i(s_i, s_{-i})$ må være:
    - Kontinuerlig i den samlede profilen $s \in S$.
-   - Kvasikonkav i egen strategi $s_i$ for enhver fast motspillerprofil $s_{-i} \in S_{-i}$ (dvs. at $\ddot{o}vre$ nivåmengder $\{s_i \in S_i \mid u_i(s_i, s_{-i}) \ge c\}$ er konvekse).
+   - Kvasikonkav i egen strategi $s_i$ for enhver fast motspillerprofil $s_{-i} \in S_{-i}$ (dvs. at øvre nivåmengder $\{s_i \in S_i \mid u_i(s_i, s_{-i}) \ge c\}$ er konvekse).
 
 ### Best-Response Korrespondanse og Optimalitetsbetingelse
 Best-Response korrespondansen for spiller $i$ gitt motspillernes handlinger $s_{-i}$ er definert som:
@@ -108,20 +111,20 @@ $$\boxed{x_{t+1} = \Omega\bigl(\Pi_K(R(\Phi(x_t)))\bigr)}$$
 
 Hvert ledd i denne sammensatte operatoren representerer en spesifikk geometrisk og informasjonsteoretisk fase:
 
-```
+```text
 [ MULIGHETSROM Φ ] ──▶ [ STØYREDUKSJON R ] ──▶ [ ADMISSIBILITY Π_K ] ──▶ [ COMMIT Ω ]
-    (Kandidater)            (Eremitt-fase)          (SCL-X Giljotin)        (Realisert hendelse)
-                                                     OPEN / HOLD / KILL
+    (Kandidater)        (Isolert prøverom)     (Hard avskjæringsport)    (Låst overgang)
+                                                 OPEN / HOLD / KILL
 ```
 
-### Fasesekvens for Ontologisk Seleksjon:
-1. **Generasjon ($\Phi$):** Systemet starter i et vidstrakt mulighetsrom $\mathcal{X}$. Her genereres baner, hypoteser og tensorfelt med høy frihetsgrad. Dette stadiet er preget av ustrukturert metrisk støy; alt som er matematisk syntetiserbart eksisterer her.
-2. **Reduksjon ($R$):** En støyfiltrerende "eremitt-fase". Operatoren $R$ undertrykker inkonsistente svingninger og forsterker koherente gradienter. Ikke alle matematiske muligheter i $\Phi$ tildeles beregningsmessig eller fysisk vekt.
-3. **Admissibility-Projeksjon ($\Pi_K$):** Dette er den absolutte porten (*The Gate*). Tilstander projiseres mot den tillatte undermonifolden $K \subseteq \mathcal{X}$. Dette er domenet til SCL-X Giljotinen, styrt av en streng ternær logikk:
+### Fasesekvens for Seleksjon:
+1. **Generasjon ($\Phi$):** Systemet starter i et vidstrakt mulighetsrom $\mathcal{X}$. Her genereres baner, hypoteser og kandidatvektorer med høy frihetsgrad. Dette stadiet rommer ufiltrert variasjon; alt som kan uttrykkes syntaktisk finnes her uten utøvende myndighet.
+2. **Reduksjon ($R$):** Isolert støyfiltrering i lukket prøverom. Operatoren $R$ demper inkonsistente utslag og jevner ut høyfrekvent støy før grensekontrollen.
+3. **Admissibility-Projeksjon ($\Pi_K$):** Den feil-lukkede avskjæringsporten (*The Gate*). Kandidater måles mot det tillatte området $K \subseteq \mathcal{X}$ med tre mulige utfall:
    - **OPEN:** Tilstanden tilfredsstiller alle invariante føringer ($x \in K$).
-   - **HOLD:** Tilstanden holdes i tidsmessig stasis for evaluering av epistemisk bevis (*witness warrant*).
-   - **KILL:** Tilstanden tilintetgjøres momentant grunnet brudd på bevaringslover, isometri eller kausalitet.
-4. **Commit ($\Omega$):** Når en tilstand passerer $\Pi_K$, utsettes den for $\Omega$-operatoren (*Sovereign Singularity Locking*). Handlingen blir irreversibel. Historien skrives inn i minnekjernen ($W$), og den admissible geometrien oppdateres for fremtidige iterasjoner.
+   - **HOLD:** Tilstanden holdes tilbake for avklaring av manglende bevisgrunnlag (*witness warrant*).
+   - **KILL:** Tilstanden avvises kontant ved brudd på invarianter, grenser eller rekkefølgekrav.
+4. **Commit ($\Omega$):** Når en tilstand passerer $\Pi_K$ med gyldig fullmakt, låses overgangen som et autorisert steg. Hendelsen skrives inn i den append-only vitneloggen ($W$), og tilstanden oppdateres for neste iterasjon.
 
 ### Geometrisk Tolkning og Hyperbolsk Kompresjon
 I faserommet $\mathcal{X}$ visualiseres dette som partikler (muligheter) som beveger seg fritt inntil de møter randen til den tillatte regionen, $\partial K$.
@@ -196,53 +199,53 @@ $$\boxed{\text{Realized dynamics are non-involutive projections of an underlying
 
 ---
 
-## 6. Fysiske Instansieringer av Projeksjonsbegrenset Realisering
+## 6. Strukturelle Analogier (`INSPIRED_BY`) og Feil-Lukkede Grensesnitt
 
-Denne operatorstrukturen er ikke en abstrakt konstruksjon, men en fundamental arkitektur som gjenfinnes på tvers av fysikk og reguleringsteknikk:
+Skillet mellom reversibel utvikling og ikke-inversibel projeksjon i Seksjon 5 gjenfinnes som **strukturell analogi (`INSPIRED_BY`)** i kjente formalismer fra fysikk, og som direkte konstruksjonsprinsipp i sikkerhetskritisk reguleringsteknikk. Sammenstillingene i 6.1 og 6.2 er rene strukturparalleller — ikke påstander om nye fysiske utledninger:
 
-```
+```text
 Generativ dynamikk (Φ) ──▶ Admissibility-filter (Π) ──▶ Realisert tilstand (M)
 ```
 
-### 6.1 Kvantesystemer: Unitær Evolusjon vs. Projeksjon
-I standard kvantemekanikk er bølgefunksjonens frie tidsutvikling unitær: $|\psi_{t+1}\rangle = U |\psi_t\rangle$, hvor $U^\dagger U = \mathrm{Id}$ (involutiv/reversibel symmetri). Målingen er derimot en projeksjon: $p(k) = \langle \psi | P_k | \psi \rangle$ med $P_k^2 = P_k$.
+### 6.1 Strukturell analogi til kvantemekanikk: Unitær evolusjon vs. projektiv måling
+I standard kvantemekanikk er bølgefunksjonens lukkede tidsutvikling unitær: $|\psi_{t+1}\rangle = U |\psi_t\rangle$, der $U^\dagger U = \mathrm{Id}$ (reversibel symmetri). En projektiv måling beskrives derimot ved projektorer $P_k^2 = P_k$ med utfallssannsynlighet $p(k) = \langle \psi | P_k | \psi \rangle$, som strukturelt speiler overgangen fra reversibelt prøverom til idempotent seleksjon:
 
-| Komponent | Realiseringsgrammatikk | Kvantemekanikk |
+| Komponent | Kontroll- og portgrammatikk | Strukturell analogi i kvantemekanikk (`INSPIRED_BY`) |
 | :--- | :--- | :--- |
 | **Generativ** | $\Phi$ | Unitær tidsutvikling $U = e^{-iHt/\hbar}$ |
-| **Konsistens** | $F$ | Unitær bevaring ($\langle \psi \mid \psi \rangle = 1$) |
-| **Seleksjon** | $\Pi$ | Projektiv måling / POVM ($P_k^2 = P_k$) |
-| **Realisering** | $M$ | Kollaps / registrert hendelse i detektor |
+| **Konsistens** | $F$ | Normbevaring ($\langle \psi \mid \psi \rangle = 1$) |
+| **Seleksjon** | $\Pi$ | Projektiv måleoperator ($P_k^2 = P_k$) |
+| **Utfall** | $M$ | Diskret utlest måleverdi |
 
-$$\boxed{\text{Unitær evolusjon er reversibel; måling og realisering er projeksjon.}}$$
+$$\boxed{\text{Unitær evolusjon er reversibel; projektiv seleksjon kaster bort mikrotilstander.}}$$
 
-### 6.2 Generell Relativitet: Levedyktighet og Horisonter
-I gravitasjonsfysikk genererer Einsteins feltligninger en evolusjon $g_{t+1} = \Phi(g_t)$. Men for at romtiden skal være fysisk meningsfull og fri for patologier (slik som Ostrogradsky-spøkelser eller nakne singulariteter), må løsningene tilhøre den levedyktige delmengden:
+### 6.2 Strukturell analogi til relativitetsteori: Velstilthet og levedyktighet
+I matematisk relativitetsteori skiller man mellom vilkårlige formelle løsninger av feltligningene og den delmengden som oppfyller velstilthet, spektral stabilitet og global hyperbolisitet (jf. levedyktighetsbegrepet $\mathrm{Viab}(\mathcal{A})$):
 
 $$\mathcal{A} = \left\{ g_{\mu\nu} \mid \mathrm{Re}(\lambda_i(\mathcal{L}_g)) \le 0, \quad \text{global hyperbolisitet opprettholdes} \right\}$$
 
-Den fysiske romtiden er gitt ved levedyktighetskjernen $\Gamma_{\mathrm{phys}} = \mathrm{Viab}(\mathcal{A})$, slik at $g_{t+1} = \Pi_{\mathcal{A}}(\Phi(g_t))$. Hendelseshorisonten fungerer som projeksjonens fysiske grenseflate: $\text{Horisont} \sim \partial \mathcal{A}$.
+Som konseptuelt bilde (`INSPIRED_BY`) illustrerer $\Gamma_{\mathrm{adm}} = \mathrm{Viab}(\mathcal{A})$ og $g_{t+1} = \Pi_{\mathcal{A}}(\Phi(g_t))$ samme grunnregel som i portarkitekturen: en matematisk skrivbar løsning er ikke automatisk en tillatt tilstand innenfor modellens gyldighetsområde ($\partial \mathcal{A}$).
 
-| Komponent | Realiseringsgrammatikk | Generell Relativitet (GR) |
+| Komponent | Kontroll- og portgrammatikk | Strukturell analogi i feltteori (`INSPIRED_BY`) |
 | :--- | :--- | :--- |
-| **Dynamikk** | $\Phi$ | Einstein-feltligninger (genererer kandidatgeometrier) |
-| **Struktur** | $\Pi$ | Kausalitets- og stabilitetsfilter ($\mathcal{A}$) |
-| **Realisering** | $M$ | Fysisk realiserbar romtid ($\Gamma_{\mathrm{phys}}$) |
+| **Dynamikk** | $\Phi$ | Fritt feltuttrykk / kandidatmetrikk |
+| **Struktur** | $\Pi$ | Hyperbolisitets- og stabilitetskrav ($\mathcal{A}$) |
+| **Utvalg** | $M$ | Levedyktig løsningsmengde ($\Gamma_{\mathrm{adm}}$) |
 
-$$\boxed{\text{Ikke alle matematiske løsninger av feltligningene er fysisk realiserbare.}}$$
+$$\boxed{\text{Ikke alle formelt skrivbare baner oppfyller modellens levedyktighetskrav.}}$$
 
-### 6.3 Kontroll og Hardware: Fail-Closed Interlocks
-I feilsikker hardware fungerer $\Pi$ som en fysisk sperrekrets (galvanisk relé, SCR-crowbar). Styresignalet realiseres aldri dersom det bryter sikkerhetskonvolutten $K$:
+### 6.3 Direkte ingeniøranvendelse: Feil-lukkede sperrekretser (Interlocks)
+I feil-lukket reguleringsteknikk (`L1`-simulert logikk og fysiske maskinvareporter) realiserer $\Pi$ et eksplisitt avskjæringsledd foran pådraget. Styresignalet slipper aldri frem til aktuatoren dersom tilstanden ligger utenfor sikkerhetskonvolutten $K$:
 
 $$u_{\mathrm{real}} = \begin{cases} u_{\mathrm{nom}}, & x \in K \\ 0.00\,\text{V}, & x \notin K \end{cases}$$
 
-| Komponent | Realiseringsgrammatikk | Sikkerhetskritisk Maskinvare |
+| Komponent | Kontroll- og portgrammatikk | Sikkerhetskritisk grensesnitt |
 | :--- | :--- | :--- |
-| **Generativ** | $\Phi$ | Kontroller-algoritme / Pådragsberegning |
-| **Struktur** | $\Pi$ | Analog Hardware Interlock (Galvanisk kutt) |
-| **Realisering** | $\Omega$ / $M$ | Fysisk aktivering / Låsestatus |
+| **Generativ** | $\Phi$ | Kontroller-algoritme / pådragsforslag |
+| **Struktur** | $\Pi$ | Avskjæringsport / sperrekrets |
+| **Realisering** | $\Omega$ / $M$ | Autorisert pådrag eller $0.00\,\text{V}$ kutt |
 
-$$\boxed{\mathbf{Realisering\;skjer\;f\mathring{o}r\;fysisk\;aktivering.}}$$
+$$\boxed{\mathbf{Seleksjon\;skjer\;f\mathring{o}r\;aktivering.}}$$
 
 ---
 
