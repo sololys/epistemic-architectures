@@ -97,65 +97,73 @@ Vi projiserer spillets tilstandsrom på et todimensjonalt strategisk koordinatsy
 
 $$\boxed{\mathbf{KY\text{–}Nash\text{-}flaten} = \mathbf{Payoff} \times \mathbf{Admissibility}}$$
 
-* **Vertikal akse (Payoff):** Hvor mye aktøren kan vinne lokalt dersom trekket får virke ($u_i$).
-* **Horisontal akse (Admissibility):** Hvor godt trekket bevarer spillets struktur, grenser, bæreflate og tillit ($A(a')$).
+* **Vertikal akse (Rå Payoff / Fristelse):** Den umiddelbare lokale gevinstendringen dersom trekket får virke ($\Delta u_i$).
+* **Horisontal akse (Admissibility / Bæreevne):** Hvor godt trekket bevarer spillets struktur, grenser, bæreflate og tillit ($A(\tilde{a})$).
 
-```
-                         HØY PAYOFF (u_i)
-                                ↑
-                                |
-             GHOST WIN          |        TRUE STRATEGY
-       Høy lokal gevinst        |      Høy lokal gevinst
-       Lav integritet           |      Høy integritet
-       KILL / Integritetskollaps|      OPEN-kandidat (Bærekraftig)
-                                |
-                 \              |              /
-                  \             |             /
-                   \            |            /
-  ------------------\-----------+-----------/------------------→ HØY ADMISSIBILITY (A)
-                     \          |          /
-                      \   HOLD-BELTE      /
-                       \ (Nær terskel)   /
-                                |
-             DEAD NOISE         |        SAFE BUT WEAK
-       Lav lokal gevinst        |      Lav lokal gevinst
-       Lav integritet           |      Høy integritet
-       KILL / Avvisning         |      HOLD / Konservativ stasis
-                                |
-                         LAV PAYOFF (u_i)
+Portfunksjonen $\Omega$ vurderer utelukkende bæreevnen $A(\tilde{a})$ mot terskelen $\tau_A$ og tvilsbeltet $\varepsilon > 0$ — den er dommer over spillets rammer, ikke barnevakt for aktørens lønnsomhet:
+
+$$\Omega(\tilde{a}) = \begin{cases}
+\mathbf{OPEN}, & A(\tilde{a}) \ge \tau_A + \varepsilon \\
+\mathbf{HOLD}, & \tau_A - \varepsilon \le A(\tilde{a}) < \tau_A + \varepsilon \\
+\mathbf{KILL}, & A(\tilde{a}) < \tau_A - \varepsilon
+\end{cases}$$
+
+```text
+                       HØY RÅ PAYOFF (Δu_i > 0)
+                                  ↑
+                                  |
+              GHOST WIN           |        TRUE STRATEGY
+        Høy lokal gevinst         |      Høy lokal gevinst
+        Lav integritet            |      Høy integritet
+        Dom: KILL                 |      Dom: OPEN (bryter ro hvis ΔU_i > 0)
+                                  |
+                   \              |              /
+                    \             |             /
+                     \            |            /
+   -------------------\-----------+-----------/------------------→ HØY ADMISSIBILITY (A)
+                       \          |          /
+                        \   HOLD-BELTE      /
+                         \  (τ_A ± ε)      /
+                                  |
+              DEAD NOISE          |        SAFE BUT WEAK
+        Ingen lokal gevinst       |      Ingen lokal forbedring
+        Lav integritet            |      Høy integritet
+        Dom: KILL                 |      Dom: OPEN (lovlig, men ΔU_i ≤ 0)
+                                  |
+                       LAV RÅ PAYOFF (Δu_i ≤ 0)
 ```
 
 ### Sonenes Karakteristikk:
 
-1. **TRUE STRATEGY (Høy Payoff, Høy Admissibility):**  
-   Den gylne banen. Trekket gir reell gevinst samtidig som det styrker eller bevarer spillets fremtidige spillbarhet. Det glir gjennom porten med minimal motstand ($\Omega = \mathrm{OPEN}$). Dette er Nash-forbedringer som respekterer KY-rammen.
-2. **GHOST WIN (Høy Payoff, Lav Admissibility):**  
-   En tilsynelatende overlegen seier i det snevre, lokale regnskapet, men som krever et trekk som forurenser eller ødelegger spillets medium. Vinneren står igjen på et askeberg av ødelagt tillit og stengte porter. Porten responderer med $\mathrm{KILL}$ eller residualstraff.
-3. **SAFE BUT WEAK (Lav Payoff, Høy Admissibility):**  
-   Posisjonen til aktører som aldri utfordrer portene. De overlever og er respekterte, men akkumulerer aldri nok strategisk moment til å endre spillets retning. Typisk fanget i evig $\mathrm{HOLD}$ eller lav-intensitets vedlikehold.
-4. **DEAD NOISE (Lav Payoff, Lav Admissibility):**  
-   Handlinger født av desperasjon, sinne eller ren kognitiv feilberegning. Koster mye energi å generere, men blir kontant tilintetgjort i porten ($\Omega = \mathrm{KILL}$). Etterlater aktøren utmattet og sårbar.
-5. **HOLD-beltet:**  
-   Sonen rundt terskelverdien $\tau_A$ hvor et trekk er lovende, men ennå ikke modent for autorisasjon. Det krever tålmodighet, testing og ressursmarginer.
+1. **TRUE STRATEGY (Høy rå gevinst, Høy Admissibility — $\Omega = \mathrm{OPEN}$):**  
+   Trekket gir reell forbedring ($\Delta U_i > 0$) samtidig som det bevarer spillets fremtidige spillbarhet ($A \ge \tau_A + \varepsilon$). Dette er den eneste sonen som opphever en eksisterende likevekt.
+2. **GHOST WIN (Høy rå gevinst, Lav Admissibility — $\Omega = \mathrm{KILL}$ eller $\Delta U_i < 0$):**  
+   En tilsynelatende overlegen seier i det snevre, lokale regnskapet ($\Delta u_i > 0$), men som forurenser eller ødelegger spillets bæreflate ($A < \tau_A - \varepsilon \implies \mathrm{KILL}$, eller spises opp av struktur-, irreversibilitets- og vitnekostnader til $\Delta U_i < 0$).
+3. **SAFE BUT WEAK (Ingen gevinstforbedring, Høy Admissibility — $\Omega = \mathrm{OPEN}$):**  
+   En fullt ut lovlig og strukturbevarende overgang ($A \ge \tau_A + \varepsilon$). Dette er **ikke** en $\mathrm{HOLD}$-tilstand i porten: akkurat som en sjakkdommer tillater et lovlig, men svakt trekk, gir porten $\mathrm{OPEN}$. Aktøren lar være å utføre trekket (eller blir stående i ro) av egen strategisk interesse fordi det ikke forbedrer den integritetsjusterte gevinsten ($\Delta U_i \le 0$).
+4. **DEAD NOISE (Ingen gevinst, Lav Admissibility — $\Omega = \mathrm{KILL}$):**  
+   Handlinger født av feilberegning eller desperasjon som verken gir uttelling ($\Delta u_i \le 0$) eller tåler strukturtesten ($A < \tau_A - \varepsilon$). Avvises kontant ved porten.
+5. **HOLD-beltet ($\tau_A - \varepsilon \le A < \tau_A + \varepsilon$ — $\Omega = \mathrm{HOLD}$):**  
+   Sonen rundt terskelverdien $\tau_A$ der et kandidattrekk ennå mangler full dokumentasjon ($\Delta_K \neq \varnothing$). Ventetid alene åpner aldri porten ($\mathrm{HOLD} \not\xrightarrow{\tau} \mathrm{OPEN}$), og hvert $\mathrm{HOLD}$ er underlagt konkret mangellapp og tidsfrist ($\tau_{\max}$) slik at beltet ikke kan misbrukes til gratis uthaling.
 
 ---
 
 ## 5. Formell Definisjon av KY–Nash-Likevekt
 
-I klassisk spillteori er en Nash-likevekt definert ved at ingen spiller kan oppnå høyere nytte ved ensidig avvik. Men klassisk teori spør aldri om avviket faktisk er *admissibelt* eller *fysisk/juridisk realiserbart*.
+I klassisk spillteori er en Nash-likevekt definert ved at ingen spiller kan oppnå høyere nytte ved ensidig avvik. Men klassisk teori spør verken om avviket er admissibelt gjennom porten, eller om tilstanden spillet står i faktisk ble nådd på lovlig vis.
 
-I KY–Nash-teorien kan et avvik kun telle dersom det kan autoriseres av konsekvensporten:
+Siden et spill er *historien av autoriserte overganger* fra et intakt startfelt $s_0$, må en gyldig likevektstilstand $s^*$ selv tilhøre mengden av tilstander som kan nås gjennom autoriserte $\mathrm{OPEN}$-overganger under en nøytral port ($\mathrm{Reach}_{\mathrm{OPEN}}(s_0)$). En ulovlig eller port-kapret tilstand blir aldri en gyldig likevekt bare fordi aktøren som tok seg inn dit trives der mens motpartens mottrekk blokkeres:
 
-$$\boxed{s^* \in E_{K\text{-Nash}} \iff \forall i, \; \nexists a_i' : \left[ \Omega\Big(\Pi_K\big(\Phi(s^*, a_i')\big)\Big) = \mathbf{OPEN} \quad \land \quad U_i(s_{-i}^*, a_i') > U_i(s^*) \right]}$$
+$$\boxed{s^* \in E_{\mathrm{KY\text{-}Nash}}(s_0) \iff s^* \in \mathrm{Reach}_{\mathrm{OPEN}}(s_0) \;\land\; \forall i, \; \nexists a_i' \neq s_i^* : \left[ \Omega\Big(\Pi_K\big(\Phi(s^*, a_i')\big)\Big) = \mathbf{OPEN} \;\land\; U_i(s_{-i}^*, a_i') > U_i(s^*) \right]}$$
 
 ### På menneskespråk:
-> **Spillet er i KY–Nash-likevekt når ingen aktør kan forbedre sin posisjon gjennom en overgang som BÅDE kan passere porten som OPEN OG bevare spillets integritet under integritetsjustert payoff.**
+> **Spillet er i KY–Nash-likevekt når tilstanden er lovlig nådd fra startfeltet ($s^* \in \mathrm{Reach}_{\mathrm{OPEN}}(s_0)$), og ingen aktør kan forbedre sin integritetsjusterte gevinst gjennom en overgang som passerer porten som OPEN.**
 
-$$\boxed{\mathbf{KY\text{–}Nash\text{-}likevekt\;er\;frav\mathring{a}r\;av\;forbedrende\;OPEN\text{-}vektorer\;p\mathring{a}\;spillflaten.}}$$
+$$\boxed{\mathbf{KY\text{–}Nash\text{-}likevekt\;er\;frav\mathring{a}r\;av\;forbedrende\;OPEN\text{-}vektorer\;fra\;en\;lovlig\;n\mathring{a}bar\;tilstand.}}$$
 
-$$\boxed{\mathbf{KY\text{–}Nash\;equilibrium\;is\;the\;absence\;of\;improving\;OPEN\text{-}vectors\;on\;the\;strategic\;surface.}}$$
+$$\boxed{\mathbf{KY\text{–}Nash\;equilibrium\;is\;the\;absence\;of\;improving\;OPEN\text{-}vectors\;from\;an\;OPEN\text{-}reachable\;state.}}$$
 
-Et spill er ikke i ro fordi ingen kan drømme om mer. Det er i ro når ingen forbedrende overgang kan passere porten uten å ødelegge flaten spillet står på.
+Et spill er ikke i ro fordi ingen kan drømme om mer. Det er i ro når ingen forbedrende overgang kan passere porten uten å skade flaten spillet står på.
 
 ---
 
@@ -163,11 +171,11 @@ Et spill er ikke i ro fordi ingen kan drømme om mer. Det er i ro når ingen for
 
 * **Ghost Payoff:** En kalkulert gevinst i kandidatrommet $\Phi$ som ser blendende ut på papiret, men som aldri kan realiseres fordi portfunksjonen dikterer $\mathrm{KILL}$.
 * **Ghost Win:** En seier oppnådd gjennom trekk som utløser et umiddelbart *integrity collapse*. Man vinner runden lokalt, men terminerer selve spillets fremtidige gyldighet.
-* **HOLD-strategi:** Strategisk suspensjon. Å holde en kandidat aktiv i porten uten å trekke den tilbake eller kreve umiddelbar avgjørelse. Dette binder opp motpartens analyse- og reaksjonsressurser, men tærer også på egne marginer.
+* **HOLD-strategi:** Strategisk suspensjon inne i tvilsbeltet ($\tau_A \pm \varepsilon$). I en uavhengig port krever $\mathrm{HOLD}$ eksplisitt mangellapp ($\Delta_K \neq \varnothing$) og fast tidsfrist ($\tau_{\max}$); uten tidsfrist korrumperes $\mathrm{HOLD}$ lett til et uthalingsvåpen.
 * **KILL:** Portens aktive, objektive forsvar av spillets overlevelse. Det er ikke et uttrykk for emosjonell motstand, men en strukturell nødvendighet for å hindre at spillet forfaller til støy eller kaos.
 * **Admissibility Dominance:** En tilstand der et trekk dominerer andre kandidater, ikke fordi den lokale gevinsten $u_i$ er størst, men fordi det påfører minimale struktur- og vitnekostnader ($C_K + S_{\mathrm{irr}} + R_W \approx 0$). Det vinner fordi det er bærbart.
 * **Integrity Collapse:** Den systemiske tilstanden som oppstår når en aktør tvinger et uadmissibelt trekk gjennom porten ved hjelp av rå makt, slik at spillets fremtidige regler mister autoritet og tillit opphører.
-* **Closed-Game Asymmetry:** En situasjon der aktørene har fundamentalt ulik tilgang til porten. Den dominerende parten får sine mest aggressive handlinger autorisert som $\mathrm{OPEN}$ (lest som nødvendig strategi), mens den svakere partens defensive trekk konsekvent klassifiseres som $\mathrm{KILL}$ eller $\mathrm{HOLD}$ (lest som illojalitet, trusler eller støy).
+* **Closed-Game Asymmetry ($\Omega_1 \neq \Omega_2$):** En situasjon der porten er kapret slik at aktørene har ulik adgang til $\mathrm{OPEN}$. Den dominerende parten får egne overganger autorisert som $\mathrm{OPEN}$, mens motpartens lovlige mottrekk låses i $\mathrm{HOLD}$ eller avvises med $\mathrm{KILL}$. Slik fastlåsing skyldes portmonopol, ikke en gyldig nøytral $\mathrm{KY\text{–}Nash}$-likevekt.
 
 ---
 
