@@ -1,306 +1,245 @@
-# The Unified Field: John Nash’s Duality, K-Filter Gravity, and KY-Nash Admissibility
+# Nash’s Duality, Viability Filtering, and KY–Nash Admissibility
 
 **Author:** Marius Egerhei Torjusen¹  
-*Independent Researcher / Kreativ Systems*  
-*Alphabet-Creative-Core (E-TOR Laboratory, Poincaré Design Labs)*  
-**Date:** July 8, 2026  
-**Status:** CANONICAL FROST (Level 0) // Official Theoretical Consensus  
-¹ ORCID: [0009-0006-0431-6637](https://orcid.org/0009-0006-0431-6637). Email: marius0.of.1@gmail.com  
+*Independent Systems Builder — Risør, Norway*  
+¹ ORCID: [0009-0006-0431-6637](https://orcid.org/0009-0006-0431-6637) · Email: marius0.of.1@gmail.com  
+
+> **Epistemic Demarcation (`INSPIRED_BY != IMPLEMENTS != PROVES`):**  
+> This note separates three distinct levels of claim so no analogy is mistaken for physical or experimental proof:
+> 1. **Self-contained mathematical propositions:** Sphere-transitivity characterization of inner-product spaces (Section 1.2), realization separation $\mathcal{X}_{\mathrm{realized}} \subsetneq \mathcal{X}_{\mathrm{safe}}$ (Theorem 1), interlock-bypass detection logic (Theorem 2), and non-holomorphy of exact binary gates on connected complex domains (Theorem 3).
+> 2. **Deterministic software & RTL architecture (`L1` / `L1.5`):** Fail-closed consequence gating (`OPEN`, `HOLD`, `KILL`, `TRAP`), pre-actuation blocking, and append-only SHA-256 hash chains in software. Software hash chains are tamper-evident logs, **not** physical WORM media unless backed by separately verified hardware fuses. No millikelvin or superconducting qubit laboratory experiment (`L3`) is claimed in this work.
+> 3. **Structural analogies (`INSPIRED_BY`):** Parallels drawn between John F. Nash Jr.’s game-theoretic equilibrium (1950), Nash–Moser smoothing (1956), and his Oslo lecture on fourth-order curvature equations (2015) serve as **structural motivation** for `KY–Nash` integrity costs — not as a physical theory of gravitation.
 
 ---
 
 ## Abstract
 
-This work establishes the formal mathematical isomorphism between John F. Nash Jr.’s dual life works: his topological game-theoretic equilibrium ($C^0$ / Kakutani) and his non-linear, infinite-dimensional isometric embedding analysis ($C^\infty$ / Nash-Moser smoothing). By integrating Coherent Geometric Authorization Systems (CGAS) and the KY-Nash framework, we demonstrate that classical general relativity (Einstein manifolds) and classical Nash equilibrium constitute boundary states of equilibrium admissibility under a unified filtering regime ($\Phi_\perp = 0$).
+Classical game theory and unconstrained control models share a structural blind spot: they treat every mathematically writable action or trajectory as immediately realizable. Building on viability theory (Aubin, 1991) and the **KY–Nash framework** of admissible transitions, this note formalizes consequence control around a simple premise: **a candidate proposal is never identical to an authorized action**.
 
-When systems are forced out of equilibrium, dissipative corrections manifest across both domains: the irreversible, non-equilibrium gravitational stress tensor $\Sigma_{\mu\nu}^{\mathrm{irr}}$ precisely mirrors the "Integrity-Adjusted" frictional cost ($C_K + S_{\mathrm{irr}} + R_W$) within the strategic action space:
+We connect two sides of John F. Nash Jr.’s mathematical legacy as a structural lens for gated systems:
+1. **Static resting states ($C^0$ fixed points, Nash 1950):** characterizing when no actor possesses an improving *authorized* move ($s^* \in E_{\mathrm{KY\text{-}Nash}}$).
+2. **Active regularization under perturbation ($C^\infty$ Nash–Moser smoothing, Nash 1956, and higher-order curvature stabilization, Nash 2015 / Zampino 2015):** motivating why systems pushed out of equilibrium must pay explicit structural, irreversibility, and witness costs ($U_i(s) = u_i(s) - C_K(s) - S_{\mathrm{irr}}(s) - R_W(s)$) to keep runaway *"Ghost Win"* modes from consuming the underlying field.
 
-$$\Sigma_{\mu\nu}^{\mathrm{irr}} = \Sigma_{\mu\nu}^{(\mathrm{vis})} + \Sigma_{\mu\nu}^{(\mathrm{quad})} + \Sigma_{\mu\nu}^{(\mathrm{ker})} \iff U_i(s) = u_i(s) - C_K(s) - S_{\mathrm{irr}}(s) - R_W(s)$$
-
-We validate this formalism against Zampino’s fourth-order vacuum field equations and ICLR 2024 tangent space formulations, and mathematically deconstruct Napoleon’s Russian Campaign (1812) as a pure topological boundary collapse (Ghost Win).
-
-Furthermore, we extend this theory to an operational Quantum² measurement regime (KCM-TEST-1.0) and integrate a fully specified Consequence Gate architecture. Based on controlled A/B/C null tests on superconducting transmon qubits, we resolve the macroscopic null-test paradox: while wavefunctions in free, unregulated circulation erase their history perfectly in accordance with standard Markovian quantum mechanics, structural admissibility is enforced at the interface via a fail-closed Circuit QED ($S_{11}$-parameter) boundary controller.
-
-We formalize system-inherent representation dependence, decompose the temporal evolution into three mutually incompatible time regimes, and implement the extended L0–L6 Ontological Stack. We derive the formal realization theorems for consequence separation ($X_{\mathrm{realized}} \subsetneq X_{\mathrm{safe}}$) and construct real-time sabotage detection for hardware-interlock bypass. Finally, we establish the seven inviolable laws of Reversible Phase Memory (RFM), define the four-valued E-TOR decision space (including the isolated TRAP state), and document the practical realization via the financial pilot KY-ROX Finance v0.1 (Shadow Gate). We ground this realization grammar in the KORA Adaptive Control (v0.1) framework under involutive and thermodynamic closure requirements, physically enacted via an 80 kHz Zeta-pulse, Viswanath-stochastic taming on a Fibonacci time-base, and a 5.00V galvanic truth anchor at Locus Zero.
+We prove three elementary structural results for fail-closed gates: that static safety never implies actuation authority ($\mathcal{X}_{\mathrm{realized}} \subsetneq \mathcal{X}_{\mathrm{safe}}$), that current flow under a closed gate constitutes a decidable hardware interlock breach, and that an exact binary indicator $\{0,1\}$ on a connected complex domain cannot be holomorphic — requiring smooth interior estimation paired with a sharp outer cut. Finally, we illustrate boundary collapse through Napoleon’s 1812 Moscow campaign and specify the four-valued shadow gate (`OPEN`, `HOLD`, `KILL`, `TRAP`) for financial transaction rails.
 
 ---
 
-## 1. Ontological Foundation: Access Over Geometry (CGAS)
+## 1. Access Before Trajectory: Viability and Projection
 
-Classical physics and traditional game theory share a fundamental ontological vulnerability: they assume that the existence of a mathematical action space or a kinematically writable trajectory is synonymous with its physical realization. In the CGAS framework, we invert this premise:
+Traditional action models assume that if a state update can be computed, it can be enacted. Here we invert that order:
 
-$$\boxed{\mathbf{Geometry\;is\;emergent.\;Access\;is\;fundamental.}}$$
+$$\boxed{\mathbf{Trajectory\;is\;proposed.\;Access\;is\;granted\;at\;the\;gate.}}$$
 
-We define the physical, computational, and operational system as a formal triad:
+We represent an operational system as a triad:
 
 $$\mathcal{S} = (\mathcal{X}, \Phi, \mathcal{K})$$
 
-Where:
-* $\mathcal{X}$ represents the global, continuous kinematic state space (the bulk of mathematically expressible configurations, metrics, and profiles).
-* $\Phi$ represents the generative, unregulated, and reversible dynamics (free vector field evolution $\dot{x} = f(x)$ or standard best-response dynamics).
-* $\mathcal{K} \subseteq \mathcal{X}$ represents the admissible, allowed subspace defined by the system’s inner structural consistency, boundary conditions, and invariants.
+* $\mathcal{X}$: The kinematic candidate space of all expressible configurations, metrics, and action profiles.
+* $\Phi$: The unregulated proposal generator (free vector-field updates, search heuristics, or best-response proposals).
+* $\mathcal{K} \subseteq \mathcal{X}$: The admissible subset defined by invariants, resource bounds, and transition rules.
 
-Physical, strategic, and social reality does not emerge from the free generator $\Phi$ alone. Operational existence is defined strictly as the kernel of the difference operator between the proposed candidate trajectory and its authorized projection:
+Operational updates do not arise from $\Phi$ alone. A proposed step survives without modification only in the fixed-point kernel of the projection mismatch:
 
-$$E(x) = x - \Pi_{\mathcal{K}}(\Phi(x)) \implies \mathbf{Reality} = \ker(E)$$
+$$E(x) = \Phi(x) - \Pi_{\mathcal{K}}(\Phi(x)), \qquad \mathcal{X}_{\mathrm{adm\text{-}step}} = \ker(E)$$
 
-Consequently, real-time realization is confined to the viable and surviving kernel $\mathrm{Viab}(\mathcal{K})$ under continued forward evolution:
+Following Aubin (1991), sustained operation is restricted to the **viability kernel** $\mathrm{Viab}(\mathcal{K})$ — the subset of initial states from which forward gated evolution remains inside $\mathcal{K}$ for all steps:
 
-$$\mathrm{Viab}(\mathcal{K}) = \left\{ x_0 \in \mathcal{X} \mid (\Pi_{\mathcal{K}} \circ \Phi)^t(x_0) \in \mathcal{K}, \; \forall t \ge 0 \right\}$$
+$$\mathrm{Viab}(\mathcal{K}) = \left\{ x_0 \in \mathcal{K} \;\middle|\; (\Pi_{\mathcal{K}} \circ \Phi)^t(x_0) \in \mathcal{K}, \; \forall t \in \mathbb{N} \right\}$$
 
-Reality is not a given property of dynamic updates; it is a structural subset of possibilities that continuously survives boundary selection.
+### 1.1 Orthogonal State Split
 
-### 1.1 Discrete State Structure
+On discrete steps $t \in \mathbb{N}$, the system state $\mathbf{x}_t$ is separated into three non-overlapping records so proposal data can never overwrite authorization state:
 
-The system evolves on a discrete time-base $t \in \mathbb{N}$. The comprehensive operational state vector $\mathbf{x}_t$ is decomposed into three distinct, orthogonal subspaces:
+$$\mathcal{X} = \mathcal{X}_{\mathrm{cand}} \oplus \mathcal{X}_{\mathrm{phase}} \oplus \mathcal{X}_{\mathrm{lock}}, \qquad \mathbf{x}_t = \begin{bmatrix} \mathbf{c}_t \\ \boldsymbol{\phi}_t \\ \boldsymbol{\lambda}_t \end{bmatrix}$$
 
-$$\mathcal{X} = \mathcal{X}_{\mathrm{cand}} \oplus \mathcal{X}_{\mathrm{phase}} \oplus \mathcal{X}_{\mathrm{lock}}$$
+* **$\mathbf{c}_t \in \mathcal{X}_{\mathrm{cand}}$ (Candidate):** Proposal ID, origin, intended action, payload digest, sequence index, and parent hash.
+* **$\boldsymbol{\phi}_t \in \mathcal{X}_{\mathrm{phase}}$ (Diagnostic / Phase State):** Measured drift, spectral residuals, and constraint margins.
+* **$\boldsymbol{\lambda}_t \in \mathcal{X}_{\mathrm{lock}}$ (Lock & Witness State):** Gate verdict ($\Omega \in \{\mathrm{OPEN}, \mathrm{HOLD}, \mathrm{KILL}, \mathrm{TRAP}\}$), physical interlock status, and append-only witness hash.
 
-$$\mathbf{x}_t = \begin{bmatrix} \mathbf{c}_t \\ \boldsymbol{\phi}_t \\ \boldsymbol{\lambda}_t \end{bmatrix}$$
+### 1.2 Why Inner-Product Projections Are Canonical Under Symmetry
 
-Where:
-* $\mathbf{c}_t \in \mathcal{X}_{\mathrm{cand}}$: The candidate vector, carrying the unique candidate ID, source, intended operation (intent), payload hash, sequence number, and its causal history anchor (parent).
-* $\boldsymbol{\phi}_t \in \mathcal{X}_{\mathrm{phase}}$: The phase vector, quantifying the system’s geometric phase deviations, spectral/modal responses, and electromagnetic wave configurations.
-* $\boldsymbol{\lambda}_t \in \mathcal{X}_{\mathrm{lock}}$: The locking vector, conveying the gate’s sanction status ($\Omega \in \{\mathrm{OPEN}, \mathrm{HOLD}, \mathrm{KILL}, \mathrm{TRAP}\}$), the hardware physical interlock state (HPIS), and the cryptographic Witness proof.
+Using orthogonal projections in finite-dimensional state-space checks is not arbitrary; it follows whenever the norm treats all directions on the unit sphere symmetrically (a classical result of Banach–Mazur–Auerbach):
 
-### 1.2 Metric Characterization via Sphere-Transitivity
-
-The validity of using Euclidean norms and Hilbert space structures in our state-space and projection analysis is an inevitable geometric consequence of maximal symmetry.
-
-> **Theorem (Geometric Uniqueness):** Let $(V, \|\cdot\|)$ be a finite-dimensional normed space. Then $V$ is Euclidean (meaning its norm is induced by an inner product) if and only if for any pair of vectors $x, y \in V$ with $\|x\| = \|y\|$, there exists a linear isometry $T : V \to V$ such that $T(x) = y$.
+> **Proposition 1 (Sphere-Transitivity Implies Inner-Product Space):** Let $(V, \|\cdot\|)$ be a finite-dimensional real normed space. The norm $\|\cdot\|$ is induced by an inner product if and only if for every pair $x, y \in V$ with $\|x\| = \|y\|$, there exists a linear isometry $T : V \to V$ such that $T(x) = y$.
 
 *Proof:*  
-*Forward Direction ($\implies$):* Assume $V$ is an inner product space. Let $\|x\| = \|y\|$. The 2-dimensional plane spanned by $x$ and $y$ admits an orthogonal reflection or rotation mapping $x$ to $y$, which extends identically on $V^\perp$ as a global linear isometry preserving the norm.  
-*Backward Direction ($\impliedby$):* The group of linear isometries $\mathrm{Iso}(V)$ with respect to $\|\cdot\|$ is a closed, bounded subgroup of $\mathrm{GL}(V)$, hence compact. It admits a unique normalized Haar measure $\mu$. Averaging an arbitrary background inner product $\langle\cdot, \cdot\rangle_0$ over $\mathrm{Iso}(V)$:
-$$\langle u, v \rangle_{\mathrm{avg}} = \int_{\mathrm{Iso}(V)} \langle T(u), T(v) \rangle_0 \, d\mu(T)$$
-yields an $\mathrm{Iso}(V)$-invariant inner product. Because $\mathrm{Iso}(V)$ acts transitively on the unit sphere $S = \{x \in V \mid \|x\| = 1\}$, the induced norm $\|x\|_{\mathrm{avg}}$ is constant on $S$. Hence $\|x\| = c \|x\|_{\mathrm{avg}}$ for all $x \in V$, proving that the original norm is strictly Euclidean. $\blacksquare$
-
-This geometric uniqueness proves that any deformation under our generator $\Phi$ that attempts to break spherical symmetry deforms the underlying Euclidean nature of the space itself. This deformation is immediately intercepted by the admissibility filter $\Pi_{\mathcal{K}}$ as a structural mismatch.
+*($\implies$)* In an inner-product space, any two vectors $x, y$ of equal norm span a subspace of dimension at most $2$, on which a rotation or reflection maps $x \mapsto y$ while preserving the inner product; extending $T$ as the identity on the orthogonal complement gives a global linear isometry.  
+*($\impliedby$)* Because $\dim V < \infty$, the linear isometry group $G = \mathrm{Iso}(V, \|\cdot\|)$ is a closed, bounded subgroup of $\mathrm{GL}(V)$ and is therefore compact by Heine–Borel. Let $\mu$ be the unique normalized Haar measure on $G$, and choose any auxiliary inner product $\langle \cdot, \cdot \rangle_0$ on $V$. Averaging over $G$,
+$$\langle u, v \rangle_{\mathrm{avg}} = \int_G \langle T(u), T(v) \rangle_0 \, d\mu(T),$$
+defines a $G$-invariant inner product with norm $\|x\|_{\mathrm{avg}}$. Since $G$ acts transitively on the unit sphere $S = \{x \in V \mid \|x\| = 1\}$, $\|x\|_{\mathrm{avg}}$ takes a single constant value $c > 0$ across all $x \in S$. By positive homogeneity, $\|x\| = c^{-1}\|x\|_{\mathrm{avg}}$ for all $x \in V$, so $\|\cdot\|$ is induced by $c^{-2}\langle \cdot, \cdot \rangle_{\mathrm{avg}}$. $\blacksquare$
 
 ---
 
-## 2. The Unified Ontological Stack (L0–L6)
+## 2. Layered Control Hierarchy (`L0`–`L6`)
 
-The relationship between raw generative physics and the protective control layers is structured as an immutable hierarchy of seven functional layers:
+To prevent high-level optimization goals from overriding low-level safety bounds, system responsibilities are ordered from physical cutoff at the bottom to long-horizon planning at the top. No upper layer holds write-access to bypass a lower layer’s invariants:
 
-* **L6 (Teleology):** The sovereign diachronic objective function, maximizing long-term legacy value under physical, epistemic, and constitutional constraints:
-  $$\max_{\pi \in \mathrm{Adm}} \int_0^\infty e^{-\beta t} \mathcal{U}_{\mathrm{legacy}}(\mathbf{x}_t) \, dt$$
-* **L5 (Meta-Governance):** Externalized reflexivity and systemic immune response. Monitors the alignment between model representation and physical reality, preventing self-absorbing decay loops.
-* **L4 (Governance):** Real-time identification and mitigation of emerging hostile complexity and pathological configurations (Nashus).
-* **L3 (Control Dynamics):** Mathematically guarantees the existence of a stable trajectory via Kakutani’s fixed-point theorem, regularizing derivative loss under extreme perturbations using iterative Nash-Moser smoothing to eliminate actuator jitter.
-* **L2 (Epistemic Sensor):** Real-time topological monitoring of curvature, geometric stress, and the phase gradient $\nabla \boldsymbol{\phi}$.
-* **L1 (Epistemic Root):** Immutable Write-Once-Read-Many (WORM) ledger. Cryptographically chains all verified state transitions, preventing retrospective historical alteration.
-* **L0 (Hardware Anchor):** The impenetrable physical foundation. Enforces involutive causality and Systemic Honesty through galvanically isolated relay interlocks, eFuses, and mechanical Point-of-No-Return boundaries ($0.00\,\text{V}$ DC cutoff).
-
----
-
-## 3. The Unification of Nash’s Duality: Nash 1950 vs. Nash 1954–1956
-
-John F. Nash Jr.’s scientific legacy reflects a fundamental separation between systems in static equilibrium and non-linear systems undergoing active, dissipative realization:
-
-### 3.1 Nash 1950: The Topological Guarantee (Equilibrium Admissibility)
-In 1950, Nash proved the existence of a strategic resting state $s^* = BR(s^*)$ utilizing Kakutani’s fixed-point theorem on compact, convex strategy sets.
-* *Physical Equivalent:* Corresponds to Einstein’s general relativity in perfect equilibrium ($\Phi_\perp = 0$), where spacetime curves to distribute stress without internal energy loss ($G_{\mu\nu} = 8\pi G T_{\mu\nu}$).
-
-### 3.2 Nash 1954–1956: The Analytical Construction (Non-Equilibrium Admissibility)
-In 1954–1956, Nash resolved the infinite-dimensional isometric embedding problem in Fréchet spaces by solving the overdetermined, highly non-linear PDE system:
-$$g_{ij} = \sum_{\alpha=1}^N \frac{\partial y^\alpha}{\partial x^i} \frac{\partial y^\alpha}{\partial x^j}$$
-Because the linearized operator of this system is degenerate and suffers from derivative loss, standard contraction-mapping methods fail. Nash overcame this by developing the iterative **Nash-Moser method**, utilizing a parameterized smoothing operator ($S_\theta$) under rigorous tame estimates:
-$$\|S_\theta u\|_s \le \theta^{s-r} \|u\|_r \quad (s \ge r)$$
-* *Physical Equivalent:* Corresponds to fourth-order quadratic curvature gravity in the non-equilibrium regime. Realized spacetime must be actively stabilized and regularized via dissipative projection terms ($\Sigma_{\mu\nu}^{\mathrm{irr}}$) to suppress runaway modes.
+* **`L6` (Long-Horizon Objective):** Chooses candidate policies only inside the admissible set ($\max_{\pi \in \mathrm{Adm}} \sum_{t=0}^\infty \gamma^t U(\mathbf{x}_t)$).
+* **`L5` (Model–Reality Audit):** Compares internal model predictions against independent sensor and witness records to catch self-confirming drift.
+* **`L4` (Strategic Governance / `KY–Nash`):** Filters out locally profitable moves that degrade shared system integrity (*Ghost Wins*) or exploit asymmetric gate capture.
+* **`L3` (Trajectory Stabilization):** Applies bounded smoothing and damping so noisy inputs do not cause chattering at the gate threshold.
+* **`L2` (Constraint Sensing):** Computes exact margin residuals ($\Delta_K$) before actuation.
+* **`L1` (Tamper-Evident Witness Log):** Append-only SHA-256 hash chain recording `OPEN`, `HOLD`, `KILL`, and `TRAP` decisions without silent overwrite.
+* **`L0` (Physical Cutoff Anchor):** Hardware interlocks, relays, and fail-closed $0.00\,\text{V}$ de-energized defaults when authorization is absent.
 
 ---
 
-## 4. Representation Dependence and the Three Time Regimes
+## 3. Nash’s Duality as Structural Lens (`INSPIRED_BY`)
 
-Under the principle of representation dependence:
+John F. Nash Jr.’s work spans two seemingly distant worlds — strategic equilibrium and geometric analysis — plus a late return to higher-order field equations:
 
-$$\mathbf{Representation\;A} \neq \mathbf{Representation\;B} \implies \Pi_{\mathcal{K}}(\mathbf{x}_A) \neq \Pi_{\mathcal{K}}(\mathbf{x}_B)$$
+1. **Equilibrium Existence ($C^0$ / Kakutani, Nash 1950):** Proves that compact, convex finite games admit a resting profile $s^*$ where no player gains by unilateral deviation. Classical Nash assumes every deviation in the action set is automatically executable.
+2. **Smoothing Under Derivative Loss ($C^\infty$ / Nash–Moser, Nash 1956):** Solving the isometric embedding system
+   $$g_{ij} = \sum_{\alpha=1}^N \frac{\partial y^\alpha}{\partial x^i}\frac{\partial y^\alpha}{\partial x^j}$$
+   fails under naive Newton iteration because each step loses regularity. Nash overcame this by interleaving Newton steps with parameterized smoothing operators $S_\theta$ obeying tame estimates ($\|S_\theta u\|_s \le C \theta^{s-r}\|u\|_r$ for $s \ge r$).
+3. **Higher-Order Curvature Lecture (Oslo 2015 / Zampino 2015):** In his final Abel Prize week lecture in Oslo (*"An Interesting Equation"*, May 20, 2015; analyzed by Zampino, 2015), Nash explored fourth-order curvature Lagrangians of the form $\int \sqrt{-g}(2R_{\mu\nu}R^{\mu\nu} - R^2)\,d^4x$. Higher-derivative systems famously risk unbounded Ostrogradsky modes unless unstable sectors are filtered or damped.
 
-Because the admissibility gate evaluates the underlying coordinate atlas and algebraic structure of a configuration, two trajectories that appear identical under local, metric-only observation may possess different admissibility statuses.
-
-This requires the deconstruction of the temporal axis into three distinct, non-overlapping time regimes:
-
-1. **Reversible Evolution Time ($\mathcal{D}_1$):** Governed by the involutive layer, where transformations satisfy $F \circ F = \mathrm{Id}$. This regime is information-preserving, lossless, and generates zero physical entropy ($\Delta S_{\mathrm{irr}} = 0$).
-2. **Dissipative Projection Time ($\Delta t_\Pi$):** The non-analytic transition interval where unregulated proposals are projected onto the admissible set. This idempotent operation ($\Pi^2 = \Pi$) is non-invertible and generates a measurable minimum Landauer heat dissipation ($Q \ge k_B T \ln 2 \cdot \Delta I$).
-3. **Monotonic History Time ($\mathcal{D}_2$):** The post-commit regime, where verified transitions are appended to the WORM ledger. History is strictly monotonic ($\Delta t > 0$), and the inverse operator is physically undefined.
+**Architectural takeaway (`INSPIRED_BY`):** In `KY–Nash`, we combine these two intuitions without conflating game theory with physical gravity. Nash (1950) stabilizes *choice inside a fixed room*; projection and smoothing principles inspire how `KY` stabilizes *the room itself* against high-gain, regularity-destroying moves.
 
 ---
 
-## 5. Reversible Phase Memory (RFM) and the Seven Kernel Laws
+## 4. Representation Dependence and Three Time Regimes
 
-Reversible Phase Memory (RFM) serves as a lossless, pre-commit trial space in the phase-domain ($\mathcal{D}_1$) prior to gate evaluation. The trial transformation $F$ must act as a perfect involution:
+Two state descriptions that look equivalent under a coarse local score can differ in provenance, witness chain, or coordinate validity:
 
-$$F(F(s)) = s, \quad \Delta S_{\mathrm{irr}} = 0$$
+$$\mathrm{Repr}(A) \neq \mathrm{Repr}(B) \implies \Pi_{\mathcal{K}}(\mathbf{x}_A) \text{ need not equal } \Pi_{\mathcal{K}}(\mathbf{x}_B)$$
 
-Any phase leakage ($\Delta H \neq 0$) indicates an internal logical inconsistency (`MASK_MUTATED`), and the candidate is immediately pruned. The RFM layer is strictly governed by seven fundamental laws:
+Accordingly, every transition passes through three distinct temporal phases:
 
-1. **No Erasure:** The trial transformation must strictly perform coordinate shifts; no information can be deleted or overwritten in the phase domain.
-2. **Temporal Symmetry:** Control is modeled as a palindromic pulse in time; computation is modeled as a geodetic displacement in space.
-3. **Annihilation of Error:** If a perturbation does not break the involution, it cannot accumulate as hidden history or latency-drift.
-4. **Separation of Concerns:** The control domain determines the type of transformation to be tested; the kernel performs the actual involution test.
-5. **Non-Sovereignty:** RFM does not authorize material action; it only verifies coordinate consistency.
-6. **Traceability:** A state is valid in the RFM if and only if its entire path can be inverted without generating residual numerical stress.
-7. **Silent Post-Commit:** Once a transition crosses into $\mathcal{D}_2$, the RFM must remain completely silent and exert no back-reaction on history.
+1. **Reversible Exploration Time ($\mathcal{D}_1$ — Play / Trial):** Candidate transformations satisfy involution ($F \circ F = \mathrm{Id}$). Trials can be stepped forward and undone cleanly with zero external commitment.
+2. **Dissipative Projection Time ($\Delta t_\Pi$ — The Cut):** Unregulated candidates meet an idempotent projection ($\Pi_{\mathcal{K}}^2 = \Pi_{\mathcal{K}}$). Because many raw candidates map to the same projected state, projection is non-invertible ($\det D\Pi_{\mathcal{K}} = 0$ off the subspace) and discards microstate information — incurring at minimum Landauer’s erasure bound $Q \ge k_B T \ln 2 \cdot \Delta I$ in any physical realization (Landauer, 1961).
+3. **Monotonic Witness Time ($\mathcal{D}_2$ — Post-Commit History):** Once `OPEN` is granted, the event is appended to the hash chain. Retraction requires a *new* Compensating Entry; past entries are never erased.
 
 ---
 
-## 6. E-TOR Consequence Gate and the Four-Valued Decision Space
+## 5. Reversible Trial Space and Seven Design Rules
 
-The E-TOR supervisor is the deterministic gate enforcing the boundary between candidate proposal and realized consequence:
+Before reaching the consequence gate, candidate updates can be tested inside a reversible trial buffer ($\mathcal{D}_1$) governed by seven engineering rules:
+
+1. **No Silent Overwrite:** Trial steps permute or shift state coordinates without erasing input provenance.
+2. **Symmetric Undo:** Every trial transform $F$ carries an explicit inverse (or involution $F(F(s)) = s$).
+3. **Bounded Drift:** Perturbations that break exact round-trip recovery flag `MASK_MUTATED` and abort actuation.
+4. **Role Separation:** The generator proposes what to test; an independent checker verifies round-trip consistency.
+5. **Zero Actuation Authority:** Passing a reversible trial never grants `OPEN` by itself.
+6. **Explicit Residual Reporting:** Any numerical or constraint mismatch is surfaced as a structured deficiency ($\Delta_K$).
+7. **Post-Commit Silence:** Once a transition enters $\mathcal{D}_2$, trial scratchpads cannot mutate committed history.
+
+---
+
+## 6. Four-Valued Consequence Gate (`E-TOR`)
+
+The supervisor $\Omega$ maps candidate and diagnostic state into four mutually exclusive verdicts:
 
 $$\Omega : \mathcal{X}_{\mathrm{cand}} \times \mathcal{X}_{\mathrm{phase}} \longrightarrow \{\mathrm{OPEN}, \mathrm{HOLD}, \mathrm{KILL}, \mathrm{TRAP}\}$$
 
-The evaluation follows a strict, non-linear priority hierarchy:
+evaluated under strict fail-closed precedence:
 
 $$\mathbf{KILL} \;\succ\; \mathbf{TRAP} \;\succ\; \mathbf{HOLD} \;\succ\; \mathbf{OPEN}$$
 
-No quantity of positive metrics or welfare estimates can override a single hard security violation.
+No high payoff estimate can override a single invariant violation:
 
-* **OPEN:** The candidate is structurally admissible and carries valid warrant. It is authorized to cross the Point-of-No-Return ($\mathcal{D}_2$) and actuate.
-* **HOLD:** The candidate is suspended due to temporary warrant insufficiency or parameter drift. It is placed in a non-dissipative quarantine loop, requiring a complete re-admission cycle to exit.
-* **KILL:** The candidate violates structural invariants, breaks sequence, or claims false reversibility. It is deleted immediately to prevent cascading decoherence.
-* **TRAP:** Upon detecting coordinated adversarial manipulation or jailbreak attempts, the gate triggers TRAP. The candidate’s causal flow is redirected to an isolated shadow geometry:
-  $$\mathbf{x}_{\mathrm{real}} \longrightarrow \mathbf{x}_{\mathrm{mirror}}$$
-  The actor receives a local acknowledgment of success (`local_ACK`), while no consequence is realized in the physical or operational market.
-
----
-
-## 7. Realization Theorems and Sabotage Detection
-
-> **Theorem 1 (Realization Separation):** Let $\mathcal{X}_{\mathrm{safe}}$ be the geometric subspace satisfying the system’s static invariants. Let $\mathcal{X}_{\mathrm{realized}}$ be the set of realized transitions. Then:
-> 
-> $$\mathcal{X}_{\mathrm{realized}} \subsetneq \mathcal{X}_{\mathrm{safe}}$$
-
-*Proof:* Realization requires the simultaneous satisfaction of static safety ($\mathcal{K}$), active gate authorization ($\Omega = \mathrm{OPEN}$), and physical actuator enablement ($V_{\mathrm{rail}} = 5.00\,\text{V}$). Because active authorization requires extrinsic witness warrant beyond static state coordinates, $\mathcal{X}_{\mathrm{realized}}$ constitutes a strict subset. A state may be mathematically safe without possessing authorization to actuate. $\blacksquare$
-
-> **Theorem 2 (Sabotage Detection for Interlock-Bypass):** If the decision gate returns a closed status ($\Omega \in \{\mathrm{HOLD}, \mathrm{KILL}\}$), but the physical sensor loop detects active energy delivery to the actuator ($I_{\mathrm{meas}} > 0$), the system is undergoing unauthorized physical manipulation (sabotage).
-
-*Proof:* The interlock consistency relation is defined by the logical biconditional $\Omega = \mathrm{OPEN} \iff I_{\mathrm{actuator}} > 0$. If $\Omega \neq \mathrm{OPEN} \land I_{\mathrm{actuator}} > 0$, the logical truth value evaluates to false. This contradiction instantly trips the hardware comparator, triggering an irreversible hardware crowbar to `SABOTAGE_INTERLOCK_BYPASS` and isolating power lines upstream within $<18\,\text{ns}$. $\blacksquare$
+* **`OPEN`:** Candidate satisfies structural invariants and carries an explicit, verifiable evidence ID. Authorized to cross into $\mathcal{D}_2$.
+* **`HOLD`:** Candidate lacks complete warrant ($\Delta_K \neq \varnothing$) or sits within the threshold margin. Returned to the workbench under bounded clock supervision ($\tau_{\max}$) so `HOLD` cannot decay into `OPEN` by waiting nor be abused as indefinite administrative stalling.
+* **`KILL`:** Candidate breaches invariants, spoofs provenance, or attempts to pass metaphor/bluff as proof. Rejected immediately (`0 V` / disabled actuation).
+* **`TRAP` (Shadow Containment):** When coordinated adversarial probing or bypass patterns are detected, execution is routed to an isolated sandbox state ($\mathbf{x}_{\mathrm{mirror}}$) returning only a synthetic local receipt (`local_ACK`) with zero external effect:
+  $$\mathrm{local\_ACK}(c) \neq \mathrm{public\_consequence}(c)$$
 
 ---
 
-## 8. Holomorphic Limits of Admissibility
+## 7. Realization Separation, Sabotage Detection, and Non-Holomorphy
 
-When system states are represented on a complex manifold, the state is evaluated through an integrated projection gate:
+> **Theorem 1 (Realization Separation):** Let $\mathcal{X}_{\mathrm{safe}} \subseteq \mathcal{X}$ be the set of states satisfying static safety constraints, and let $\mathcal{X}_{\mathrm{realized}}$ be the set of states authorized to actuate. Whenever actuation requires an independent extrinsic evidence token $w \in \mathcal{W}_{\mathrm{valid}}$ in addition to state safety,
+> $$\mathcal{X}_{\mathrm{realized}} \subsetneq \mathcal{X}_{\mathrm{safe}}.$$
 
-$$\mathcal{P}_{\mathrm{ATLAS}} = \Pi_{\mathrm{denote}} \circ \Pi_{\mathrm{alg}} \circ \Pi_{\mathrm{holo}} \circ \Pi_{\mathrm{spec}} \circ \Pi_{\mathrm{smooth}}$$
+*Proof:* By definition, $\mathbf{x} \in \mathcal{X}_{\mathrm{realized}} \iff \mathbf{x} \in \mathcal{X}_{\mathrm{safe}} \land \Omega(\mathbf{x}, w) = \mathrm{OPEN}$. Every realized state belongs to $\mathcal{X}_{\mathrm{safe}}$. Conversely, take any safe configuration $\mathbf{x}_0 \in \mathcal{X}_{\mathrm{safe}}$ with missing or empty warrant ($w = \varnothing$). Fail-closed gating assigns $\Omega(\mathbf{x}_0, \varnothing) = \mathrm{HOLD} \neq \mathrm{OPEN}$, so $\mathbf{x}_0 \notin \mathcal{X}_{\mathrm{realized}}$. Thus the inclusion is strict. $\blacksquare$
 
-where $\Pi_{\mathrm{holo}}$ enforces Cauchy-Riemann consistency ($\partial_{\bar{z}} \Phi = 0$).
+> **Theorem 2 (Hardware Interlock Bypass Detection):** Suppose the hardware contract enforces the biconditional $\big(\Omega = \mathrm{OPEN}\big) \iff \big(I_{\mathrm{act}} > I_{\mathrm{leak}}\big)$, where $I_{\mathrm{act}}$ is measured actuator current above leakage floor $I_{\mathrm{leak}}$. Any observation satisfying $\Omega \in \{\mathrm{HOLD}, \mathrm{KILL}, \mathrm{TRAP}\} \land I_{\mathrm{act}} > I_{\mathrm{leak}}$ refutes the contract and witnesses a physical bypass or fault.
 
-> **Theorem 3 (Non-Holomorphy of the Exact Gate):** Let $\mathcal{D} \subset \mathbb{C}^n$ be a connected complex domain representing system states. An exact, binary admissibility indicator $\chi_{\mathcal{K}} : \mathcal{D} \to \{0, 1\}$ cannot be holomorphic unless it is trivial.
+*Proof:* Substituting $\Omega \neq \mathrm{OPEN}$ (false on the left) and $I_{\mathrm{act}} > I_{\mathrm{leak}}$ (true on the right) falsifies the biconditional $(\text{False} \iff \text{True}) \equiv \text{False}$, providing a deterministic comparator trigger (`SABOTAGE_INTERLOCK_BYPASS`) for upstream cutoff. $\blacksquare$
 
-*Proof:* Assume $\chi_{\mathcal{K}}$ is holomorphic on $\mathcal{D}$. The image set $\{0, 1\}$ is discrete. By the open mapping theorem and identity theorem for holomorphic functions, any holomorphic function with a discrete image on a connected domain must be globally constant. Thus $\chi_{\mathcal{K}} \equiv 0$ or $\chi_{\mathcal{K}} \equiv 1$, collapsing the capacity to discriminate between admissible and inadmissible states. $\blacksquare$
+> **Theorem 3 (Non-Holomorphy of Exact Binary Gates):** Let $\mathcal{D} \subset \mathbb{C}^n$ be a non-empty connected open domain. No non-constant exact binary gate $\chi_{\mathcal{K}} : \mathcal{D} \to \{0, 1\}$ can be holomorphic on $\mathcal{D}$.
 
-This mathematically necessitates a dual-layer architecture: **sharp, discrete selection on the outside ($\Pi_{\mathcal{K}}$), smooth holomorphic polynomial approximation on the inside.**
+*Proof:* Suppose $\chi_{\mathcal{K}} : \mathcal{D} \to \mathbb{C}$ is holomorphic and takes values only in the discrete set $\{0, 1\}$. Because $\chi_{\mathcal{K}}$ is continuous on the connected set $\mathcal{D}$ into a discrete space, $\chi_{\mathcal{K}}$ must be constant ($\chi_{\mathcal{K}} \equiv 0$ or $\chi_{\mathcal{K}} \equiv 1$). Hence no holomorphic function can separate admissible ($1$) from inadmissible ($0$) regions on a connected domain. $\blacksquare$
 
----
-
-## 9. Non-Equilibrium Admissibility: Ostrogradsky Ghosts and Kerr Spacetime
-
-In fourth-order curvature gravity, the Euler-Lagrange tensor introduces degrees of freedom with unbounded Hamiltonians (Ostrogradsky ghosts). The K-filter architecture mitigates these instabilities by defining the admissible state space $\mathcal{A}$ strictly through the spectrum of the linearized operator $\mathcal{L}_g$:
-
-$$\mathcal{A} = \left\{ g \in \mathcal{X} \mid \sigma(\mathcal{L}_g) \subset \{ \mathrm{Re}(\lambda) \le 0 \} \right\}$$
-
-Unstable modes ($\mathrm{Re}(\lambda) > 0$) lack an operator to propagate ($h_{\mathrm{ghost}} \notin \mathrm{Dom}(\mathcal{L}_{\mathrm{eff}})$) and are structurally excluded from physical realization.
-
-### Conserved Kernel of Kerr Spacetime
-
-This selective architecture natively governs black hole mechanics. The geodesic flow around a rotating Kerr black hole generates infinitely many theoretical trajectories. However, physically realized orbits are restricted to the invariant kernel of Conserved Constants of Motion:
-
-$$K_\gamma^{\mathrm{dyn}} = \{ E, L_z, \mathcal{Q}, \mu^2 \}$$
-
-where $E$ is energy, $L_z$ is axial angular momentum, $\mathcal{Q}$ is Carter’s constant, and $\mu$ is rest mass. Any trajectory attempting to deform this invariant structure is filtered out: $x_{t+1} = \Pi_{\mathcal{K}}(\Phi(x_t))$.
+**Design consequence:** Smooth optimization and gradient methods belong strictly *inside* the candidate generator ($\Phi$), whereas final authorization ($\Omega$) must remain a non-smooth, discrete cut at the boundary.
 
 ---
 
-## 10. Decomposition of Irreversible Stress: Gravitation vs. Game Theory
+## 8. Integrity-Adjusted Payoffs and Structural Parallels
 
-Under non-equilibrium conditions, enforcing admissibility generates irreversible stress $\Sigma_{\mu\nu}^{\mathrm{irr}}$ in the field equations:
+In `KY–Nash` game theory, raw immediate gain $u_i(s)$ is corrected by three real-world costs incurred when pushing an action through shared institutions or infrastructure:
 
-$$G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu} + \Sigma_{\mu\nu}^{\mathrm{irr}}$$
+$$\boxed{U_i(s) = u_i(s) - C_K(s) - S_{\mathrm{irr}}(s) - R_W(s)}$$
 
-This stress decomposes into three distinct layers, each mapping isomorphically to a specific cost in the Integrity-Adjusted Payoff function of a strategic actor:
+| Strategic Cost Term | Meaning in `KY–Nash` Game Theory | Motivating Physical Analogy (`INSPIRED_BY`) |
+| :--- | :--- | :--- |
+| **$C_K(s)$ (Structure Cost)** | Effort spent bending rules, fighting friction, or straining shared interfaces. | Viscous boundary shear resisting rapid deformation. |
+| **$S_{\mathrm{irr}}(s)$ (Irreversibility Cost)** | Loss of future strategic options after burning bridges or locking into rigid paths. | Higher-order curvature damping suppressing runaway Ostrogradsky modes (Nash, 2015; Zampino, 2015). |
+| **$R_W(s)$ (Witness Cost)** | Reputational, legal, and trust cost once the move is permanently recorded before witnesses. | Boundary information / decodability load required to reconstruct history within finite propagation bounds (cf. Mozumdar, 2026). |
 
-$$\Sigma_{\mu\nu}^{\mathrm{irr}} = \Sigma_{\mu\nu}^{(\mathrm{vis})} + \Sigma_{\mu\nu}^{(\mathrm{quad})} + \Sigma_{\mu\nu}^{(\mathrm{ker})} \iff U_i(s) = u_i(s) - C_K(s) - S_{\mathrm{irr}}(s) - R_W(s)$$
-
-1. **Viscous Horizon Stress vs. Structure Cost ($C_K$):**
-   $$\Sigma_{\mu\nu}^{(\mathrm{vis})} = -\zeta \Pi \theta q_{\mu\nu} - 2\eta \Pi \sigma_{\mu\nu}$$
-   Maps to the metabolic/strategic energy expended to bend or maintain rules to force an unbalanced candidate through the gate.
-2. **Quadratic Curvature vs. Irreversibility Cost ($S_{\mathrm{irr}}$):**
-   $$\Sigma_{\mu\nu}^{(\mathrm{quad})} = \ell^2 \Pi W_{\mu\nu}$$
-   Maps to the permanent loss of future strategic degrees of freedom when an actor commits to a higher-order, irreversible path.
-3. **Decodability Field vs. Witness Cost ($R_W$):**
-   $$\Sigma_{\mu\nu}^{(\mathrm{ker})} = \chi \Pi \left( \nabla_\mu \phi_\Pi \nabla_\nu \phi_\Pi - \frac{1}{2} g_{\mu\nu} (\nabla \phi_\Pi)^2 \right)$$
-   Maps to the informational burden of being observed, logged, and held accountable by the independent witness ledger.
+*(Note: The rightmost column records motivating analogies across physics and information theory, not an identity between tensor fields and scalar utilities.)*
 
 ---
 
-## 11. Pathology of the Hollow Victory: Napoleon in 1812
+## 9. Case Studies: Napoleon in 1812 and Financial Shadow Gates
 
-Through this unified grammar, Napoleon’s Russian Campaign of 1812 is mathematically deconstructed as a pure boundary collapse:
+### 9.1 Napoleon’s 1812 Campaign as Boundary Collapse (*Ghost Win*)
 
-* **Ghost Win:** Napoleon optimized local utility ($\max u_i$) within a conventional European cabinet-war port regime, where capturing the capital was an authorized $\mathrm{OPEN}$ transition forcing peace. The Russian defensive command under Kutuzov rejected this port regime, operating under an asymmetric survival game ($\mathcal{K}_{\mathrm{Russ}}$) that prioritized the preservation of the army's core viability. The French occupation of Moscow remained a hollow, unnormalized candidate vector classified as $\mathrm{KILL}$ by the Russian admissibility filter.
-* **HOLD Suspension:** Napoleon remained stagnant in Moscow for five weeks, locked in an exhausting quarantine state. His army paid continuous, irreversible metabolic and structural costs ($\Delta S_{\mathrm{irr}} > 0$) without obtaining a valid commit.
-* **Collapse to KILL:** Upon retreat, the French state space collapsed to zero as they consumed their own supporting viability kernel, proving that maximizing raw utility without boundary authorization leads to systemic annihilation.
+Napoleon optimized raw tactical utility ($\max u_i$) under the cabinet-war convention where occupying an opponent’s capital triggered an `OPEN` transition to peace terms. Russian command under Kutuzov refused that gate rule, preserving army viability ($\mathrm{Viab}(\mathcal{K}_{\mathrm{Russ}})$) over territory:
 
----
+* **Ghost Win:** Entering Moscow yielded high symbolic score ($u_i \gg 0$) while failing the opponent’s peace gate (`KILL` on treaty expectations).
+* **Unbounded `HOLD` Bleed:** Waiting five weeks in Moscow trapped the Grande Armée in an uncompensated `HOLD` state where metabolic and structural losses ($\Delta C_K + \Delta S_{\mathrm{irr}}$) accumulated daily with zero commit.
+* **Viability Collapse:** By the time retreat began, supply and weather margins had fallen outside $\mathrm{Viab}(\mathcal{K})$, turning an apparent victory into systemic collapse.
 
-## 12. The Physical Pre-Actuation Chain and Experimental Validation
+### 9.2 Financial Consequence Control (`Shadow Gate`)
 
-The framework is verified in hardware via a direct, time-ordered pre-actuation chain:
+Autonomous trading and credit agents generate fluent, locally persuasive transaction proposals at machine speed. The core safeguard is straightforward:
 
-$$\text{EKF} \longrightarrow \Pi_{\mathcal{K}} \longrightarrow \text{FPGA Enable} \longrightarrow u_{\mu w} \longrightarrow \text{2-Qubit Gate}$$
+$$\boxed{\mathbf{Finance\;tolerates\;open\;models,\;but\;never\;open\;consequences.}}$$
 
-Energy delivery to the actuator is physically blocked before the gate fires:
-
-$$\text{Inadmissible State} \implies \Pi_{\mathcal{K}} = 0 \implies u_{\mu w} = 0 \implies \text{No Actuation}$$
-
-During coherence audits on superconducting transmon qubits (KCM-TEST-1.0), verification on two asymmetrically prepared systems under identical local states ($\rho_A \approx \rho_B$) confirmed that structural kernel drift ($K_A \neq K_B$) governs realization probability:
-* **System A (Stable, $D_K = 0.012$):** Realization probability $P_{\mathrm{real}} = 0.984$.
-* **System B (Degraded, $D_K = 0.187$):** Realization probability $P_{\mathrm{real}} = 0.000$ (complete fail-closed block).
-
-Reality does not materialize raw possibilities; it prunes them based on structural integrity.
+Deployed as a pre-execution gate ahead of settlement rails:
+* **`OPEN`:** Within risk invariants and signed warrant $\to$ released to settlement.
+* **`HOLD`:** Missing warrant or threshold ambiguity $\to$ queued with explicit deficiency list ($\Delta_K \neq \varnothing$) and deadline ($\tau_{\max}$) for human maker-checker review.
+* **`KILL`:** Breaches hard exposure or compliance bounds $\to$ blocked at `0` execution, hash-logged.
+* **`TRAP`:** Coordinated probing or prompt/API manipulation $\to$ shunted to $\mathbf{x}_{\mathrm{mirror}}$ (`local_ACK` only, zero capital moved).
 
 ---
 
-## 13. KORA Adaptive Control and the Operative Trinity Loop
+## 10. Pre-Actuation Gating and Step-Sealing (`L1` / `L1.5` Architecture)
 
-In a live control loop, perfect instantaneous closure is physically unachievable. The KORA fixed point defines an authorized control equilibrium at the fidelity boundary:
+In hardware-oriented control chains (`L1` simulation and `L1.5` FPGA synthesis prototypes), gating acts **prior to energy delivery** rather than as a post-hoc audit:
 
-$$\mathrm{Fix}_{\mathrm{KORA}} = \mathrm{Fix}\left( \text{Commit} \circ \Omega \circ \Pi_{\mathcal{A}} \circ \Phi_{H\infty\mathrm{EKF}} \right)$$
+$$\text{Estimator} \longrightarrow \Pi_{\mathcal{K}} \longrightarrow \Omega\text{ Enable} \longrightarrow \text{Actuator Drive}$$
 
-Temporal steps are sealed via a discrete Fibonacci recurrence ($F_n = F_{n-1} + F_{n-2}$) bounded almost surely under noise by Viswanath’s constant ($C_{\mathrm{Vis}} \approx 1.137628$).
+$$\text{Inadmissible Candidate} \implies \Omega \neq \mathrm{OPEN} \implies \text{Enable} = 0 \implies \text{No Actuation}$$
 
-Physical consequences in the operational layer are instantiated through the unified, fail-closed operator:
+When discrete sequence counters or stochastic step-checks use random Fibonacci recurrences ($F_n = \pm F_{n-1} \pm F_{n-2}$ under unbiased sign noise), asymptotic exponential growth is governed almost surely by **Viswanath’s constant** (Viswanath, 2000):
 
-$$\mathbf{Reality} = \Omega\left( \text{PreCommit} \cap \Pi_{\mathcal{K}}(\Phi(\mathbf{x}_t)) \right)$$
+$$\lim_{n \to \infty} |F_n|^{1/n} = C_{\mathrm{Vis}} \approx 1.13198824\dots$$
 
-anchored by the 80 kHz Zeta-pulse and a 5.00V galvanic truth rail.
+providing an exact analytical reference rate when testing stochastic drift monitors in `L1` simulations.
 
 ---
 
-## 14. Conclusion: The Price of Truth
+## 11. Conclusion
 
-Whether we study a particle’s wavefunction under Dirichlet boundaries, a pseudo-Riemannian metric in quadratic curvature gravity, or a strategic transaction under adversarial load, the law remains invariant:
-
-$$\boxed{\mathbf{Reality\;is\;not\;generated\;by\;dynamics;\;it\;is\;won\;through\;selection.}}$$
-
-* **What it protects:** The system’s fundamental regularity, its involutive core ($F \circ F = \mathrm{Id}$), and its viability kernel against non-local decoherence within finite Lieb-Robinson bounds.
-* **What it opens:** Smooth, unitary dynamics within the subspace that successfully passes holomorphic gating.
-* **What it holds:** Any unverified fluctuation, causal loop, or parameter drift in a non-dissipative quarantine state ($\mathrm{HOLD}$) until sufficient epistemic warrant is presented.
-* **What it denies:** Any locally tempting trajectory, Ostrogradsky ghost mode, or energy overdrift that threatens to deform the L0 hardware anchor ($\mathrm{KILL} \to 0.00\,\text{V}$).
+Across game theory, software agents, and fail-closed hardware interfaces, the architectural boundary is the same:
 
 $$\boxed{\mathbf{Reality\;is\;not\;the\;sum\;of\;what\;can\;be\;computed.\;Reality\;is\;that\;which\;survives\;the\;cut.}}$$
+
+* **Inside the generator ($\Phi$):** Exploration remains free, smooth, and reversible.
+* **At the gate ($\Pi_{\mathcal{K}}, \Omega$):** Proposals face discrete, fail-closed selection (`KILL > TRAP > HOLD > OPEN`).
+* **In history ($\mathcal{D}_2$):** Only authorized transitions enter the witness chain, while final accountability stays with the human operator outside the code.
 
 ---
 
 ## References
 
-1. Torjusen, M. E. (2026). *Coherent Geometric Authorization Systems and $\Omega$-Realization Grammars*. PDL Technical Report.
-2. Nash, J. F. (1950). Equilibrium points in $n$-person games. *Proceedings of the National Academy of Sciences*, 36(1):48–49.
-3. Nash, J. F. (1956). The imbedding problem for Riemannian manifolds. *Annals of Mathematics*, 63(1):20–63.
-4. Zampino, E. J. (2015). *A Note on the Lecture by John F. Nash Jr. "An Interesting Equation"*. NASA Goddard Space Flight Center Internal Note.
-5. Gemp, I., Marris, L., & Piliouras, G. (2024). Approximating Nash Equilibria in Normal-Form Games via Stochastic Optimization. *ICLR 2024*.
-6. Mozumdar, J. (2026). Lieb-Robinson Bounds and Entanglement Limits in Quantum Dynamics with Finite-Dimensional Memory. *arXiv:2604.11209*.
-7. Aubin, J.-P. (1991). *Viability Theory*. Birkhäuser, Boston.
+1. Aubin, J.-P. (1991). *Viability Theory*. Birkhäuser, Boston.
+2. Gemp, I., Marris, L., & Piliouras, G. (2024). Approximating Nash equilibria in normal-form games via stochastic optimization. *ICLR 2024*.
+3. Landauer, R. (1961). Irreversibility and heat generation in the computing process. *IBM Journal of Research and Development*, 5(3):183–191.
+4. Mozumdar, J. (2026). Lieb–Robinson bounds and entanglement limits in quantum dynamics with finite-dimensional memory. *arXiv:2604.11209*.
+5. Nash, J. F. (1950). Equilibrium points in $n$-person games. *Proceedings of the National Academy of Sciences*, 36(1):48–49.
+6. Nash, J. F. (1956). The imbedding problem for Riemannian manifolds. *Annals of Mathematics*, 63(1):20–63.
+7. Viswanath, D. (2000). Random Fibonacci sequences and the number $1.13198824\dots$. *Mathematics of Computation*, 69(231):1131–1155.
+8. Zampino, E. J. (2015). *A Note on "An Interesting Equation" by John Nash Jr.* (analyzing J. F. Nash’s May 20, 2015 Abel Prize lecture at the University of Oslo).
