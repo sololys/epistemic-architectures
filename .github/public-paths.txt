@@ -26,6 +26,7 @@ L2_GATE/test_verify_public_surface.py
 L2_GATE/verify_cos45_kms_spectral_series.py
 L2_GATE/verify_davisson_fine_newtonian_gate.py
 L2_GATE/verify_fluid_process_idr_twin_gate.py
+L2_GATE/verify_ky_nash_and_dual_clock_gate.py
 L2_GATE/verify_mpolynomial_1wl_molecular_gate.py
 L2_GATE/verify_norcics_digital_twin_llm_gate.py
 L2_GATE/verify_public_surface.py
