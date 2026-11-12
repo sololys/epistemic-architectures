@@ -8,8 +8,8 @@ MONOGRAPH SERIES ON CAUSAL INERTIA, EPISTEMIC GOVERNANCE & REALIZATION GRAMMAR:
   DOKUMENT-ID             : DOKUMENT-173-AUTORISERBARE-REALISERINGER-2026
   FORFATTER               : Marius Egerhei Torjusen (ORCID: 0009-0006-0431-6637)
   LOKUS                   : Epistemic Architectures / Sektor 06 Research
-  EPISTEMISK SKRANKE      : INSPIRED_BY != IMPLEMENTS != PROVES // L1/L2 FIELD THEORY
-  STATUS                  : KANONISK FROST (LEVEL 0) // PEER-READY PREPRINT (ZENODO CANDIDATE)
+  EPISTEMISK SKRANKE      : INSPIRED_BY != IMPLEMENTS != PROVES
+  EVIDENSNIVÅ             : L1 KONSEPTUELL SYNTESE & MODELL (FELTLIGNINGER SOM STRUKTURANALOGI)
   DATO                    : 7. oktober 2026
 ========================================================================================
 ```

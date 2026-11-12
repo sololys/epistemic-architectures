@@ -179,7 +179,7 @@ Selv når de $5{,}00\text{ voltene}$ vender tilbake til reléet, blir det brente
 
 ### **V. Sokrates på Torget og De Åtte Glyfene**
 
-Hvorfor all denne motstanden? Hvorfor tvinge en bit gjennom en åttetrinns intervallgrammatikk (**Alphabet-Creative-Core**: $0 \to \cdot \to \circ \to \square \to \triangle \to \lozenge \to \odot \to 1$) med 16-bits fikspunktpresisjon – der man unngår den katastrofale $257:1$-feilforsterkningen ($\frac{65535}{255} = 257{,}0$) som oppstår når lavoppløste 8-bits systemer kollapser gråsoner til falsk binær skråsikkerhet? Hvorfor erstatte klassisk boolsk logikk ($\{0, 1\}$) i *Dør 22* og *Dør 31* med Belnap–Dunns fireverdilogikk ($\mathcal{FOUR} = \{\mathbf{T}, \mathbf{F}, \mathbf{N}, \mathbf{B}\}$), der manglende bevis ($\mathbf{N} = (0,0)$) tvinger frem `HOLD`, og motstridende sensorer ($\mathbf{T} \oplus_k \mathbf{F} = \mathbf{B} = (1,1)$) utløser øyeblikkelig `KILL` via *Uzzahs Subsumpsjonsgitter* ($\text{KILL} > \text{HOLD} > \text{OPEN}$)?
+Hvorfor all denne motstanden? Hvorfor tvinge en bit gjennom en åttetrinns intervallgrammatikk (det skapende generatorrommets tilstandsskala: $0 \to \cdot \to \circ \to \square \to \triangle \to \lozenge \to \odot \to 1$) med 16-bits fikspunktpresisjon – der man unngår den katastrofale $257:1$-feilforsterkningen ($\frac{65535}{255} = 257{,}0$) som oppstår når lavoppløste 8-bits systemer kollapser gråsoner til falsk binær skråsikkerhet? Hvorfor erstatte klassisk boolsk logikk ($\{0, 1\}$) i *Dør 22* og *Dør 31* med Belnap–Dunns fireverdilogikk ($\mathcal{FOUR} = \{\mathbf{T}, \mathbf{F}, \mathbf{N}, \mathbf{B}\}$), der manglende bevis ($\mathbf{N} = (0,0)$) tvinger frem `HOLD`, og motstridende sensorer ($\mathbf{T} \oplus_k \mathbf{F} = \mathbf{B} = (1,1)$) utløser øyeblikkelig `KILL` via *Uzzahs Subsumpsjonsgitter* ($\text{KILL} > \text{HOLD} > \text{OPEN}$)?
 
 Svaret ligger i den lille indeksen $C_{\text{cat}}$ i *Spesifikasjon 55* – **Schrödingers katt-perspektivet** på maktutøvelse.
 
@@ -205,7 +205,7 @@ Hvis man ser lenge nok på disse tegningene, går det opp for en at hele den mod
 
 Men et liv der ingenting har vekt, er et liv der ingenting setter spor. Når du polstrer virkeligheten for et menneske – når du nekter handlingslivet deres å skjære en irreversibel fure i historien – utøver du en stille form for ontologisk utslettelse. Du låser dem inne i mulighetsrommets tåkehav ($\mathcal{NP}$), der alt er tillatt fordi ingenting betyr noe.
 
-Arkitekturen som er tegnet opp på disse plansjene – **OMNI-KY / Phronesis** – er bygget over det motsatte redskapet: *Spaden*.
+Arkitekturen som er tegnet opp på disse plansjene – **OMNI-KY-portstyringen** – er bygget over det motsatte redskapet: *Spaden*.
 
 Den utfører ikke klassisk optimalisering. Den prøver ikke å gjette seg frem til den mest behagelige fremtiden blant tusen glatte kurver. Som det står i *Dokument 143*: **Den velger ikke en bane – den eliminerer alle andre** (*Selection by Impossibility*). Det som står igjen når alt det ulovlige, det selvmotsigende og det ubevitnede er skåret bort av den idempotente projektoren $\Pi_K$, er det eneste som har bæreevne nok til å kalles virkelighet:
 
@@ -215,13 +215,13 @@ $$x_{t+1} = \Omega(\Pi_K(\Phi(x_t))), \qquad \mathcal{R}_K = \text{Fix}(\Omega \
 
 ### **I. De Tre Aksiomene og Halvbroens Nåde**
 
-På den første plansjen (*DOC-ID: IEEE-PHRONESIS-3AXIOMS-REV1*) er denne grunnloven støpt inn i tre søyler: blått for ontologi, oker for operasjon, og skarlagenrødt for den arkitektoniske giljotinen.
+På den første plansjen (*DOC-ID: OMNI-KY-3AXIOMS-REV1*) er denne grunnloven støpt inn i tre søyler: blått for ontologi, oker for operasjon, og skarlagenrødt for den arkitektoniske giljotinen.
 
 **Det første aksiomet** setter en jernport mellom det som oppstår og det som gjelder: *«Det som oppstår, er ikke automatisk rett. Det er en kandidat.»* Enten det er en språkmodell som hallusinerer en rapport, en aksjemegler som får en innskytelse, eller en kvantemekanisk bølgefunksjon som brer seg utover i rommet ($\Phi_H(x) = (J - D)\nabla H(x)$), har forslaget $x'$ nøyaktig null myndighet (`Authority = NONE`). Eksistens er ikke en fødselsrett; eksistens er et fikspunkt ($x \text{ eksisterer} \iff x = \Pi_K(\Phi(x))$).
 
 **Det andre aksiomet** er kanskje det mest subversive i møte med vår egen rastløse samtid: *«$\text{HOLD}$ er ikke svakhet eller treghet. $\text{HOLD}$ er affektregulering, strukturell nedkjøling og rett til ny prøving.»*
 
-I nesten alle eksisterende datamaskiner og byråkratier er en pause bare et nedtellingsur. Når fristen $\tau_{\text{hold}}$ løper ut, glir porten automatisk opp av seg selv. I Phronesis-arkitekturen er tidsstyrt åpning strengt forbudt ($\partial_t = 0 \text{ i } B_{\text{hold}}$). Tiden alene bærer null autorisasjonsmyndighet. Når nedkjølingstiden i ventekammeret $B_{\text{hold}}$ er omme, sendes kandidaten nådeløst tilbake til starten av domstolen (`Delayed Re-Admission Loop`) for å prøves på nytt fra bunnen av mot et eksplisitt vitne. $\text{HOLD}$ er sivilisasjonens bremsepedal.
+I nesten alle eksisterende datamaskiner og byråkratier er en pause bare et nedtellingsur. Når fristen $\tau_{\text{hold}}$ løper ut, glir porten automatisk opp av seg selv. I feil-lukket portstyring er tidsstyrt åpning strengt forbudt ($\partial_t = 0 \text{ i } B_{\text{hold}}$). Tiden alene bærer null autorisasjonsmyndighet. Når nedkjølingstiden i ventekammeret $B_{\text{hold}}$ er omme, sendes kandidaten nådeløst tilbake til starten av domstolen (`Delayed Re-Admission Loop`) for å prøves på nytt fra bunnen av mot et eksplisitt vitne. $\text{HOLD}$ er sivilisasjonens bremsepedal.
 
 Hvorfor er denne pausen så hellig? I *Omsorgsprotokollen* (*Dokument 143*) hentes svaret ikke fra moralfilosofien, men fra tung kraftelektronikk – nærmere bestemt fra halvbro-topologien som styrer høyspentbryterne i et hurtigtog eller en industriell omformer:
 
@@ -468,7 +468,7 @@ I nesten all moderne teknologi – fra brukergrensesnitt og sosiale medier til r
 
 $$\lim_{\gamma \to 0} \frac{d\mathcal{E}}{dt} = 0 \implies \forall x_1, x_2 \in \mathcal{X} : \mathcal{E}(x_1) \approx \mathcal{E}(x_2)$$
 
-Når alt glir like lett, ser alle tilstander like gyldige ut. Og når alle tilstander er like gyldige, er ingen tilstander nødvendige. Sannhet opphører å eksistere som en operasjonell skranke, og systemet synker ned i et *Degenerate Stability Regime (DSR)* – en lunken, passiv vedlikeholdsdvale der dømmekraften er død. Derfor tillater Dør 30 kun liv innenfor det smale **Phronesis-båndet** $\gamma \in [\gamma_{\min}, \gamma_{\max}]$. Blir friksjonen for høy ($\gamma > \gamma_{\max}$), brenner anlegget opp; blir friksjonen for lav ($\gamma < \gamma_{\min}$), mister det evnen til å skjelne mellom løgn og virkelighet og kuttes øyeblikkelig til `KILL`. Og hver gang en ulovlig bane siles bort ved porten, setter den et fysisk fotavtrykk i selve romtiden gjennom ikke-likevekts stress-energitensoren $T_{\mu\nu}^{\text{adm}} = \frac{Q_{\text{erase}}}{V\cdot\Delta t}u_\mu u_\nu + \Pi_{\mu\nu}^{\text{drift}}$.
+Når alt glir like lett, ser alle tilstander like gyldige ut. Og når alle tilstander er like gyldige, er ingen tilstander nødvendige. Sannhet opphører å eksistere som en operasjonell skranke, og systemet synker ned i et *Degenerate Stability Regime (DSR)* – en lunken, passiv vedlikeholdsdvale der dømmekraften er død. Derfor tillater Dør 30 kun liv innenfor det smale **dømmekrafts-båndet** $\gamma \in [\gamma_{\min}, \gamma_{\max}]$. Blir friksjonen for høy ($\gamma > \gamma_{\max}$), brenner anlegget opp; blir friksjonen for lav ($\gamma < \gamma_{\min}$), mister det evnen til å skjelne mellom løgn og virkelighet og kuttes øyeblikkelig til `KILL`. Og hver gang en ulovlig bane siles bort ved porten, setter den et fysisk fotavtrykk i selve romtiden gjennom ikke-likevekts stress-energitensoren $T_{\mu\nu}^{\text{adm}} = \frac{Q_{\text{erase}}}{V\cdot\Delta t}u_\mu u_\nu + \Pi_{\mu\nu}^{\text{drift}}$.
 
 Fra denne siste korridoren trer kandidaten inn i midtpunktet av hele arkitekturen: **Dør 31 – Den Symbiotiske Maskin**.
 

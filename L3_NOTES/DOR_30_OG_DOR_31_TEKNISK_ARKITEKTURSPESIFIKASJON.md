@@ -103,7 +103,7 @@ Eksistensen av dette overgangslaget $\Delta_\epsilon$ tvinger frem en veldefiner
 
 ---
 
-## 4. Epistemisk Dynamikk: Phronesis-Båndbredde, DSR-Kollaps og Landauer-Sletting
+## 4. Epistemisk Dynamikk: Dømmekrafts-Båndbredde, DSR-Kollaps og Landauer-Sletting
 
 I konvensjonell reguleringsteori og automatisering tilstreber man ofte å eliminere all motstand, tidsfordrøyning og friksjon i styringssløyfen for å oppnå maksimal respons. I kognitive cyber-fysiske arkitekturer opphever en fullstendig motstandsløs reguleringssløyfe systemets evne til å utøve selektiv dømmekraft, ettersom differensiering mellom tilstander krever strukturell motstand.
 
@@ -113,12 +113,12 @@ $$\lim_{\gamma \to 0} \frac{d\mathcal{E}}{dt} = 0 \quad \implies \quad \forall x
 
 Konsekvensen av denne utflatingen er at alle tilstander fremstår som like gyldige. Når ingen tilstander er strengt nødvendige eller unike, opphører operasjonell sannhet å fungere som en effektiv begrensning, og systemet mister evnen til å skille signal fra støy. Systemet kollapser inn i en beslutningslammelse (DSR) – en tilstand hvor det fortsatt kan utføre passive vedlikeholdsoppgaver, men hvor evnen til å treffe kritiske, selektive sikkerhetsvalg er utradert.
 
-For å forhindre DSR-kollaps defineres et strengt eksistensintervall for operativ drift, kjent som **Phronesis-båndbredden $[\gamma_{\min}, \gamma_{\max}]$**:
+For å forhindre DSR-kollaps defineres et strengt eksistensintervall for operativ drift, **dømmekrafts-båndbredden $[\gamma_{\min}, \gamma_{\max}]$**:
 
 ```text
-                          EKSISTENSINTERVALL FOR PHRONESIS
+                     LEVEDYKTIG INTERVALL FOR PRAKTISK DØMMEKRAFT
    <─────────────────────────────┼─────────────────────────────┼─────────────────────────────>
-        Under-friksjon           │      Phronesis-båndet       │        Over-friksjon
+        Under-friksjon           │     Dømmekrafts-båndet      │        Over-friksjon
     (γ < γ_min)                  │   (γ_min ≤ γ ≤ γ_max)       │         (γ > γ_max)
    ──────────────────────────────┼─────────────────────────────┼─────────────────────────────
     Risør-varselet / DSR-kollaps │   Levedyktig korridor for   │  Runaway-dissipasjon og
@@ -128,13 +128,13 @@ For å forhindre DSR-kollaps defineres et strengt eksistensintervall for operati
 
 1. **Under-friksjon ($\gamma < \gamma_{\min}$):** DSR-kollaps inntreffer (*Risør-varselet*). Manglende motstand gjør at systemet mister sin selektive dømmekraft $\implies \mathrm{KILL}$ ($0.00\,\text{V DC}$, `RC-DSR-DEGENERATE-COLLAPSE-KILL`).
 2. **Over-friksjon ($\gamma > \gamma_{\max}$):** Systemet påføres uoverkommelig intern motstand, noe som fører til runaway-dissipasjon, støyindusert krakelering og termisk svikt $\implies \mathrm{KILL}$ ($0.00\,\text{V DC}$, `RC-OVERFRICTION-THERMAL-CRACK-KILL`).
-3. **Phronesis-båndet ($\gamma \in [\gamma_{\min}, \gamma_{\max}]$):** Den eneste levedyktige korridoren der systemet kan utøve dømmekraft og utføre strukturbevarende realiseringer.
+3. **Dømmekrafts-båndet ($\gamma \in [\gamma_{\min}, \gamma_{\max}]$):** Den eneste levedyktige korridoren der systemet kan utøve praktisk dømmekraft og utføre strukturbevarende overganger.
 
 Systemets dynamikk modelleres av den 5-leddede handlingsfunksjonen, **Den Epistemiske Lagrangianen ($\mathcal{L}_{\text{epist}}$)**:
 
 $$\mathcal{L}_{\text{epist}} = W_{\text{epist}} - \gamma \mathcal{F}_{\text{friction}} - \mu \mathcal{D}_{\text{divergence}}^2 - \lambda \mathcal{C}_{\text{violation}} - Q_{\text{termo}}$$
 
-Hvor $W_{\text{epist}}$ er det aktive arbeidet for å bevare representasjonskoherens, $\gamma \mathcal{F}_{\text{friction}}$ er friksjonsleddet bundet til Phronesis-båndbredden, $\mu \mathcal{D}_{\text{divergence}}^2$ straffer metrisk avvik fra den relasjonelle kjernen, $\lambda \mathcal{C}_{\text{violation}}$ er barrieremultiplikatoren som divergerer ved skrankebrudd ($\mathcal{C}_{\text{violation}} > 0 \implies \mathrm{KILL}$), og $Q_{\text{termo}}$ representerer den termodynamiske energidissipasjonen.
+Hvor $W_{\text{epist}}$ er det aktive arbeidet for å bevare representasjonskoherens, $\gamma \mathcal{F}_{\text{friction}}$ er friksjonsleddet bundet til dømmekrafts-båndbredden, $\mu \mathcal{D}_{\text{divergence}}^2$ straffer metrisk avvik fra den relasjonelle kjernen, $\lambda \mathcal{C}_{\text{violation}}$ er barrieremultiplikatoren som divergerer ved skrankebrudd ($\mathcal{C}_{\text{violation}} > 0 \implies \mathrm{KILL}$), og $Q_{\text{termo}}$ representerer den termodynamiske energidissipasjonen.
 
 I denne sammenhengen trekkes et strengt skille mellom matematisk beregning og fysisk tilstandssletting:
 
