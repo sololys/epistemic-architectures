@@ -1,12 +1,12 @@
 # Strategisk Beredskapsrammeverk: Distriktsautarki og Sivil-Militær Kontinuitet med Infranett
 
 **Forfatter:** Marius Egerhei Torjusen (ORCID: [0009-0006-0431-6637](https://orcid.org/0009-0006-0431-6637))  
-**Enhet:** Brahman (`sololyset`, Risør, Norge)  
+**Enhet:** Locus Zero (`sololys`, Risør, Norge)  
 **Dato:** 19. oktober 2026  
 **Kanonisk Doktrine (`AGENTS.md`):** $\texttt{INSPIRED\_BY} \neq \texttt{IMPLEMENTS} \neq \texttt{PROVES}$  
 **Epistemisk Nivå:**
 - **`L0` (Sikkerhetspolitisk & Sosiomekanisk Arkitektur):** Den ontologiske inversjonen, «Postbudets retur» og totalforsvarskontinuitet (NOU 2023: 14 / NSM Grunnprinsipper / DSB 72t+).
-- **`L1` (Lokalt Demonstrert Deterministisk Programvare):** Append-only SHA-256 hash-kjede WAL med POSIX `fsync()`-barriere (`tools/verify_public_surface.py`, `door27_network`), relativistisk Minkowski-avstandsbudsjett ($\Delta t_{\mathrm{RTT}} \le 133{,}4256\text{ ns}$ ved $r_{\max} = 20{,}0\text{ m}$), kurer-pakkemodell (`Noise_KK` / `Ed25519` / RFC 8785) og DFØ $4{,}0\,\%$ samfunnsøkonomisk nåverdimodell ($+9{,}335\text{ BNOK}$ basis / $+18{,}139\text{ BNOK}$ under makrosjokk). Programvare-WAL er append-only hash-kjeder, ikke fysisk WORM-maskinvare.
+- **`L1` (Lokalt Demonstrert Deterministisk Programvare):** Append-only SHA-256 hash-kjede WAL med POSIX `fsync()`-barriere (`tools/verify_public_surface.py`), relativistisk Minkowski-avstandsbudsjett ($\Delta t_{\mathrm{RTT}} \le 133{,}4256\text{ ns}$ ved $r_{\max} = 20{,}0\text{ m}$), kurer-pakkemodell (`Noise_KK` / `Ed25519` / RFC 8785) og DFØ $4{,}0\,\%$ samfunnsøkonomisk nåverdimodell ($+9{,}335\text{ BNOK}$ basis / $+18{,}139\text{ BNOK}$ under makrosjokk). Programvare-WAL er append-only hash-kjeder, ikke fysisk WORM-maskinvare.
 - **`L2–L3` (`HOLD` — Fysisk Maskinvare, RF/UWB & Feltpilot):** Fysisk IEEE 802.15.4z STS UWB-transceiver i industrimiljø, analog $0{,}00\text{ V DC}$ relé-crowbar på fysisk tavle, Nokia MXIE/DAC edge-integrasjon og operativ feltpilot i havn/vannverk holdes strengt i `HOLD` inntil fysisk Fase 2–3 HIL- og feltverifikasjon foreligger.
 
 ---

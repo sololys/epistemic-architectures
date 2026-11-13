@@ -3,7 +3,7 @@
 """
 DAVISSON–FINE OCTOBER 22 COHERENCE & PERIOD-LOCK CONSEQUENCE GATE ENGINE (L1)
 =============================================================================
-Locus: 03_ENGINES/ENGINES/micro_engines/davisson_fine_oct22_coherence_gate_engine.py
+Locus: L2_GATE/verify_davisson_fine_newtonian_gate.py
 Classification: L1 Deterministic Software Prototype / Matter-Wave & Combinatorial Gate
 Epistemic Boundary: INSPIRED_BY != IMPLEMENTS != PROVES (PHYSICAL_AUTHORITY = NONE)
 

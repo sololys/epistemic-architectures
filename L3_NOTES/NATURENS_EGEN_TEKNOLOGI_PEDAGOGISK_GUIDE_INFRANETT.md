@@ -1,7 +1,7 @@
 # Naturens Egen Teknologi: En Pedagogisk Guide til Infranetts Bio-Kybernetiske Doktrine
 
 **Forfatter:** Marius Egerhei Torjusen (ORCID: [0009-0006-0431-6637](https://orcid.org/0009-0006-0431-6637))  
-**Enhet:** Brahman (`sololyset`, Risør, Norge)  
+**Enhet:** Locus Zero (`sololys`, Risør, Norge)  
 **Dato:** 19. oktober 2026  
 **Kanonisk Doktrine (`AGENTS.md`):** $\texttt{INSPIRED\_BY} \neq \texttt{IMPLEMENTS} \neq \texttt{PROVES}$  
 **Epistemisk Nivå:**

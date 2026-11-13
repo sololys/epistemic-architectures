@@ -1,7 +1,7 @@
 # Det Optiske Laser-Vitnet ($W_{\text{laser}}$): Okklusjonsskranke, FSO-Taushet og $532\text{ nm}$ Undervannskausalitet i Infranett v0.5
 
 **Forfatter:** Marius Egerhei Torjusen (ORCID: [0009-0006-0431-6637](https://orcid.org/0009-0006-0431-6637))  
-**Enhet:** Brahman (`sololyset`, Risør, Norge)  
+**Enhet:** Locus Zero (`sololys`, Risør, Norge)  
 **Dato:** 19. oktober 2026  
 **Kanonisk Doktrine (`AGENTS.md`):** $\texttt{INSPIRED\_BY} \neq \texttt{IMPLEMENTS} \neq \texttt{PROVES}$  
 **Referansemotor (`L1`):** `engines/infranett_laser_fso_witness_engine.py` (`7/7` enhetstester `PASS` i `tests/test_infranett_laser_fso_witness_engine.py`)  
