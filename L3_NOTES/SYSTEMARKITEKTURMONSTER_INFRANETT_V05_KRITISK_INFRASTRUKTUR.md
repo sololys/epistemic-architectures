@@ -299,14 +299,14 @@ For å overholde tidsbudsjettet flyttes tidsstemplingen helt ned til L1-silisium
 Bussen drives av en $80{,}0\text{ kHz}$ Frisch-klokke (et diskret tidsvindu på $12{,}5\,\mu\text{s}$). Interaksjonen mellom C++ Hardware Abstraction Layer (HAL) og GDExtension-bussen gjennomføres med en deterministisk latens på $\sim 0{,}2509\,\mu\text{s}$, noe som gir rikelig margin innenfor klokkevinduet.
 
 ```text
-  [ UWB STS Puls ] ---> [ L1 Silisium (Pikosekund) ] ---> [ HMAC-SHA256 WORM ]
+  [ UWB STS Puls ] ---> [ L1 Silisium (Pikosekund) ] ---> [ HMAC-SHA256 WAL  ]
                                                                    |
   [ 5,00V / 0,00V Tri-State Latch ] <--- [ SPEC-250 HIL ] <--------+
 ```
 
 Tri-State Latch-realiseringsfunksjonen $\Pi_K$ håndheves direkte i kraftelektronikken:
 
-$$\Pi_K = \begin{cases} \mathbf{5{,}00\text{ V DC (OPEN)}} & \text{hvis } \Delta t \le 133{,}42\text{ ns} \land \text{Valid\_HMAC} \land C \ge C_{\text{hw}} \\ \mathbf{0{,}00\text{ V DC (HOLD)}} & \text{hvis } \Delta t > 133{,}42\text{ ns (Relativistisk avvist / romlignende)} \\ \mathbf{0{,}00\text{ V DC (KILL)}} & \text{hvis kryptografisk brudd / WORM-korrupsjon / } C < C_{\text{hw}} \end{cases}$$
+$$\Pi_K = \begin{cases} \mathbf{5{,}00\text{ V DC (OPEN)}} & \text{hvis } \Delta t \le 133{,}42\text{ ns} \land \text{Valid\_HMAC} \land C \ge C_{\text{hw}} \\ \mathbf{0{,}00\text{ V DC (HOLD)}} & \text{hvis } \Delta t > 133{,}42\text{ ns (Relativistisk avvist / romlignende)} \\ \mathbf{0{,}00\text{ V DC (KILL)}} & \text{hvis kryptografisk brudd / WAL-kjedeavvik (append-only SHA-256) / } C < C_{\text{hw}} \end{cases}$$
 
 ### 3.3 Faseorientert Kommersiell Samarbeidsmodell
 

@@ -761,7 +761,7 @@ class KYConsequenceGateEngine:
             prop, GateVerdict.OPEN, DomainLayer.D3_WITNESS, 5.00,
             "check(o -> emptyset -> Box -> diamond => bullet)#! |>",
             r_energy, r_momentum, r_path,
-            "OPEN_REALIZED: Crystal coherent, Fine-Wilf locked, P-path integrated and WORM-sealed."
+            "OPEN_REALIZED: Crystal coherent, Fine-Wilf locked, P-path integrated and append-only SHA-256 WAL-sealed (not physical WORM)."
         )
 
     def _finalize(

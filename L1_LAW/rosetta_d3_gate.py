@@ -224,7 +224,7 @@ class RosettaD3Gate:
                 d12_bijection_ok=False,
                 envelope_208b=None,
                 envelope_sha256="0" * 64,
-                reason="Registry A (KILL): Standalone Unicode or unanchored hash-chain rejected; D3 requires 208B Rosetta v1.5 + Ed25519/WORM anchor.",
+                reason="Registry A (KILL): Standalone Unicode or unanchored hash-chain rejected; D3 requires 208B Rosetta v1.5 + Ed25519 or physical WORM anchor.",
             )
         raise ValueError("Use seal_d3_envelope() for anchored Rosetta v1.5 payloads")
 
