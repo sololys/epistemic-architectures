@@ -31,6 +31,7 @@ L2_GATE/verify_mpolynomial_1wl_molecular_gate.py
 L2_GATE/verify_norcics_digital_twin_llm_gate.py
 L2_GATE/verify_public_surface.py
 L2_GATE/verify_pwr2_scrambling_collective_gate.py
+L2_GATE/verify_two_track_prose_gate_x01_x12.py
 L2_GATE/verify_w2_five_proof_chains.py
 L3_NOTES/00_THE_CAUSAL_INFRASTRUCTURE_MASTER_WHITEPAPER_2026_2031.md
 L3_NOTES/01_TRACTATUS_DETERMINISTICUS_MASTER_TREATISE.md
