@@ -37,6 +37,7 @@ gate: law
 	@$(PYTHON) $(GATE_DIR)/evaluate_boundaries.py || ($(MAKE) kill && exit 1)
 	@$(PYTHON) $(GATE_DIR)/verify_ky_nash_and_dual_clock_gate.py || ($(MAKE) kill && exit 1)
 	@$(PYTHON) $(GATE_DIR)/verify_two_track_prose_gate_x01_x12.py || ($(MAKE) kill && exit 1)
+	@$(PYTHON) $(GATE_DIR)/verify_sosionomos_xor_rox_gate.py || ($(MAKE) kill && exit 1)
 	@echo "[+] L2_GATE: Konsekvensgrenser respektert. Klar for W^2 vitne."
 
 # ------------------------------------------------------------------------------
