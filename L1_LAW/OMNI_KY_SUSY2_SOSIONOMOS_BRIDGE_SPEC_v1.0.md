@@ -261,7 +261,30 @@ Arkitekturen skiller strengt mellom tre ulike egenskaper: **matematisk reversibi
 * **Commit-kontrakten — Den operative irreversibiliteten:**
   > *XOR defines the reversible reception relation prior to the gate. ROX marks the protocol transition in direction without implying mathematical irreversibility. Operational irreversibility is established by the commit contract: append-only event anchoring, cryptographic chaining, external witnessing, and—at Level 01—physical consequences that cannot be reverted by software state reconstruction.*
 
-## 3. Referanseverifikatorer
+## 3. Beslutningsgrammatikk, Vitnets Passivitet og De Fire Rollene
+
+Portens tre grunntilstander (`OPEN`, `HOLD`, `KILL`) og vitnets rolle er strengt adskilt:
+
+| Tilstand | Betydning | Konsekvens | Vitnets rolle ($W$) |
+| :--- | :--- | :--- | :--- |
+| **`OPEN`** | Kandidaten har bestått alle kontroller | Kan sendes videre til autorisert realisering | Registrerer vedtaket, autorisasjonsgrunnlaget og forseglet spor |
+| **`HOLD`** | Vilkår ikke avklart eller ressursgrense nådd | Stans; ingen realisering | Registrerer stasis; tolker aldri `HOLD` som implisitt tillatelse |
+| **`KILL`** | Invariant brutt eller ugyldig handling forsøkt | Avviser kandidaten og sperrer overgangen | Bevarer bruddspor, årsak og rekkefølge; opphever aldri `KILL` |
+
+Vitnet bevarer alle tre utfallene uten å eie egen beslutningsmyndighet:
+
+$$W(\mathrm{OPEN}),\quad W(\mathrm{HOLD}),\quad W(\mathrm{KILL}), \qquad \mathrm{Authority}(W) = \mathrm{NONE}$$
+
+$$\mathrm{HOLD} \not\Rightarrow \mathrm{OPEN}, \qquad \mathrm{KILL} \not\Rightarrow \mathrm{OPEN}$$
+
+En ny vurdering kan åpne en ny, separat beslutningsprosess, men vitnet kan aldri skrive om historikken slik at en tidligere `KILL` blir til `OPEN`. Hele arkitekturen faller dermed i **fire strengt atskilte roller**:
+
+1. **Generatoren foreslår** ($\Phi$).
+2. **Porten avgjør** ($\Pi_K \to \Omega$).
+3. **Commit-protokollen forsegler** (`SHA-256` + append-only DAG + $W_{\text{ext}}$ ved `Level 01`).
+4. **Vitnet bevarer bevis** (passivt bevisorgan med $\mathrm{Authority}(W) = \mathrm{NONE}$).
+
+## 4. Referanseverifikatorer
 
 * **Regel-verifikator (`3 · Rule`):** [`L2_GATE/verify_sosionomos_xor_rox_gate.py`](../L2_GATE/verify_sosionomos_xor_rox_gate.py) (`0 float`, stdlib only)
 * **Kjørbar demonstrator (`4 · Gate`):** [`ky-rox-public-demonstrators/artifacts/microtests/sosionomos_xor_rox_gate_v0_1/`](https://github.com/sololys/ky-rox-public-demonstrators/tree/main/artifacts/microtests/sosionomos_xor_rox_gate_v0_1) (`6/6 PASS`)
