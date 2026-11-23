@@ -241,17 +241,25 @@ Realiserte noder kjøles fra `HOT` $\to$ `WARM` $\to$ `COLD` etter relevans, men
 | **Dreg-kammeret** | `G_shadow` med TTL + `shadow_summary(a)` | Støy forvises; vitnesbyrd om motstand bevares |
 | **KORA-drift** ($\delta_K$) | `ActorSupervisor` ($S_a$: `seq_last`, `prev_hash`, `kill_count`, `trap_mask`) | Identisk innlegg med ulik historikk får ulik admisjon |
 
-## 2. Det Bit-Eksakte `XOR / ROX`-Paret (`0 float`, $O(1)$)
+## 2. Det Bit-Eksakte `XOR / ROX`-Paret og Commit-Kontrakten (`0 float`, $O(1)$)
 
-For å skille *reversibel fase før porten* fra *irreversibel retning ved porten* med ren heltallslogikk (`0 float`), innføres operatørparet **`XOR`** og **`ROX`**:
+Arkitekturen skiller strengt mellom tre ulike egenskaper: **matematisk reversibilitet**, **protokollmessig retningsbrudd** og **operasjonell irreversibilitet**.
 
-* **`XOR` — Før porten (involutiv, tapsfri, reversibel):**
+| Lag | Mekanisme | Egenskap |
+| :--- | :--- | :--- |
+| **`L0` — `XOR`** | $\chi(h) = x \oplus k$ | Reversibel, involutiv mottaksrelasjon før porten ($(x \oplus k) \oplus k = x$) |
+| **`L0/L1` — `ROX`** | $y = \operatorname{ROTL}_{64}(x \oplus k,\; r),\; r \in \{1..63\}$ | Protokollmarkør for retningsbrudd: ikke-involutiv ($\operatorname{ROX}(\operatorname{ROX}(x,k),k) \neq x$), men fortsatt bijektiv dersom $(k, r)$ er kjent ($x = \operatorname{ROTR}_{64}(y, r) \oplus k$) |
+| **`L1` — Commit-kontrakt** | `SHA-256`-kjeding, append-only `PublicDAG` + `WitnessLedger` | Historisk forankring og synlig integritet (reset legger til ny hendelse, sletter aldri) |
+| **`Level 01` — Realisering** | $W_{\text{ext}}$ + ekstern / fysisk konsekvens | Operasjonell irreversibilitet som ikke kan spoles tilbake via programvaretilstand |
+
+* **`XOR` — Før porten (reversibelt mottak, `HOLD`):**
   1. **Tilstandsvakt:** `state_byte in {0x01, 0x02}` (eksklusiv paritet mellom bit 0 og bit 1; `0x00` og `0x03` $\implies$ `KILL`).
-  2. **Dobbelpuls-sjekk (OMNI-KY 4.1):** $\mathrm{XOR}(\mathrm{XOR}(x, k), k) = x$ over 64-bits tilstandsord. Dersom frem-og-tilbake-testen gir rest $\neq 0$ (`MASK_MUTATED`), tvinges `KILL`.
-* **`ROX` — Ved porten (ikke-involutiv, retningslåst):**
-  $$\mathrm{ROX}_r(x, k) = \mathrm{ROTL}_{64}(x \oplus k,\; r), \qquad r \in \{1..63\},\quad \mathrm{ROX}_r(\mathrm{ROX}_r(x, k), k) \neq x$$
-  1. **Ved `OPEN`:** Bryter reversibiliteten eksplisitt, skifter bit-tilstand `0x01 -> 0x02`, og binder `ROX`-forseglingen sammen med `SHA-256(parent_hash || candidate_hash || witness)` i `PublicDAGStore` og `WitnessLedger`.
-  2. **Ved `TRAP`:** Roterer aktørens strøm inn i skygge-speilet ($G_{\text{shadow}}^{(a)}$) uten anker i $V_R$.
+  2. **Dobbelpuls-sjekk (OMNI-KY 4.1):** $\operatorname{XOR}(\operatorname{XOR}(x, k), k) = x$ over 64-bits tilstandsord. Dersom frem-og-tilbake-testen gir rest $\neq 0$ (`MASK_MUTATED`), tvinges `KILL`.
+* **`ROX` — Ved porten (retningsmarkør, `OPEN / TRAP`):**
+  1. **Ved `OPEN`:** Markerer overgangen fra `0x01` (`StateCandidate`) til `0x02` (`RealizedConsequence`), uten å hevde at bit-operasjonen alene er matematisk irreversibel.
+  2. **Ved `TRAP`:** Roterer en fanget aktørs strøm inn i skygge-speilet ($G_{\text{shadow}}^{(a)}$) uten anker i $V_R$.
+* **Commit-kontrakten — Den operative irreversibiliteten:**
+  > *XOR defines the reversible reception relation prior to the gate. ROX marks the protocol transition in direction without implying mathematical irreversibility. Operational irreversibility is established by the commit contract: append-only event anchoring, cryptographic chaining, external witnessing, and—at Level 01—physical consequences that cannot be reverted by software state reconstruction.*
 
 ## 3. Referanseverifikatorer
 
