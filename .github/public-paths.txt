@@ -17,6 +17,7 @@ L1_LAW/KY_NASH_SPILLTEORI_HANDBOK.pdf
 L1_LAW/MPOLYNOMIAL_1WL_MOLECULAR_GATE_SPEC.md
 L1_LAW/OMNI_KY_SUSY2_SOSIONOMOS_BRIDGE_SPEC_v1.0.md
 L1_LAW/PWR2_SCRAMBLING_COLLECTIVE_GATE_SPEC.md
+L1_LAW/REALISERINGSGRAMMATIKK_v1_0.md
 L1_LAW/STACK_MAP_v0.1.md
 L1_LAW/TWO_TRACK_PROSE_GATE_X01_X12_SPEC.md
 L1_LAW/W2_FIVE_PROOF_CHAINS_SPEC.md
@@ -24,6 +25,11 @@ L1_LAW/invariants_pure.py
 L1_LAW/rosetta_d3_gate.py
 L1_LAW/test_rosetta_d3.py
 L2_GATE/evaluate_boundaries.py
+L2_GATE/realization_grammar_qnx/Makefile
+L2_GATE/realization_grammar_qnx/include/rg_grammar.h
+L2_GATE/realization_grammar_qnx/src/qnx/rg_qnx_resmgr.c
+L2_GATE/realization_grammar_qnx/src/rg_grammar.c
+L2_GATE/realization_grammar_qnx/tests/test_rg_invariants.c
 L2_GATE/test_verify_public_surface.py
 L2_GATE/verify_cos45_kms_spectral_series.py
 L2_GATE/verify_davisson_fine_newtonian_gate.py
