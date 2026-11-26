@@ -5,13 +5,13 @@
 ## 1. Den Kanoniske Konstitusjonen
 Bit er ikke mening. Mønster blir først struktur når det types. Struktur blir først konsekvens når den slipper gjennom porten. Konsekvens blir først historie når den bevitnes.
 
-$$\mathcal{R} = (\Phi, \Pi_K, \Omega, W) \quad \text{med} \quad x_{t+1} = \Omega(\Pi_K(\Phi(x_t))) \in \{0.00\text{ V DC (KILL)}, \; 2.50\text{ V DC (HOLD i } A_5\text{)}, \; 5.00\text{ V DC (OPEN)}\}$$
+$$\mathcal{R} = (\Phi, \Pi_K, \Omega, W) \quad \text{med} \quad x_{t+1} = \Omega(\Pi_K(\Phi(x_t))) \in \{0.00\text{ V DC (KILL)}, \; 0.00\text{ V DC (HOLD i } A_5\text{)}, \; 5.00\text{ V DC (OPEN)}\}$$
 
 ## 2. Den Reviderte Lagdelingen ($D_0 \to D_3$)
 - **$D_0$ — RAW BIT FIELD (`○` / `raw`):** Binary code, non-positional binary, finger binary (5 uavhengige D-latcher på én hånd, 0–31), ufortolket 0/1-materiale ($\Phi$). $\mathrm{Authority}(D_0) = 0$.
 - **$D_1$ — REVERSIBLE / PERMUTATIONAL PHASE (`∅` / `estimate`):** Kun ekte bijeksjoner og involusjoner med $F(F(s)) = s$: Bit-rotasjoner (`ROL`/`ROR`), $\mathrm{ROX}_m(x) = x \oplus m$ med frossen maske ($q=1, m_{\text{inn}} = m_{\text{ut}}$), `NOT`, Gray-kode ($\Delta = 1$ bit), `KY-Enigma` ($E_q^2 = I$), dual-rail paritet på $\mathbb{Z}_2^{1000}$ og ikke-singulære `LFSR`-dynamikker. **Ikke-invertible operatorer (`AND`, `OR`, `SHL`, `SHR`) destruerer entropi og er strengt ekskludert fra $D_1$.**
 - **$D_{1.2}$ — STRUCTURAL NUMERIC TYPES (`□` / `struct`):** Toer-komplement ($\bmod 2^n$), offset-binær, balansert ternært ($-1,0,+1$), redundante binære representasjoner ($O(1)$), Wallace/Dadda-reduksjon, BCD, Kvibinær (IBM 650: eksakt 2 av 7 bits HIGH), IEEE 754. Krever $D_{1.2}$ Codec Roundtrip: $\mathrm{decode}(\mathrm{encode}(v)) = v$.
-- **$D_{1.5}$ — VIABILITY / NUMERIC RISK (`◇` / `◊` / `viability`):** Overløp, underløp, NaN, ugyldige kvibinære kodeord, carry-propagation-risiko, periodiske desimalfeil ($1/3 = 0.333\dots \to \pi_t$ målt mot $\tau_{\text{OPEN}}, \tau_{\text{KILL}}$). I $A_5$-sommerfugllommen ($c = +0.5525 > 0, \lvert x\rvert \le 0.45$, 400 klokkesykluser ved $80\text{ kHz}$ mens `fsync()` herder) holdes tilstanden i tapsfri stasis ved **$2.50\text{ V DC HOLD}$** (`∥` / `⏸`).
+- **$D_{1.5}$ — VIABILITY / NUMERIC RISK (`◇` / `◊` / `viability`):** Overløp, underløp, NaN, ugyldige kvibinære kodeord, carry-propagation-risiko, periodiske desimalfeil ($1/3 = 0.333\dots \to \pi_t$ målt mot $\tau_{\text{OPEN}}, \tau_{\text{KILL}}$). I $A_5\text{-sommerfugllommen}$ ($c = +0.5525 > 0, \lvert x\rvert \le 0.45$, 400 klokkesykluser ved $80\text{ kHz}$ mens `fsync()` herder) holdes tilstanden i tapsfri stasis ved **$0.00\text{ V DC HOLD}$** (`∥` / `⏸`).
 - **$D_{2^-}$ — PRE-COMMIT WARRANT (`𝒪` / `⊙` / `authorized`):** Genererer og `fsync()`-låser **119 B $W_{\text{pre}}$** (`<QQ32sfBH32s32s`) med `candidate_hash`, `kernel_drift_val` ($\Delta_{\text{prov}} = 0, \partial_1\partial_2 = 0$) og `w_pre_hash` (byte 87..118) *før* fysisk utførelse ($\odot \prec 1$).
 - **$D_2$ — COMMITTED SYMBOLIC STATE (`●` / `committed`):** ASCII 7-bit (128 tegn) / **205-byte låst binærramme** (`119 B W_pre` `<QQ32sfBH32s32s` + `86 B W_post` `<QQ32sBfB32s`, RFC 8785 JCS fikspunkt), L1-simulert D-Latch HIGH (**$5.00\text{ V DC}$**, `OPEN_AS_SOFTWARE_DEMONSTRATION`). Point of No Return ($\eta = 1$). **Alternativ A låst:** `●` er utelukkende en tilstandsnode i kjeden, aldri et suffiks; selve commit-handlingen i suffikset representeres av `!` (`commit_event`) kombinert med `#` (`witness_hash`).
 - **$D_3$ — WITNESS / REPLAYABLE SEMANTIC LAYER (`#!` / `audit(hash,commit)`):** Kanonisk glyph-streng `↻(○ ⇒ ∅ → □ → ◊ → 𝒪 ↦ ●)#! ▶` (og `✓(○ → ∅ → □ → ◇ → ●)#! ▸`). Skjema- og proveniensbundet vitnelogg ($W_{t+1}^+$) med eksplisitt demarkasjon mellom **Nivå L1** (append-only programvare-WAL med `os.fsync` og bilateral Merkle-rot $W_t^{\text{bilat}}$) og **Nivå L2/L3** (fysisk WORM-medium / laser-ablatert silisium / eFuse og maskinvarelås). **Unicode alene (`Unicode as Semantic Realization = KILL`) og frittstående hashkjede (`Standalone Hashchain as WORM = KILL`) kan aldri hevde fysisk WORM.**
@@ -43,7 +43,7 @@ $$\mathcal{R} = (\Phi, \Pi_K, \Omega, W) \quad \text{med} \quad x_{t+1} = \Omega
            │
            ▼  (→)
   [D1.5: VIABILITY / A5 POCKET] ◊ / ◇          Overflow/NaN guard, π_t vs (τ_OPEN, τ_KILL)
-                                               A5 Butterfly Pocket (c=+0.5525): 2.50 V DC HOLD (∥)
+                                               A5 Butterfly Pocket (c=+0.5525): 0.00 V DC HOLD (∥)
            │
            ▼  (→)
   [D2-: PRE-COMMIT WARRANT]     𝒪 / ⊙          119 B W_pre (<QQ32sfBH32s32s) fsync-locked (⊙ ≺ 1)
