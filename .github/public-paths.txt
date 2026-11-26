@@ -106,4 +106,3 @@ LICENSE
 Makefile
 NOTICE
 README.md
-STACK_MAP_v0.1.md

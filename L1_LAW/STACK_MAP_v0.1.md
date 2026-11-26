@@ -36,10 +36,10 @@ $$\mathcal{R} = (\Phi, \Pi_K, \Omega, W) \quad \text{med} \quad x_{t+1} = \Omega
            │
            ▼  (→)
   [D1.2: STRUCTURAL NUMERIC]    □  (struct)    Bijective Codec: from_ascii(to_ascii(x)) ≡ x
-  ┌────────────────────────────────────────────────────────────────────────────┐
-  │  Unicode : ↻(○ ⇒ ∅ → □ → ◊ → 𝒪 ↦ ●)#! ▶  /  ✓(○ → ∅ → □ → ◇ → ●)#! ▸       │
-  │  ASCII   : validate(raw -> estimate -> struct -> viability -> committed)#! OPEN
-  └────────────────────────────────────────────────────────────────────────────┘
+  ┌─────────────────────────────────────────────────────────────────────────────────┐
+  │  Unicode : ↻(○ ⇒ ∅ → □ → ◊ → 𝒪 ↦ ●)#! ▶  /  ✓(○ → ∅ → □ → ◇ → ●)#! ▸            │
+  │  ASCII   : validate(raw -> estimate -> struct -> viability -> committed)#! OPEN │
+  └─────────────────────────────────────────────────────────────────────────────────┘
            │
            ▼  (→)
   [D1.5: VIABILITY / A5 POCKET] ◊ / ◇          Overflow/NaN guard, π_t vs (τ_OPEN, τ_KILL)
