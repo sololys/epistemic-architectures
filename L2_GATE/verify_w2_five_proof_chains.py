@@ -14,11 +14,15 @@ from fractions import Fraction
 import hashlib
 import json
 import math
+import re
 import sys
 import unittest
 from typing import Any, Dict, Optional, Sequence, Tuple
 
 C_VACUUM_M_PER_S = 299_792_458.0
+REQUIRED_CHAIN_IDS = (1, 2, 3, 4, 5)
+VALID_CHAIN_VERDICTS = frozenset({"OPEN", "HOLD", "KILL"})
+HEX64_RE = re.compile(r"^[0-9a-fA-F]{64}$")
 
 
 def canonical_sha256(payload: Dict[str, Any]) -> str:
@@ -162,11 +166,36 @@ def verify_chain_5_cook_levin_w2(
 # Master Conjunctive Gate Evaluator (Chains 1..5 -> Omega_CI/CD)
 # ---------------------------------------------------------------------------
 def evaluate_w2_conjunctive_gate(chain_results: Sequence[Dict[str, Any]], ancestor_hash: str) -> Dict[str, Any]:
-    verdicts = [c["verdict"] for c in chain_results]
-    if "KILL" in verdicts:
+    ancestor_valid = isinstance(ancestor_hash, str) and bool(HEX64_RE.fullmatch(ancestor_hash))
+    schema_error = not ancestor_valid
+    chain_ids: list[int] = []
+    verdicts: list[str] = []
+
+    for entry in chain_results:
+        if not isinstance(entry, dict):
+            schema_error = True
+            break
+        cid = entry.get("chain")
+        verdict = entry.get("verdict")
+        if type(cid) is not int or cid not in REQUIRED_CHAIN_IDS:
+            schema_error = True
+            break
+        if not isinstance(verdict, str) or verdict not in VALID_CHAIN_VERDICTS:
+            schema_error = True
+            break
+        chain_ids.append(cid)
+        verdicts.append(verdict)
+
+    has_duplicate_chain = len(set(chain_ids)) != len(chain_ids)
+
+    if schema_error or has_duplicate_chain or "KILL" in verdicts:
         overall = "KILL"
         voltage_v = 0.00
-    elif "HOLD" in verdicts or len(chain_results) != 5:
+    elif (
+        len(chain_results) != 5
+        or set(chain_ids) != set(REQUIRED_CHAIN_IDS)
+        or not all(v == "OPEN" for v in verdicts)
+    ):
         overall = "HOLD"
         voltage_v = 0.00
     else:
@@ -175,7 +204,7 @@ def evaluate_w2_conjunctive_gate(chain_results: Sequence[Dict[str, Any]], ancest
 
     envelope = {
         "ancestor": ancestor_hash,
-        "chains": list(chain_results),
+        "chains": list(chain_results) if all(isinstance(x, dict) for x in chain_results) else [],
         "overall_verdict": overall,
         "voltage_v": voltage_v,
     }
@@ -227,6 +256,46 @@ class TestW2FiveProofChains(unittest.TestCase):
         res = evaluate_w2_conjunctive_gate(all_open, h0)
         self.assertEqual(res["overall_verdict"], "OPEN")
         self.assertEqual(res["voltage_v"], 5.00)
+
+    def test_master_gate_rejects_duplicate_chains_and_unknown_verdicts(self) -> None:
+        h0 = "0" * 64
+        c1_open = verify_chain_1_involutive_twin((1.0, 2.0), (0.5, -0.5))
+
+        # Five copies of Chain 1 must NEVER pass as all five distinct chains
+        dup_res = evaluate_w2_conjunctive_gate([c1_open] * 5, h0)
+        self.assertEqual(dup_res["overall_verdict"], "KILL")
+        self.assertEqual(dup_res["voltage_v"], 0.00)
+
+        # Unknown / forged verdict string must fail closed to KILL (never fall through to OPEN)
+        forged_chains = [
+            verify_chain_1_involutive_twin((1.0, 2.0), (0.5, -0.5)),
+            verify_chain_2_relational_gram(((1.0, 0.0), (0.0, 1.0)), ((0.0, 1.0), (-1.0, 0.0))),
+            {"chain": 3, "verdict": "UNKNOWN", "voltage_v": 5.0},
+            verify_chain_4_causal_phase_cone(100.0, 15.0, 0.5),
+            verify_chain_5_cook_levin_w2(h0, h0, 0b0001, 0b0011, "WM-01", "WH-L01"),
+        ]
+        unk_res = evaluate_w2_conjunctive_gate(forged_chains, h0)
+        self.assertEqual(unk_res["overall_verdict"], "KILL")
+        self.assertEqual(unk_res["voltage_v"], 0.00)
+
+        # Missing Chain 5 (only 4 distinct OPEN chains) must stay in HOLD
+        partial_res = evaluate_w2_conjunctive_gate(forged_chains[:2] + [
+            verify_chain_3_rational_conservation([Fraction(10, 1)], [Fraction(10, 1)], [Fraction(1, 1)]),
+            verify_chain_4_causal_phase_cone(100.0, 15.0, 0.5),
+        ], h0)
+        self.assertEqual(partial_res["overall_verdict"], "HOLD")
+        self.assertEqual(partial_res["voltage_v"], 0.00)
+
+        # Malformed ancestor hash must fail closed to KILL
+        bad_anc = evaluate_w2_conjunctive_gate([
+            verify_chain_1_involutive_twin((1.0, 2.0), (0.5, -0.5)),
+            verify_chain_2_relational_gram(((1.0, 0.0), (0.0, 1.0)), ((0.0, 1.0), (-1.0, 0.0))),
+            verify_chain_3_rational_conservation([Fraction(10, 1)], [Fraction(10, 1)], [Fraction(1, 1)]),
+            verify_chain_4_causal_phase_cone(100.0, 15.0, 0.5),
+            verify_chain_5_cook_levin_w2(h0, h0, 0b0001, 0b0011, "WM-01", "WH-L01"),
+        ], "not_a_64_hex_hash")
+        self.assertEqual(bad_anc["overall_verdict"], "KILL")
+        self.assertEqual(bad_anc["voltage_v"], 0.00)
 
 
 if __name__ == "__main__":

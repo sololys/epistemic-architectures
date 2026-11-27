@@ -115,11 +115,24 @@ def evaluate_gate(
         verdict = "HOLD_READY_FOR_W2"
         voltage_mv = 0
 
+    candidate_spec = {
+        "envelope_max": str(envelope_max),
+        "eps_iso": str(eps_iso),
+        "min_zd_dist": str(min_zd_dist),
+        "s0": ["2", "3"],
+        "delta_cmd": ["3/2", "-1"],
+        "tau_gram": str(tau_gram),
+    }
+    candidate_sha256 = hashlib.sha256(
+        json.dumps(candidate_spec, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+
     payload: Dict[str, Any] = {
         "aps_index": aps_idx,
         "aps_residual_q": str(aps_res_q),
         "are_descent_le_zero": are_dot <= Fraction(0, 1),
         "bft_quorum": bft_verdict,
+        "candidate_sha256": candidate_sha256,
         "d0_to_d3_sealed": d3_ok,
         "delta_g": str(delta_g),
         "delta_r": str(delta_r),
@@ -145,11 +158,12 @@ def evaluate_gate(
 
 def main() -> int:
     result = evaluate_gate()
-    if result["verdict"] == "KILL":
-        print(json.dumps(result, sort_keys=True))
-        return 1
     print(json.dumps(result, sort_keys=True))
-    return 0
+    if result["verdict"] == "HOLD_READY_FOR_W2":
+        return 0
+    if result["verdict"] == "HOLD":
+        return 2
+    return 1
 
 
 if __name__ == "__main__":

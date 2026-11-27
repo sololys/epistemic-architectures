@@ -30,6 +30,8 @@ L2_GATE/realization_grammar_qnx/include/rg_grammar.h
 L2_GATE/realization_grammar_qnx/src/qnx/rg_qnx_resmgr.c
 L2_GATE/realization_grammar_qnx/src/rg_grammar.c
 L2_GATE/realization_grammar_qnx/tests/test_rg_invariants.c
+L2_GATE/record_witness.py
+L2_GATE/test_record_witness.py
 L2_GATE/test_verify_public_surface.py
 L2_GATE/verify_cos45_kms_spectral_series.py
 L2_GATE/verify_davisson_fine_newtonian_gate.py

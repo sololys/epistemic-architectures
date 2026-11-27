@@ -24,7 +24,9 @@ jobs:
         run: python3 L2_GATE/verify_public_surface.py
 
       - name: Run verifier tests
-        run: python3 -m unittest -v L2_GATE/test_verify_public_surface.py
+        run: |
+          python3 -m unittest -v L2_GATE/test_verify_public_surface.py
+          python3 -m unittest -v L2_GATE/test_record_witness.py
 
       - name: Run Morandi-Core Formal Verification Contract (L1_LAW -> L2_GATE)
         run: make verify && make clean
